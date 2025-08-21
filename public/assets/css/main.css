@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container-header{
+    background-color: aqua;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.browser{
+    background-color: green;
+}
+
+.home-center{
+    background-color: gray;
+    position: absolute;
+}
+
+
+.home-center .hh{
+        position: relative;
+
+    bottom: 20px;
+}
+
+.container-zones{
+    background-color: brown;
+   
+}
+
