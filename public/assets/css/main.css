@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/*COMMENTARY*/
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  margin: 10px;
+}
+
+/*COMMENTARY*/
+.logo h1 {
+  color: #4fa13f;
+  margin-left: 40px;
+  font-size: 25px;
+}
+
+/*COMMENTARY*/
+.nav-link {
+  display: flex;
+  list-style: none;
+  margin-right: 30px;
+  font-size: 20px;
+  cursor: pointer;
+  gap: 30px;
+}
+
+.nav-link a {
+  text-decoration: none;
+  color: black;
+}
+.nav-link a:hover {
+  color: #929292;
+}
+
+/*COMMENTARY*/
+#btnlogin {
+  background-color: #4fa13f;
+  border: none;
+  padding: 5px 15px;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background 0.3;
+}
+
+#btnlogin:hover {
+  background-color: #929292;
+}
+
+/*COMMENTARY*/
+
+.main-view {
+  height: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  padding: 20px;
+  margin: 20px 80px 20px 80px;
+  border-radius: 10px;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://imgs.search.brave.com/4BIRoQU9EGO8lyCpuI_RPQDpjzyJ6x80Z84VS8f-eE4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvOTg3/OTMwNzYwL3Bob3Rv/L2NhcnRhZ2VuYS1j/b2xvbWJpYS1hZnJv/LWNvbG9tYmlhbi1n/aXJscy1kcmVzc2Vk/LWluLXRoZS10cmFk/aXRpb25hbC1wYWxl/bnF1ZXJhLWNvc3R1/bWUtcG9zZS1mb3Iu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PTY0ZlI2TEd0NUhF/OXJMTUVCMEhVNFBq/bHVWeUNUbTh4b0lU/dURlX29IWlk9")
+      center/cover no-repeat;
+  color: white;
+  box-shadow: 0 0 10px black;
+}
+
+/*COMMENTARY*/
+.container-main {
+  margin-left: 50px;
+  margin-top: 5em;
+  max-width: 500px;
+}
+
+.main-view h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.main-view p {
+  font-size: 1.1rem;
+  margin-top: 25px;
+}
+
+.main-view button {
+  background-color: #4fa13f;
+  padding: 12px 50px;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+  margin-top: 20px;
+}
+
+.main-view button:hover {
+  transform: scale(1.05);
+  background-color: #929292;
+}
