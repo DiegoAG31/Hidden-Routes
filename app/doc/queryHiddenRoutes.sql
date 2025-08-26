@@ -66,12 +66,3 @@ CREATE TABLE bookings (
         REFERENCES booking_status (booking_status_id)
         ON DELETE SET NULL ON UPDATE CASCADE
 );
-
-
-
-
-
-
-
-
-
