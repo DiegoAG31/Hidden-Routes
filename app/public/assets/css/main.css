@@ -5,6 +5,11 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+body{
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
 /*COMMENTARY*/
 .navbar {
   display: flex;
@@ -220,7 +225,7 @@
 .container-footer {
   display: flex;
   justify-content: space-between;
-  padding: 30px;
+  padding: 20px;
 }
 
 .logo-footer img {
@@ -237,12 +242,19 @@
 .social-footer a img {
   max-width: 25px;
 }
-
 /*COMMENTARY*/
 
-.info-footer a{
+.info-footer a {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  margin-top: 1.5em;
+  margin-right: 3em;
+  font-size: 1rem;
+  text-decoration: none;
+  color: #000000;
 }
 
-.footer-copy{ text-align: center;}
+.footer-copy {
+  text-align: center;
+  padding: 10px;
+}
