@@ -70,7 +70,7 @@
     url("https://imgs.search.brave.com/4BIRoQU9EGO8lyCpuI_RPQDpjzyJ6x80Z84VS8f-eE4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvOTg3/OTMwNzYwL3Bob3Rv/L2NhcnRhZ2VuYS1j/b2xvbWJpYS1hZnJv/LWNvbG9tYmlhbi1n/aXJscy1kcmVzc2Vk/LWluLXRoZS10cmFk/aXRpb25hbC1wYWxl/bnF1ZXJhLWNvc3R1/bWUtcG9zZS1mb3Iu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PTY0ZlI2TEd0NUhF/OXJMTUVCMEhVNFBq/bHVWeUNUbTh4b0lU/dURlX29IWlk9")
       center/cover no-repeat;
   color: white;
-  box-shadow: 0 0 10px black;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
 
 /*COMMENTARY*/
@@ -106,3 +106,143 @@
   transform: scale(1.05);
   background-color: #929292;
 }
+
+/*COMMENTARY*/
+
+.zones {
+  padding: 60px 50px;
+}
+
+.zones h1 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #4fa13f;
+}
+
+.container-prin {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 45px;
+}
+
+.grid-prin {
+  background-color: #ffffff;
+
+  overflow: hidden;
+}
+
+.grid-prin img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.grid-prin h2 {
+  margin: 15px 10px 5px;
+  color: black;
+}
+
+.grid-prin p {
+  margin: 10px 10px 15px;
+  color: grey;
+  font-size: 1rem;
+}
+
+.grid-prin a {
+  display: inline-block;
+  margin: 10px;
+  background-color: #4fa13f;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 8px;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.grid-prin a:hover {
+  background-color: #929292;
+  transform: scale(1.05);
+}
+
+/*COMMENTARY*/
+
+.exit-section {
+  background-color: #ccc9c94b;
+  height: 10em;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+}
+
+.exit {
+  margin-top: 3em;
+  margin-right: 8em;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.exit .btnprofile {
+  padding: 20px 45px;
+  background-color: #4fa13f;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  color: #ffffff;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.exit .btnlogout {
+  padding: 20px 45px;
+  background-color: #9292929c;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  color: #000000;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.exit .btnprofile:hover {
+  background-color: #326728;
+}
+
+.exit .btnlogout:hover {
+  background-color: #656565;
+}
+
+/*COMMENTARY*/
+
+.container-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+}
+
+.logo-footer img {
+  margin-left: 20px;
+  width: 100px;
+  height: auto;
+}
+
+.social-footer {
+  display: flex;
+  gap: 15px;
+}
+
+.social-footer a img {
+  max-width: 25px;
+}
+
+/*COMMENTARY*/
+
+.info-footer a{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer-copy{ text-align: center;}
