@@ -1,6 +1,7 @@
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import User from '../models/userModel.js';
+import Role from '../models/roleModel.js';
 
 export const register = async (req, res) => {
   try {
@@ -29,8 +30,10 @@ export const login = async (req, res) => {
     if (!isPasswordValid) {
       return res.status(401).json({ message: 'Invalid password' });
     }
+    // Obtener el nombre del rol
+    const role = await Role.findByPk(user.Role_id);
     const token = jwt.sign(
-      { userId: user.User_id, roleId: user.Role_id },
+      { userId: user.User_id, roleId: user.Role_id, roleName: role?.Role_name },
       process.env.JWT_SECRET,
       { expiresIn: '1h' }
     );
