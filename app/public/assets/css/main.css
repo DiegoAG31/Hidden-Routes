@@ -258,3 +258,26 @@ body{
   text-align: center;
   padding: 10px;
 }
+
+/*COMMENTARY*/
+.logo-login{
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+}
+
+/*COMMENTARY*/
+.logo-login img{
+  width: 250px;
+  height: auto;
+}
+/*COMMENTARY*/  
+.login-box{
+  width: 350px;
+  margin: auto;
+  padding: 30px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  margin-top: 2em;
+}
