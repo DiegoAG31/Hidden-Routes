@@ -6,8 +6,11 @@
 }
 
 body{
-  margin-bottom: 20px;
-  padding: 10px;
+ width: 100vw;
+ height: 100vh;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
 }
 
 /*COMMENTARY*/
@@ -16,7 +19,6 @@ body{
   justify-content: space-between;
   align-items: center;
   padding: 20px 50px;
-  margin: 10px;
 }
 
 /*COMMENTARY*/
@@ -190,6 +192,8 @@ body{
   gap: 20px;
 }
 
+/*COMMENTARY*/
+
 .exit .btnprofile {
   padding: 20px 45px;
   background-color: #4fa13f;
@@ -257,4 +261,122 @@ body{
 .footer-copy {
   text-align: center;
   padding: 10px;
+}
+
+/*COMMENTARY*/
+.container-experiences{
+  background-color: #ffffff;
+}
+
+#exp-h1{
+  color: #4fa13f;
+  margin-top: 3em;
+  margin-left: 40px;
+  font-size: 25px;
+}
+
+/*COMMENTARY*/
+.filter{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;  
+  
+}
+
+/*COMMENTARY*/
+.select-city{
+  margin: 10px;
+}
+
+.select-city select{
+  font-size: 18px;
+  width: 250px;
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+
+/*COMMENTARY*/
+
+.range-container{
+  margin: 10px;
+}
+
+.slider{
+  width: 250px;
+  margin-top: 5px;
+}
+
+.label-l{
+  float: left;
+  font-size: 14px;
+  color: #4fa13f;
+}
+
+.label-r{
+  float: right;
+  font-size: 14px;
+  color: #4fa13f;
+}
+
+.value-filter{
+  font-size: 14px;
+  color: #929292;
+  clear: both;
+}
+
+/*COMMENTARY*/
+
+.btn-filter button{
+  background-color: #4fa13f;
+  border: 1.5px solid black;
+  margin-top: 20px;
+  padding: 5px 15px;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.btn-filter button:hover{
+  background-color: #929292;
+}
+/*COMMENTARY*/
+.container-prin-exp {
+
+  display: grid;
+  margin-top: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 45px;
+}
+
+/*COMMENTARY*/
+
+#btn-exp-card {
+  display: inline-block;
+  margin: 10px;
+  background-color: #4fa13f;
+  color: #ffffff;
+  padding: 8px 10px;
+  font-size: 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+  border: none;
+}
+
+#btn-exp-card:hover{
+    background-color: #929292;
+}
+
+
+
+
+
+
+
+/*COMMENTARY*/
+.container{
+  max-width: 80%;
+  width: 100%;
 }

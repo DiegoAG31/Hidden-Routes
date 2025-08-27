@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <!---->
-    <header class="navbar">
+    <header class="navbar container">
       <div class="logo"><h1>Hidden Routes</h1></div>
       <nav>
         <ul class="nav-link">
@@ -17,23 +18,104 @@
         </ul>
       </nav>
     </header>
-    <main>
+    <main class="container"
+      <div>
+        <section class="container-experiences">
+        <div id="exp-h1">
+          <h1>Experiences</h1>
+        </div>
+        <div class="filter">
+          <div class="select-city"><select name="selectcity" id="selectcity">
+            <option value="">Select a city</option>
+            <option value="barranquilla">Barranquilla</option>
+            <option value="cartagena">Cartagena</option>
+            <option value="santamarta">Santa Marta</option>
+          </select>
+        </div>
+          <div class="range-container">
+            <span class="label-l">Quotas</span>
+            <span class="label-r">0-100</span><br>
+            <input type="range" min="0" max="100" value="50" id="quotasrange" class="slider">
+            <div class="value-filter">
+              <p>Description<span id="valuequota"></span></p>
+            </div>
+          </div>
+          <div class="range-container">
+            <span class="label-l">Prices</span>
+            <span class="label-r">$0-100</span><br>
+            <input type="range" min="0" max="100" value="" id="pricerange" class="slider">
+            <div class="value-filter">
+              <p>Description<span id="valueprice"></span></p>
+            </div>
+          </div>
+          <div class="btn-filter">
+            <button type="button">filter</button></div>
+        </div>
+      </section>
+      </div>
+      <!--COMMENTARY-->
+      <section class="experiences-cards">
+        <div class="container-prin-exp">
+         <div class="grid-prin">
+            <img src="../assets/img/barranquilla.webp" alt="example1" />
+            <h2>Barranquilla</h2>
+            <p>
+              Known for its vibrant carnival and festive atmosphere,
+              Barranquilla is a city full of...
+            </p>
+            <button type="button" id="btn-exp-card">Reservar</button>
+          </div>
+          <div class="grid-prin">
+            <img src="../assets/img/barranquilla.webp" alt="example1" />
+            <h2>Barranquilla</h2>
+            <p>
+              Known for its vibrant carnival and festive atmosphere,
+              Barranquilla is a city full of...
+            </p>
+            <button type="button" id="btn-exp-card">Reservar</button>
+          </div>
+          <div class="grid-prin">
+            <img src="../assets/img/barranquilla.webp" alt="example1" />
+            <h2>Barranquilla</h2>
+            <p>
+              Known for its vibrant carnival and festive atmosphere,
+              Barranquilla is a city full of...
+            </p>
+            <button type="button" id="btn-exp-card">Reservar</button>
+          </div>
+          </div>
+      </section>
+      <!--COMMENTARY FALTAN LAS RESEÑAS HACERLAS-->
+      <section class="reviews">
+        <div class="grid-review">
+            <h2>Barranquilla</h2>
+            <div>
+              <img src="../assets/img/logo.webp" alt="example1" />
+              <p>
+              Known for its vibrant carnival and festive atmosphere,
+              Barranquilla is a city full of...
+            </p>
+            </div>  
+          </div>
+      </section>
 
     </main>
-      <footer>
+    <footer class="container">
       <section class="container-footer">
         <div class="sf-footer">
           <div class="logo-footer">
-            <img src="./app/public/assets/img/logo.webp" alt="logo footer" />
+            <img src="../assets/img/logo.webp" alt="logo footer" />
           </div>
           <div class="social-footer">
-            <a href="#"><img src="./app/public/assets/img/github.png" alt="github" /></a>
+            <a href="#"><img src="../assets/img/github.png" alt="github" /></a>
             <a href="#"
-              ><img src="./app/public/assets/img/facebook.png" alt="facebook"
+              ><img src="../assets/img/facebook.png" alt="facebook"
             /></a>
-            <a href="#"><img src="./app/public/assets/img/youtube.png" alt="youtube" /></a>
             <a href="#"
-              ><img src="./app/public/assets/img/instagram.png" alt="instagram"
+              ><img src="../assets/img/youtube.png" alt="youtube"
+            /></a>
+            <a href="#"
+              ><img src="../assets/img/instagram.png" alt="instagram"
             /></a>
           </div>
         </div>
@@ -48,5 +130,5 @@
         © 2025 Colombia Hidden Routes - All rights reserved.
       </p>
     </footer>
-</body>
+  </body>
 </html>
