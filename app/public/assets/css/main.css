@@ -5,26 +5,39 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-body{
-  margin-bottom: 20px;
-  padding: 10px;
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*COMMENTARY*/
+.container {
+  max-width: 80%;
+  width: 100%;
 }
 
 /*COMMENTARY*/
 .navbar {
   display: flex;
   justify-content: space-between;
+  gap: 10px;
   align-items: center;
   padding: 20px 50px;
-  margin: 10px;
 }
 
 /*COMMENTARY*/
-.logo h1 {
+.logo h1,
+.r-h2,
+.reservation h2,
+.container-manager h2 {
   color: #4fa13f;
-  margin-left: 40px;
+  margin-bottom: 10px;
   font-size: 25px;
 }
+
 
 /*COMMENTARY*/
 .nav-link {
@@ -38,11 +51,14 @@ body{
 
 .nav-link a {
   text-decoration: none;
-  color: black;
+  color: #000000;
 }
-.nav-link a:hover {
-  color: #929292;
+
+
+.nav-link button a {
+  color: #ffffff;
 }
+
 
 /*COMMENTARY*/
 #btnlogin {
@@ -72,17 +88,14 @@ body{
   margin: 20px 80px 20px 80px;
   border-radius: 10px;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("https://imgs.search.brave.com/4BIRoQU9EGO8lyCpuI_RPQDpjzyJ6x80Z84VS8f-eE4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvOTg3/OTMwNzYwL3Bob3Rv/L2NhcnRhZ2VuYS1j/b2xvbWJpYS1hZnJv/LWNvbG9tYmlhbi1n/aXJscy1kcmVzc2Vk/LWluLXRoZS10cmFk/aXRpb25hbC1wYWxl/bnF1ZXJhLWNvc3R1/bWUtcG9zZS1mb3Iu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PTY0ZlI2TEd0NUhF/OXJMTUVCMEhVNFBq/bHVWeUNUbTh4b0lU/dURlX29IWlk9")
-      center/cover no-repeat;
+    url("https://imgs.search.brave.com/4BIRoQU9EGO8lyCpuI_RPQDpjzyJ6x80Z84VS8f-eE4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvOTg3/OTMwNzYwL3Bob3Rv/L2NhcnRhZ2VuYS1j/b2xvbWJpYS1hZnJv/LWNvbG9tYmlhbi1n/aXJscy1kcmVzc2Vk/LWluLXRoZS10cmFk/aXRpb25hbC1wYWxl/bnF1ZXJhLWNvc3R1/bWUtcG9zZS1mb3Iu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PTY0ZlI2TEd0NUhF/OXJMTUVCMEhVNFBq/bHVWeUNUbTh4b0lU/dURlX29IWlk9") center/cover no-repeat;
   color: white;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
 
-/*COMMENTARY*/
+/*COMMENTARY ------------------------------------------------------------------------------------*/
 .container-main {
-  margin-left: 50px;
   margin-top: 5em;
-  max-width: 500px;
 }
 
 .main-view h1 {
@@ -119,57 +132,93 @@ body{
 }
 
 .zones h1 {
-  font-size: 2rem;
+  font-size: 25px;
   margin-bottom: 40px;
   color: #4fa13f;
 }
 
-.container-prin {
+.container-prin,
+.container-prin-exp {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 45px;
+  margin-top: 40px;
 }
 
-.grid-prin {
+/*COMMENTARY*/
+.grid-exp-card {
   background-color: #ffffff;
-
   overflow: hidden;
+  padding: 20px;
 }
 
-.grid-prin img {
+.grid-exp-card img {
   width: 100%;
   height: 380px;
   object-fit: cover;
   border-radius: 10px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.grid-prin h2 {
+.grid-exp-card h2 {
   margin: 15px 10px 5px;
   color: black;
 }
 
-.grid-prin p {
-  margin: 10px 10px 15px;
+.grid-exp-card p {
+  margin: 10px;
   color: grey;
-  font-size: 1rem;
+  font-size: 0.9rem;
+}
+
+.grid-exp-card a {
+  display: inline-block;
+  margin: 10px;
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+
+/*COMMENTARY*/
+.grid-prin {
+  background-color: #ffffff;
+  overflow: hidden;
+  padding: 10px;
+  border-radius: 10PX;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.grid-prin:hover {
+  transform: scale(1.05);
+}
+
+/*COMMENTARY*/
+.grid-prin img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.grid-prin h2 {
+  margin: 10px;
+  color: black;
+}
+
+.grid-prin p {
+  margin: 10px;
+  color: grey;
+  font-size: 0.9rem;
 }
 
 .grid-prin a {
   display: inline-block;
   margin: 10px;
-  background-color: #4fa13f;
   color: #ffffff;
   text-decoration: none;
   padding: 8px 10px;
   border-radius: 8px;
-  transition: background 0.3s, transform 0.3s;
-}
-
-.grid-prin a:hover {
-  background-color: #929292;
-  transform: scale(1.05);
 }
 
 /*COMMENTARY*/
@@ -180,6 +229,7 @@ body{
   display: flex;
   flex-direction: row;
   justify-content: right;
+  margin-top: 20px;
 }
 
 .exit {
@@ -189,6 +239,8 @@ body{
   align-items: center;
   gap: 20px;
 }
+
+/*COMMENTARY*/
 
 .exit .btnprofile {
   padding: 20px 45px;
@@ -242,6 +294,7 @@ body{
 .social-footer a img {
   max-width: 25px;
 }
+
 /*COMMENTARY*/
 
 .info-footer a {
@@ -260,24 +313,476 @@ body{
 }
 
 /*COMMENTARY*/
-.logo-login{
-  display: flex;
-  justify-content: center;
-  margin-top: 2em;
+.container-experiences {
+  background-color: #ffffff;
+}
+
+#exp-h1 {
+  color: #4fa13f;
+  margin-top: 2.5rem;
+  margin-left: 40px;
+  font-size: 20px;
 }
 
 /*COMMENTARY*/
-.logo-login img{
-  width: 250px;
-  height: auto;
+.filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
 }
-/*COMMENTARY*/  
-.login-box{
-  width: 350px;
-  margin: auto;
-  padding: 30px;
-  border: 1px solid #ccc;
+
+/*COMMENTARY*/
+.select-city {
+  margin: 10px;
+}
+
+.select-city select {
+  font-size: 18px;
+  width: 250px;
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+
+/*COMMENTARY*/
+
+.range-container {
+  margin: 10px;
+}
+
+.slider {
+  width: 250px;
+  margin-top: 5px;
+}
+
+.label-l {
+  float: left;
+  font-size: 14px;
+  color: #4fa13f;
+}
+
+.label-r {
+  float: right;
+  font-size: 14px;
+  color: #4fa13f;
+}
+
+.value-filter {
+  font-size: 14px;
+  color: #929292;
+  clear: both;
+}
+
+/*COMMENTARY*/
+
+.btn-filter button {
+  background-color: #4fa13f;
+  border: 1.5px solid black;
+  margin-top: 20px;
+  margin-right: 20px;
+  padding: 8px 15px;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.btn-filter button:hover {
+  background-color: #929292;
+}
+
+/*COMMENTARY*/
+
+#btn-exp-card {
+  display: inline-block;
+  margin: 10px;
+  background-color: #4fa13f;
+  color: #ffffff;
+  padding: 8px 10px;
+  font-size: 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+  border: none;
+}
+
+#btn-exp-card:hover {
+  background-color: #929292;
+}
+
+/*COMMENTARY*/
+.reviews {
+  padding: 3rem 1rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  margin-top: 3rem;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 10px;
+}
+
+.tittle-review {
+  margin-bottom: 40px;
+  font-size: 0.9rem;
+}
+
+.review-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/*COMMENTARY*/
+.review-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+
+/*COMMENTARY*/
+.review-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  /* avatar circular */
+  object-fit: cover;
+  border: 2px solid #ddd;
+}
+
+/*COMMENTARY*/
+.review-user {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+
+.review-location {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+
+/*COMMENTARY*/
+.review-body {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+
+/*COMMENTARY*/
+.reservation,
+.container-manager,
+.created-experiences {
+  padding: 3rem 5rem;
+  border-radius: 8px;
+  width: 100%;
+  border: solid 1px #6565659d;
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+}
+
+/*COMMENTARY*/
+.reservation-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.reservation-form label {
+  margin-top: 20px;
+  color: #656565;
+}
+
+.reservation-form select,
+.reservation-form input {
+  padding: 0.75rem;
   border-radius: 10px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-  margin-top: 2em;
+  border: solid 1px #656565;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.reservation-form select:focus,
+.reservation-form input:focus {
+  border: 1px solid #326728;
+  box-shadow: 0 0 5px #4fa13f;
+}
+
+/*COMMENTARY*/
+.terms a {
+  text-decoration: none;
+  color: #326728;
+}
+
+/*COMMENTARY*/
+.btn-submit {
+  padding: 1rem;
+  background-color: #4fa13f;
+  color: white;
+  border: solid 1px black;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.btn-submit:hover {
+  background: #929292;
+  transform: scale(1.02);
+}
+
+
+/*COMMENTARY*/
+.create-experience-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+  margin-top: 20px;
+}
+
+
+.created-experiences h2 {
+  color: #4fa13f;
+  margin-bottom: 10px;
+  font-size: 25px;
+  margin-top: 30px;
+}
+
+.create-experience-form label {
+  font-size: 0.85rem;
+  color: #4fa13f;
+  font-weight: 600;
+}
+
+/*COMMENTARY*/
+.create-experience-form input,
+.create-experience-form select,
+.create-experience-form textarea {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.create-experience-form select {
+  cursor: pointer;
+}
+
+.create-experience-form textarea {
+  height: 70px;
+}
+
+.create-experience-form button {
+  background-color: #4fa13f;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 10px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.create-experience-form button:hover {
+  background-color: #3b7d2a;
+}
+
+
+.created-experiences {
+  border-top: 1px solid #ccc;
+  padding-top: 1rem;
+}
+
+/*COMMENTARY*/
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.card {
+  margin-top: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.07);
+  color: #333;
+}
+
+.card h3 {
+  margin-top: 0;
+  color: #4fa13f;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/*COMMENTARY*/
+.card label {
+  font-size: 0.75rem;
+  color: #4fa13f;
+  font-weight: 600;
+  margin-top: 0.6rem;
+  display: block;
+}
+
+/*COMMENTARY*/
+.card input,
+.card textarea {
+  width: 100%;
+  font-family: inherit;
+  font-size: 0.9rem;
+  padding: 6px 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  margin-top: 3px;
+}
+
+.card textarea {
+  height: 60px;
+}
+
+/*COMMENTARY*/
+.actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-between;
+}
+
+.btn-edit {
+  flex: 1;
+  background-color: #4fa13f;
+  border: none;
+  color: white;
+  padding: 8px 0;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-edit:hover {
+  background-color: #3b7d2a;
+}
+
+.btn-delete {
+  flex: 1;
+  background-color: #d32f2f;
+  border: none;
+  color: white;
+  padding: 8px 0;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-delete:hover {
+  background-color: #a52828;
+}
+
+/*COMMENTARY*/
+
+.container-login {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 60px;
+
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login img {
+  max-width: 400px;
+}
+
+/* Formulario */
+.form-login {
+  width: 400px;
+  border: 1px solid #6565658c;
+  border-radius: 8px;
+  padding: 20px 30px;
+}
+
+.form-login form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-login label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.form-login input {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border 0.3s ease;
+}
+
+
+
+/* Botón de inicio de sesión */
+.sign-in-button {
+  padding: 12px;
+  background-color: #3b7d2a;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sign-in-button:hover {
+  background-color: #0056b3;
+}
+
+/* Enlace de "Forgot password" */
+.forgot-password-link {
+  margin-top: 15px;
+  text-align: center;
+  display: block;
+  color: #007bff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.forgot-password-link:hover {
+  text-decoration: underline;
 }

@@ -7,8 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    
-    <header class="navbar">
+     <!--COMMENTARY-->
+    <header class="navbar container">
         <div class="logo"><h1>Hidden Routes</h1></div>
       <nav>
         <ul class="nav-link">
@@ -18,60 +18,60 @@
         </ul>
       </nav>
     </header>
-    <main>
-        <section>
-            <div class="logo-login">
-             <img src="../assets/img/logo.webp" alt="logo-login">   
-            </div>
-            <div class="login-box">
-                <h2>login</h2>
-                <form action="#" method="POST">
-                    <div class="user-box">
-                        <input type="text" name="username" required="">
-                        <label>Email</label>
-                    </div>
-                    <div class="user-box">
-                        <input type="password" name="password" required="">
-                        <label>Password</label>
-                    </div>
-                    <a href="#">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <button>Submit</button>
-                        <label for="">Forgot password</label>
-                    </a>
-                </form>
-            </div>
-        </section>
 
+
+
+    <!--COMMENTARY-->
+    <main class="container">
+        <section class="container-login">
+             <div class="login">  
+              <img src="../assets/img/logo.webp" alt="logo-login"> 
+             <div class="form-login">
+                      <form action="#" method="POST">
+                      <label for="email">Email</label>
+                      <input type="email" id="email" name="email" placeholder="Value" required="">
+
+                      <label for="password">Password</label>
+                      <input type="password" id="password" name="password" placeholder="Value" required="">
+
+                  <button type="submit" class="sign-in-button" id="btnlogin">Sign In</button>
+                  <a href="#" class="forgot-password-link">Forgot password?</a>
+              </form>
+            </div>
+          </div>
+        </section>
     </main>
-    <footer>
-        <section class="container-footer">
-            <div class="sf-footer">
-              
-              <div class="social-footer">
-                <a href="#"><img src="../assets/img/github.png" alt="github" /></a>
-                <a href="#"
-                  ><img src="../assets/img/facebook.png" alt="facebook"
-                /></a>
-                <a href="#"><img src="../assets/img/youtube.png" alt="youtube" /></a>
-                <a href="#"
-                  ><img src="../assets/img/instagram.png" alt="instagram"
-                /></a>
-              </div>
-            </div>
-            <div class="info-footer">
-              <a href="#">About us</a>
-              <a href="#">Contact</a>
-              <a href="#">Privacy</a>
-              <a href="#">TyC</a>
-            </div>
-          </section>
-          <p class="footer-copy">
-            © 2025 Colombia Hidden Routes - All rights reserved.
-          </p>
+     <!--COMMENTARY-->
+
+    <footer class="container">
+      <section class="container-footer">
+        <div class="sf-footer">
+          <div class="logo-footer">
+            <img src="../assets/img/logo.webp" alt="logo footer" />
+          </div>
+          <div class="social-footer">
+            <a href="#"><img src="../assets/img/github.png" alt="github" /></a>
+            <a href="#"
+              ><img src="../assets/img/facebook.png" alt="facebook"
+            /></a>
+            <a href="#"
+              ><img src="../assets/img/youtube.png" alt="youtube"
+            /></a>
+            <a href="#"
+              ><img src="../assets/img/instagram.png" alt="instagram"
+            /></a>
+          </div>
+        </div>
+        <div class="info-footer">
+          <a href="#">About us</a>
+          <a href="#">Contact</a>
+          <a href="#">Privacy</a>
+          <a href="#">TyC</a>
+        </div>
+      </section>
+      <p class="footer-copy">
+        © 2025 Colombia Hidden Routes - All rights reserved.
+      </p>
     </footer>
 
 </body>
