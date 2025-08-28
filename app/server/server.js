@@ -2,7 +2,7 @@ import express from 'express';
 import path from 'path';
 import cors from 'cors';
 import authRoutes from './routes/auth.js';
-// import bookingRoutes from './routes/bookings.js';
+import bookingRoutes from './routes/bookings.js';
 import experienceRoutes from './routes/experiences.js';
 // import reviewRoutes from './routes/reviews.js';
 import sequelize from './database.js';
@@ -13,7 +13,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);
-// app.use('/api/bookings', bookingRoutes);
+app.use('/api/bookings', bookingRoutes);
 app.use('/api/experiences', experienceRoutes);
 // app.use('/api/reviews', reviewRoutes);
 
