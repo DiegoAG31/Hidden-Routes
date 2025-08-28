@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--COMMENTARY-->
+    <header class="navbar container">
+      <div class="logo"><h1>Hidden Routes</h1></div>
+      <nav>
+        <ul class="nav-link">
+          <li><a href="../../../dashboard.html">Home</a></li>
+          <li><a href="./experience.html">Experiences</a></li>
+          <li>
+            <button type="button" id="btnlogin">
+              <a href="./login.html">Login</a>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!--COMMENTARY-->
+    <main class="container">
+      <section class="reservation">
+        <h2>Book your Experience</h2>
+        <form class="reservation-form">
+          <!--COMMNETARY -->
+          <label for="experience">Select an experience:</label>
+          <select id="experience" name="experience" required>
+            <option value="">-- Select --</option>
+            <option value="barranquilla">Tour Barranquilla</option>
+          </select>
+          <!--COMMNETARY -->
+          <label for="quota">Number of places:</label>
+          <input
+            type="number"
+            id="quota"
+            name="quota"
+            min="1"
+            max="20"
+            required/>
+          <!--COMMNETARY -->
+          <div class="terms">
+            <input type="checkbox" id="accept" name="accept" required />
+            <label for="accept"
+              >I accept the <a href="#tyc">Terms and Conditions</a></label>
+          </div>
+          <!--COMMNETARY -->
+          <button type="submit" class="btn-submit">Reserve</button>
+        </form>
+      </section>
+    </main>
+    <!--COMMENTARY-->
+    <footer class="container">
+      <section class="container-footer">
+        <div class="sf-footer">
+          <div class="logo-footer">
+            <img src="../assets/img/logo.webp" alt="logo footer" />
+          </div>
+          <div class="social-footer">
+            <a href="#"><img src="../assets/img/github.png" alt="github" /></a>
+            <a href="#"
+              ><img src="../assets/img/facebook.png" alt="facebook"
+            /></a>
+            <a href="#"
+              ><img src="../assets/img/youtube.png" alt="youtube"
+            /></a>
+            <a href="#"
+              ><img src="../assets/img/instagram.png" alt="instagram"
+            /></a>
+          </div>
+        </div>
+        <div class="info-footer">
+          <a href="#">About us</a>
+          <a href="#">Contact</a>
+          <a href="#">Privacy</a>
+          <a href="#">TyC</a>
+        </div>
+      </section>
+      <p class="footer-copy">
+        © 2025 Colombia Hidden Routes - All rights reserved.
+      </p>
+    </footer>
+  </body>
+</html>
