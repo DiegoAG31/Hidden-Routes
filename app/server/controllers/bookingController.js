@@ -1,11 +1,11 @@
 import { pool } from '../db.js';
 import Joi from 'joi';
 
-const createSchema = joi.object({
-    user_id: joi.number().integer().required(),
-    experience_id:joi.number().integer().required(),
-    quotes:joi.number().integer().min(1).required(),
-    booking_status_name: joi_string().valid('pending','confirmed','cancelled','rejected').optional()
+const createSchema = Joi.object({
+    user_id: Joi.number().integer().required(),
+    experience_id: Joi.number().integer().required(),
+    quotes: Joi.number().integer().min(1).required(),
+    booking_status_name: Joi.string().valid('pending', 'confirmed', 'cancelled', 'rejected').optional()
 });
 
 const updateSchema = joi.object({
