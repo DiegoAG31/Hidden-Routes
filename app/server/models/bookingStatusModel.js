@@ -1,5 +1,5 @@
-const { DataTypes } = require('sequelize');
-const sequelize = require('../database.js');
+import { DataTypes } from 'sequelize';
+import sequelize from '../database.js';
 
 const BookingStatus = sequelize.define('BookingStatus', {
     Booking_status_id: {
@@ -18,4 +18,5 @@ const BookingStatus = sequelize.define('BookingStatus', {
     updatedAt: 'Updated_at',
 });
 
-module.exports = BookingStatus;
+export default BookingStatus;
+

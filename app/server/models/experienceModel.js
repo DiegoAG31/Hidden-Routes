@@ -1,5 +1,5 @@
-const { DataTypes } = require('sequelize');
-const sequelize = require('../database.js');
+import { DataTypes } from 'sequelize';
+import sequelize from '../database.js';
 
 const Experience = sequelize.define('Experience', {
     Experience_id: {
@@ -28,10 +28,10 @@ const Experience = sequelize.define('Experience', {
         allowNull: false,
     },
 }, {
-    tableName: 'Experiences',
+    tableName: 'experiences',
     timestamps: true,
     createdAt: 'Created_at',
     updatedAt: 'Updated_at',
 });
 
-module.exports = Experience;
+export default Experience;
