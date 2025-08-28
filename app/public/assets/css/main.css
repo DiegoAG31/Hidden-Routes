@@ -30,12 +30,12 @@ body {
 
 /*COMMENTARY*/
 .logo h1,
-.r-h2, .reservation h2 {
+.r-h2, .reservation h2, .container-manager h2{
   color: #4fa13f;
-  margin-left: 40px;
   margin-bottom: 10px;
   font-size: 25px;
 }
+
 
 /*COMMENTARY*/
 .nav-link {
@@ -131,7 +131,7 @@ body {
 }
 
 .zones h1 {
-  font-size: 2rem;
+  font-size: 25px;
   margin-bottom: 40px;
   color: #4fa13f;
 }
@@ -314,11 +314,11 @@ body {
   background-color: #ffffff;
 }
 
-#exp-h1 {
+#exp-h1  {
   color: #4fa13f;
-  margin-top: 3em;
+  margin-top: 2.5rem;
   margin-left: 40px;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 /*COMMENTARY*/
@@ -387,7 +387,6 @@ body {
 .btn-filter button:hover {
   background-color: #929292;
 }
-/*COMMENTARY*/
 
 /*COMMENTARY*/
 
@@ -473,7 +472,7 @@ body {
 }
 
 
-/* Texto de la reseña */
+/*COMMENTARY*/
 .review-body {
   font-size: 0.95rem;
   line-height: 1.5;
@@ -483,15 +482,15 @@ body {
 
 
 /*COMMENTARY*/
-.reservation{
-  padding: 5rem 3rem;
+.reservation, .container-manager, .created-experiences{
+  padding: 3rem 5rem;
   border-radius: 8px;
   width: 100%;
   border: solid 1px #6565659d;
-  margin-top: 5rem;
+  margin-top: 3rem;
   margin-bottom: 5rem;
 }
-
+/*COMMENTARY*/
 .reservation-form{
   display: flex;
   flex-direction: column;
@@ -518,11 +517,13 @@ transition: border 0.2s, box-shadow 0.2s;
   box-shadow: 0 0 5px #4fa13f;
 }
 
+/*COMMENTARY*/
 .terms a{
   text-decoration: none;
   color: #326728;
 }
 
+/*COMMENTARY*/
 .btn-submit{
     padding: 1rem;
   background-color: #4fa13f;
@@ -540,3 +541,155 @@ transition: border 0.2s, box-shadow 0.2s;
   transform: scale(1.02);
 }
 
+
+/*COMMENTARY*/
+.create-experience-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+  margin-top: 20px;
+}
+
+
+.created-experiences h2{
+  color: #4fa13f;
+  margin-bottom: 10px;
+  font-size: 25px;
+  margin-top: 30px;
+}
+
+.create-experience-form label {
+  font-size: 0.85rem;
+  color: #4fa13f;
+  font-weight: 600;
+}
+
+/*COMMENTARY*/
+.create-experience-form input,
+ .create-experience-form select,
+.create-experience-form textarea {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.create-experience-form select {
+  cursor: pointer;
+}
+
+.create-experience-form textarea {
+  height: 70px;
+}
+
+.create-experience-form button {
+  background-color: #4fa13f;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 10px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.create-experience-form button:hover {
+  background-color: #3b7d2a;
+}
+
+
+    .created-experiences {
+      border-top: 1px solid #ccc;
+      padding-top: 1rem;
+    }
+
+ /*COMMENTARY*/
+  .cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 1rem; 
+}
+.card {
+  margin-top: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.07);
+  color: #333;
+}
+
+    .card h3 {
+      margin-top: 0;
+      color: #4fa13f;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+   /*COMMENTARY*/
+    .card label {
+      font-size: 0.75rem;
+      color: #4fa13f;
+      font-weight: 600;
+      margin-top: 0.6rem;
+      display: block;
+    }
+
+   /*COMMENTARY*/
+    .card input,
+    .card textarea {
+      width: 100%;
+      font-family: inherit;
+      font-size: 0.9rem;
+      padding: 6px 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      resize: vertical;
+      margin-top: 3px;
+    }
+
+    .card textarea {
+      height: 60px;
+    }
+
+    /*COMMENTARY*/
+    .actions {
+      margin-top: 1rem;
+      display: flex;
+      gap: 0.5rem;
+      justify-content: space-between;
+    }
+
+    .btn-edit {
+      flex: 1;
+      background-color: #4fa13f;
+      border: none;
+      color: white;
+      padding: 8px 0;
+      border-radius: 5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .btn-edit:hover {
+      background-color: #3b7d2a;
+    }
+
+    .btn-delete {
+      flex: 1;
+      background-color: #d32f2f;
+      border: none;
+      color: white;
+      padding: 8px 0;
+      border-radius: 5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .btn-delete:hover {
+      background-color: #a52828;
+    }

@@ -1,234 +1,64 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Gestión de Experiencias</title>
-  <style>
-    /* Contenedor general */
-    .experience-manager {
-      max-width: 1000px;
-      margin: 2rem auto;
-      font-family: Arial, Helvetica, sans-serif;
-      padding: 1rem;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      color: #333;
-    }
-
-    /* Títulos y subtítulos */
-    .experience-manager h2 {
-      color: #4fa13f;
-      margin-bottom: 0.2rem;
-      font-weight: 600;
-    }
-    .experience-manager small {
-      color: #666;
-      font-size: 0.85rem;
-      display: block;
-      margin-bottom: 1rem;
-    }
-
-    /* Formulario creación */
-    form.create-experience-form {
-      display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
-      margin-bottom: 2rem;
-    }
-
-    form.create-experience-form label {
-      font-size: 0.85rem;
-      color: #4fa13f;
-      font-weight: 600;
-    }
-
-    form.create-experience-form input,
-    form.create-experience-form select,
-    form.create-experience-form textarea {
-      padding: 8px 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 1rem;
-      resize: vertical;
-      font-family: inherit;
-    }
-
-    form.create-experience-form select {
-      cursor: pointer;
-    }
-
-    form.create-experience-form textarea {
-      height: 70px;
-    }
-
-    form.create-experience-form button {
-      background-color: #4fa13f;
-      border: none;
-      border-radius: 5px;
-      color: white;
-      font-weight: 600;
-      font-size: 1rem;
-      padding: 10px 0;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    form.create-experience-form button:hover {
-      background-color: #3b7d2a;
-    }
-
-    /* Contenedor de experiencias creadas */
-    .created-experiences {
-      border-top: 1px solid #ccc;
-      padding-top: 1rem;
-    }
-
-    /* Grid de tarjetas */
-    .cards-container {
-      display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    /* Cada tarjeta */
-    .card {
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 15px;
-      width: calc(33.333% - 1rem);
-      box-shadow: 0 2px 6px rgba(0,0,0,0.07);
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      color: #333;
-    }
-
-    .card h3 {
-      margin-top: 0;
-      color: #4fa13f;
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
-
-    /* Labels dentro de tarjetas */
-    .card label {
-      font-size: 0.75rem;
-      color: #4fa13f;
-      font-weight: 600;
-      margin-top: 0.6rem;
-      display: block;
-    }
-
-    /* Inputs en tarjetas */
-    .card input,
-    .card textarea {
-      width: 100%;
-      font-family: inherit;
-      font-size: 0.9rem;
-      padding: 6px 8px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      resize: vertical;
-      margin-top: 3px;
-    }
-
-    .card textarea {
-      height: 60px;
-    }
-
-    /* Botones dentro de tarjetas */
-    .acciones {
-      margin-top: 1rem;
-      display: flex;
-      gap: 0.5rem;
-      justify-content: space-between;
-    }
-
-    .btn-edit {
-      flex: 1;
-      background-color: #4fa13f;
-      border: none;
-      color: white;
-      padding: 8px 0;
-      border-radius: 5px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    .btn-edit:hover {
-      background-color: #3b7d2a;
-    }
-
-    .btn-delete {
-      flex: 1;
-      background-color: #d32f2f;
-      border: none;
-      color: white;
-      padding: 8px 0;
-      border-radius: 5px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    .btn-delete:hover {
-      background-color: #a52828;
-    }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-      .card {
-        width: calc(50% - 1rem);
-      }
-    }
-    @media (max-width: 600px) {
-      .card {
-        width: 100%;
-      }
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <title>Document</title>
 </head>
+
 <body>
-  <div class="experience-manager">
-    <section>
-      <h2>Creacion de experiencias</h2>
-      <small>Agrega una nueva experiencia</small>
+  <!--COMMENTARY-->
+  <header class="navbar container">
+    <div class="logo">
+      <h1>Hidden Routes</h1>
+    </div>
+    <nav>
+      <ul class="nav-link">
+        <li><a href="../../../dashboard.html">Home</a></li>
+        <li><a href="./experience.html">Experiences</a></li>
+        <li>
+          <button type="button" id="btnlogin">
+            <a href="./login.html">Login</a>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main class="container">
+    <!--COMMENTARY-->
+    <section class="container-manager">
+      <h2>Creating experiences</h2>
+      <small>Add a new experience</small>
       <form class="create-experience-form" id="createExperienceForm">
-        <label for="name">Nombre de la experiencia</label>
+        <label for="name">Name of the experience</label>
         <input type="text" id="name" name="name" placeholder="Nombre" required />
 
-        <label for="capacity">Cupos</label>
-        <select id="capacity" name="capacity" required>
-          <option value="" disabled selected>Selecciona cupos</option>
-          <option value="5">5</option>
-          <option value="10">10</option>
-          <option value="15">15</option>
-          <option value="20">20</option>
-          <option value="25">25</option>
-        </select>
+        <label for="capacity">Quotas</label>
+        <input type="number" id="quota" name="quota" min="1" max="20" required />
 
-        <label for="price">Precio de la experiencia</label>
-        <input type="number" id="price" name="price" placeholder="Precio" min="0" step="0.01" required />
+        <label for="price">Price of the experience</label>
+        <input type="number" id="price" name="price" placeholder="Precio" min="0" step="100" required />
 
-        <label for="description">Descripción de la experiencia</label>
+        <label for="description">Description of the experience</label>
         <textarea id="description" name="description" placeholder="Descripción" required></textarea>
 
-        <button type="submit">Crear</button>
+        <button type="submit">Create</button>
       </form>
     </section>
-
+    <!--COMMENTARY-->
     <section class="created-experiences">
-      <h2>Experiencias creadas</h2>
-      <small>Gestiona tus experiencias</small>
+      <h2>Experiences created</h2>
+      <small>Manage your experiences</small>
 
       <div class="cards-container" id="experienceList">
-        <!-- Ejemplo de tarjeta -->
+        
         <div class="card">
-          <h3>Jetsky Acuatico</h3>
+          <h3>Water Jet Ski</h3>
 
           <label>Experiences Name</label>
-          <input type="text" value="Jetsky Acuatico" />
+          <input type="text" value="Water Jet Ski" />
 
           <label>Price</label>
           <input type="number" value="120" />
@@ -236,20 +66,20 @@
           <label>Capacity</label>
           <input type="number" value="10" />
 
-          <label>Descripcion</label>
-          <textarea>Divertida experiencia acuática para toda la familia.</textarea>
+          <label>Description</label>
+          <textarea>Fun aquatic experience for the whole family.</textarea>
 
-          <div class="acciones">
+          <div class="actions">
             <button class="btn-edit">Edit</button>
             <button class="btn-delete">Delete</button>
           </div>
         </div>
 
         <div class="card">
-          <h3>Salto en Bonjee</h3>
+          <h3>Bungee Jumping</h3>
 
           <label>Experiences Name</label>
-          <input type="text" value="Salto en Bonjee" />
+          <input type="text" value="Bungee Jumping" />
 
           <label>Price</label>
           <input type="number" value="80" />
@@ -257,20 +87,20 @@
           <label>Capacity</label>
           <input type="number" value="15" />
 
-          <label>Descripcion</label>
-          <textarea>Salto emocionante para amantes de la adrenalina.</textarea>
+          <label>Description</label>
+          <textarea>Exciting jump for adrenaline lovers.</textarea>
 
-          <div class="acciones">
+          <div class="actions">
             <button class="btn-edit">Edit</button>
             <button class="btn-delete">Delete</button>
           </div>
         </div>
 
         <div class="card">
-          <h3>Comida Artesanal</h3>
+          <h3>Artisanal Food</h3>
 
           <label>Experiences Name</label>
-          <input type="text" value="Comida Artesanal" />
+          <input type="text" value="Artisanal Food" />
 
           <label>Price</label>
           <input type="number" value="50" />
@@ -278,16 +108,49 @@
           <label>Capacity</label>
           <input type="number" value="20" />
 
-          <label>Descripcion</label>
-          <textarea>Deliciosa comida preparada de forma artesanal.</textarea>
+          <label>Description</label>
+          <textarea>Delicious food prepared by hand.</textarea>
 
-          <div class="acciones">
+          <div class="actions">
             <button class="btn-edit">Edit</button>
             <button class="btn-delete">Delete</button>
           </div>
         </div>
       </div>
     </section>
-  </div>
+    <!--COMMENTARY-->
+         <section class="exit-section">
+        <div class="exit">
+          <button type="button" class="btnprofile">Profile</button>
+          <button type="button" class="btnlogout">Logout</button>
+        </div>
+      </section>
+  </main>
+  <!--COMMENTARY-->
+  <footer class="container">
+    <section class="container-footer">
+      <div class="sf-footer">
+        <div class="logo-footer">
+          <img src="../assets/img/logo.webp" alt="logo footer" />
+        </div>
+        <div class="social-footer">
+          <a href="#"><img src="../assets/img/github.png" alt="github" /></a>
+          <a href="#"><img src="../assets/img/facebook.png" alt="facebook" /></a>
+          <a href="#"><img src="../assets/img/youtube.png" alt="youtube" /></a>
+          <a href="#"><img src="../assets/img/instagram.png" alt="instagram" /></a>
+        </div>
+      </div>
+      <div class="info-footer">
+        <a href="#">About us</a>
+        <a href="#">Contact</a>
+        <a href="#">Privacy</a>
+        <a href="#">TyC</a>
+      </div>
+    </section>
+    <p class="footer-copy">
+      © 2025 Colombia Hidden Routes - All rights reserved.
+    </p>
+  </footer>
 </body>
+
 </html>
