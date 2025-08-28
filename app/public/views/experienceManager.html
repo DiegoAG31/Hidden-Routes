@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestión de Experiencias</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+
+  <div class="container">
+    <section class="crear-experiencia">
+      <h2>Creación de experiencias</h2>
+      <p>Agrega una nueva experiencia</p>
+
+      <form id="crearExperienciaForm">
+        <input type="text" placeholder="Nombre de la experiencia" name="titulo" required>
+        <input type="number" placeholder="Cupos" name="capacidad" required>
+        <input type="number" step="0.01" placeholder="Precio de la experiencia" name="precio" required>
+        <textarea placeholder="Descripción de la experiencia" name="descripcion" required></textarea>
+        <button type="submit" class="btn verde">Crear</button>
+      </form>
+    </section>
+
+    <section class="experiencias-creadas">
+      <h3>Experiencias creadas</h3>
+      <p>Gestiona tus experiencias</p>
+
+      <div class="cards-container">
+        <!-- Card de experiencia (repetible con JS) -->
+        <div class="card">
+          <input type="text" value="Jetsky Acuático">
+          <input type="number" value="120.00">
+          <input type="number" value="10">
+          <textarea>Actividad acuática de alta velocidad</textarea>
+
+          <div class="acciones">
+            <button class="btn verde">Edit</button>
+            <button class="btn rojo">Delete</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <input type="text" value="Salto en Bonjee">
+          <input type="number" value="250.00">
+          <input type="number" value="5">
+          <textarea>Salta desde lo más alto con seguridad</textarea>
+
+          <div class="acciones">
+            <button class="btn verde">Edit</button>
+            <button class="btn rojo">Delete</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <input type="text" value="Comida Artesanal">
+          <input type="number" value="80.00">
+          <input type="number" value="15">
+          <textarea>Degustación de comida local hecha a mano</textarea>
+
+          <div class="acciones">
+            <button class="btn verde">Edit</button>
+            <button class="btn rojo">Delete</button>
+          </div>
+        </div>
+        <!-- Fin de ejemplo de card -->
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>
