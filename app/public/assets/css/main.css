@@ -30,7 +30,7 @@ body {
 
 /*COMMENTARY*/
 .logo h1,
-.r-h2 {
+.r-h2, .reservation h2 {
   color: #4fa13f;
   margin-left: 40px;
   margin-bottom: 10px;
@@ -56,9 +56,7 @@ body {
 .nav-link button a{
   color: #ffffff;
 }
-.nav-link button a:hover {
-  color: #929292;
-}
+
 
 /*COMMENTARY*/
 #btnlogin {
@@ -484,32 +482,61 @@ body {
 }
 
 
-.toggle {
-  display: none;
+/*COMMENTARY*/
+.reservation{
+  padding: 5rem 3rem;
+  border-radius: 8px;
+  width: 100%;
+  border: solid 1px #6565659d;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
 }
 
-.text .more-text {
-  display: none;
+.reservation-form{
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
 }
 
-.toggle:checked ~ .text .more-text {
-  display: inline;
+.reservation-form label{
+  margin-top: 20px;
+  color: #656565;
 }
 
-.view-more-button {
-  color: #0077cc;
-  cursor: pointer;
-  display: inline-block;
-  margin-top: 5px;
-  font-size: 14px;
+.reservation-form select, .reservation-form input{
+padding: 0.75rem;
+border-radius: 10px;
+border: solid 1px #656565;
+font-size: 1rem;
+outline: none;
+transition: border 0.2s, box-shadow 0.2s;
+}
+
+.reservation-form select:focus,
+.reservation-form input:focus {
+  border: 1px solid #326728;
+  box-shadow: 0 0 5px #4fa13f;
+}
+
+.terms a{
+  text-decoration: none;
+  color: #326728;
+}
+
+.btn-submit{
+    padding: 1rem;
+  background-color: #4fa13f;
+  color: white;
+  border: solid 1px black;
+  border-radius: 10px;
+  font-size: 1.1rem;
   font-weight: bold;
-  text-decoration: underline;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
 }
 
-.toggle ~ .view-more-button::before {
-  content: "View more";
+.btn-submit:hover {
+  background: #929292;
+  transform: scale(1.02);
 }
 
-.toggle:checked ~ .view-more-button::before {
-  content: "View less";
-}
