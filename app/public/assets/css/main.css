@@ -5,24 +5,35 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-body{
-  margin-bottom: 20px;
-  padding: 10px;
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*COMMENTARY*/
+.container {
+  max-width: 80%;
+  width: 100%;
 }
 
 /*COMMENTARY*/
 .navbar {
   display: flex;
   justify-content: space-between;
+  gap: 10px;
   align-items: center;
   padding: 20px 50px;
-  margin: 10px;
 }
 
 /*COMMENTARY*/
-.logo h1 {
+.logo h1,
+.r-h2, .reservation h2 {
   color: #4fa13f;
   margin-left: 40px;
+  margin-bottom: 10px;
   font-size: 25px;
 }
 
@@ -38,11 +49,14 @@ body{
 
 .nav-link a {
   text-decoration: none;
-  color: black;
+  color: #000000;
 }
-.nav-link a:hover {
-  color: #929292;
+
+
+.nav-link button a{
+  color: #ffffff;
 }
+
 
 /*COMMENTARY*/
 #btnlogin {
@@ -78,11 +92,9 @@ body{
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
 
-/*COMMENTARY*/
+/*COMMENTARY ------------------------------------------------------------------------------------*/
 .container-main {
-  margin-left: 50px;
   margin-top: 5em;
-  max-width: 500px;
 }
 
 .main-view h1 {
@@ -124,52 +136,87 @@ body{
   color: #4fa13f;
 }
 
-.container-prin {
+.container-prin,
+.container-prin-exp {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 45px;
+  margin-top: 40px;
 }
-
-.grid-prin {
+/*COMMENTARY*/
+.grid-exp-card {
   background-color: #ffffff;
-
   overflow: hidden;
+  padding: 20px;
 }
 
-.grid-prin img {
+.grid-exp-card img {
   width: 100%;
   height: 380px;
   object-fit: cover;
   border-radius: 10px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.grid-prin h2 {
+.grid-exp-card h2 {
   margin: 15px 10px 5px;
   color: black;
 }
 
-.grid-prin p {
-  margin: 10px 10px 15px;
+.grid-exp-card p {
+  margin: 10px;
   color: grey;
-  font-size: 1rem;
+  font-size: 0.9rem;
+}
+
+.grid-exp-card a {
+  display: inline-block;
+  margin: 10px;
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+
+/*COMMENTARY*/
+.grid-prin {
+  background-color: #ffffff;
+  overflow: hidden;
+  padding: 10px;
+  border-radius: 10PX;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.grid-prin:hover {
+  transform: scale(1.05);
+}
+
+/*COMMENTARY*/
+.grid-prin img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.grid-prin h2 {
+  margin: 10px;
+  color: black;
+}
+
+.grid-prin p {
+  margin: 10px;
+  color: grey;
+  font-size: 0.9rem;
 }
 
 .grid-prin a {
   display: inline-block;
   margin: 10px;
-  background-color: #4fa13f;
   color: #ffffff;
   text-decoration: none;
   padding: 8px 10px;
   border-radius: 8px;
-  transition: background 0.3s, transform 0.3s;
-}
-
-.grid-prin a:hover {
-  background-color: #929292;
-  transform: scale(1.05);
 }
 
 /*COMMENTARY*/
@@ -180,6 +227,7 @@ body{
   display: flex;
   flex-direction: row;
   justify-content: right;
+  margin-top: 20px;
 }
 
 .exit {
@@ -189,6 +237,8 @@ body{
   align-items: center;
   gap: 20px;
 }
+
+/*COMMENTARY*/
 
 .exit .btnprofile {
   padding: 20px 45px;
@@ -259,4 +309,234 @@ body{
   padding: 10px;
 }
 
+/*COMMENTARY*/
+.container-experiences {
+  background-color: #ffffff;
+}
+
+#exp-h1 {
+  color: #4fa13f;
+  margin-top: 3em;
+  margin-left: 40px;
+  font-size: 25px;
+}
+
+/*COMMENTARY*/
+.filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/*COMMENTARY*/
+.select-city {
+  margin: 10px;
+}
+
+.select-city select {
+  font-size: 18px;
+  width: 250px;
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+
+/*COMMENTARY*/
+
+.range-container {
+  margin: 10px;
+}
+
+.slider {
+  width: 250px;
+  margin-top: 5px;
+}
+
+.label-l {
+  float: left;
+  font-size: 14px;
+  color: #4fa13f;
+}
+
+.label-r {
+  float: right;
+  font-size: 14px;
+  color: #4fa13f;
+}
+
+.value-filter {
+  font-size: 14px;
+  color: #929292;
+  clear: both;
+}
+
+/*COMMENTARY*/
+
+.btn-filter button {
+  background-color: #4fa13f;
+  border: 1.5px solid black;
+  margin-top: 20px;
+  margin-right: 20px;
+  padding: 8px 15px;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.btn-filter button:hover {
+  background-color: #929292;
+}
+/*COMMENTARY*/
+
+/*COMMENTARY*/
+
+#btn-exp-card {
+  display: inline-block;
+  margin: 10px;
+  background-color: #4fa13f;
+  color: #ffffff;
+  padding: 8px 10px;
+  font-size: 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+  border: none;
+}
+
+#btn-exp-card:hover {
+  background-color: #929292;
+}
+
+/*COMMENTARY*/
+.reviews {
+  padding: 3rem 1rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  margin-top: 3rem;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 10px;
+}
+
+.tittle-review{
+  margin-bottom: 40px;
+  font-size: 0.9rem;
+}
+
+.review-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/*COMMENTARY*/
+.review-header{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+
+/*COMMENTARY*/
+.review-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; /* avatar circular */
+  object-fit: cover;
+  border: 2px solid #ddd;
+}
+
+/*COMMENTARY*/
+.review-user {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+
+.review-location {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+
+/* Texto de la reseña */
+.review-body {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+
+/*COMMENTARY*/
+.reservation{
+  padding: 5rem 3rem;
+  border-radius: 8px;
+  width: 100%;
+  border: solid 1px #6565659d;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.reservation-form{
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.reservation-form label{
+  margin-top: 20px;
+  color: #656565;
+}
+
+.reservation-form select, .reservation-form input{
+padding: 0.75rem;
+border-radius: 10px;
+border: solid 1px #656565;
+font-size: 1rem;
+outline: none;
+transition: border 0.2s, box-shadow 0.2s;
+}
+
+.reservation-form select:focus,
+.reservation-form input:focus {
+  border: 1px solid #326728;
+  box-shadow: 0 0 5px #4fa13f;
+}
+
+.terms a{
+  text-decoration: none;
+  color: #326728;
+}
+
+.btn-submit{
+    padding: 1rem;
+  background-color: #4fa13f;
+  color: white;
+  border: solid 1px black;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.btn-submit:hover {
+  background: #929292;
+  transform: scale(1.02);
+}
 
