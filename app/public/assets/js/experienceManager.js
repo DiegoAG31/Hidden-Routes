@@ -10,15 +10,15 @@ function renderExperiences(experiences) {
     container.innerHTML += `
       <div class="card" data-id="${exp.id}">
         <h3>${exp.Experience_title || exp.name}</h3>
-        <label>Nombre</label>
+        <label>Name</label>
         <input type="text" value="${exp.Experience_title || exp.name}" class="input-name" />
-        <label>Precio</label>
+        <label>Price</label>
         <input type="number" value="${exp.Price || exp.price}" class="input-price" />
-        <label>Cupos</label>
+        <label>Quotas</label>
         <input type="number" value="${exp.Capacity || exp.capacity}" class="input-capacity" />
-        <label>Descripción</label>
+        <label>Description</label>
         <textarea class="input-description">${exp.Experience_description || exp.description}</textarea>
-        <div class="acciones">
+        <div class="actions">
           <button class="btn-edit">Edit</button>
           <button class="btn-delete">Delete</button>
         </div>

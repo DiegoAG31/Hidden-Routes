@@ -33,16 +33,16 @@
       <small>Add a new experience</small>
       <form class="create-experience-form" id="createExperienceForm">
         <label for="name">Name of the experience</label>
-        <input type="text" id="name" name="name" placeholder="Nombre" required />
+        <input type="text" id="name" name="name" placeholder="Name" required />
 
         <label for="capacity">Cupos</label>
-        <input type="number" id="capacity" name="capacity" min="1" max="20" required />
+        <input type="number" id="capacity" name="capacity" placeholder="Quotas" min="1" max="100" required />
 
         <label for="price">Price of the experience</label>
-        <input type="number" id="price" name="price" placeholder="Precio" min="0" step="100" required />
+        <input type="number" id="price" name="price" placeholder="Price" min="0" required />
 
         <label for="description">Description of the experience</label>
-        <textarea id="description" name="description" placeholder="Descripción" required></textarea>
+        <textarea id="description" name="description" placeholder="Description" required></textarea>
 
         <button type="submit">Create</button>
       </form>
@@ -53,11 +53,41 @@
       <small>Manage your experiences</small>
 
       <div class="cards-container" id="experienceList">
-        <!-- Las experiencias se renderizan aquí -->
+        <!-- Experiences are rendered here-->
       </div>
     </section>
   </div>
-
+  </main>
+   <footer class="container">
+      <section class="container-footer">
+        <div class="sf-footer">
+          <div class="logo-footer">
+            <img src="../assets/img/logo.webp" alt="logo footer" />
+          </div>
+          <div class="social-footer">
+            <a href="#"><img src="../assets/img/github.png" alt="github" /></a>
+            <a href="#"
+              ><img src="../assets/img/facebook.png" alt="facebook"
+            /></a>
+            <a href="#"
+              ><img src="../assets/img/youtube.png" alt="youtube"
+            /></a>
+            <a href="#"
+              ><img src="../assets/img/instagram.png" alt="instagram"
+            /></a>
+          </div>
+        </div>
+        <div class="info-footer">
+          <a href="#">About us</a>
+          <a href="#">Contact</a>
+          <a href="#">Privacy</a>
+          <a href="#">TyC</a>
+        </div>
+      </section>
+      <p class="footer-copy">
+        © 2025 Colombia Hidden Routes - All rights reserved.
+      </p>
+    </footer>
   <script src="/assets/js/experienceManager.js"></script>
 </body>
 
