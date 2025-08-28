@@ -52,7 +52,9 @@ export const createExperience = async (req, res) => {
 export const updateExperience = async (req, res) => {
     try {
         const { id } = req.params;
-        const [updated] = await Experience.update(req.body, { where: { Experience_id: id } });
+        // Forzar user_id = 1 temporalmente
+        const user_id = 1;
+        const [updated] = await Experience.update({ ...req.body, user_id }, { where: { Experience_id: id } });
         if (!updated) return res.status(404).json({ error: 'Experiencia no encontrada' });
         const updatedExperience = await Experience.findByPk(id);
         res.json(updatedExperience);
@@ -65,6 +67,10 @@ export const updateExperience = async (req, res) => {
 export const deleteExperience = async (req, res) => {
     try {
         const { id } = req.params;
+        // Forzar user_id = 1 temporalmente
+        const user_id = 1;
+        // Si quieres filtrar por user_id, descomenta la siguiente línea y comenta la actual:
+        // const deleted = await Experience.destroy({ where: { Experience_id: id, user_id } });
         const deleted = await Experience.destroy({ where: { Experience_id: id } });
         if (!deleted) return res.status(404).json({ error: 'Experiencia no encontrada' });
         res.json({ message: 'Experiencia eliminada' });

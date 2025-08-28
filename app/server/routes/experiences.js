@@ -21,9 +21,9 @@ router.get('/:id', getExperienceById);
 router.post('/', createExperience);
 
 // Actualizar una experiencia (solo host)
-router.put('/:id', authMiddleware, isHost, updateExperience);
+router.put('/:id', updateExperience);
 
 // Eliminar una experiencia (solo host)
-router.delete('/:id', authMiddleware, isHost, deleteExperience);
+router.delete('/:id', deleteExperience);
 
 export default router;

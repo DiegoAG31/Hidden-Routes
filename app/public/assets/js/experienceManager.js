@@ -8,7 +8,7 @@ function renderExperiences(experiences) {
   container.innerHTML = '';
   experiences.forEach(exp => {
     container.innerHTML += `
-      <div class="card" data-id="${exp.id}">
+      <div class="card" data-id="${exp.Experience_id || exp.id}">
         <h3>${exp.Experience_title || exp.name}</h3>
         <label>Name</label>
         <input type="text" value="${exp.Experience_title || exp.name}" class="input-name" />
