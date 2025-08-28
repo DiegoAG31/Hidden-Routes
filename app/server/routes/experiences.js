@@ -18,7 +18,7 @@ router.get('/', getExperiences);
 router.get('/:id', getExperienceById);
 
 // Crear una nueva experiencia (solo host)
-router.post('/', authMiddleware, isHost, createExperience);
+router.post('/', createExperience);
 
 // Actualizar una experiencia (solo host)
 router.put('/:id', authMiddleware, isHost, updateExperience);

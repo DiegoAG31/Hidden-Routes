@@ -230,7 +230,7 @@
 
   <script>
     // URL base de la API (ajusta si tu backend está en otro puerto/ruta)
-    const API_URL = '/api/experiences';
+  const API_URL = 'http://localhost:3000/api/experiences';
 
     // Renderizar experiencias en el DOM
     function renderExperiences(experiences) {
@@ -271,10 +271,10 @@
     // Crear experiencia
     document.getElementById('createExperienceForm').addEventListener('submit', async function(e) {
       e.preventDefault();
-      const name = document.getElementById('name').value;
-      const capacity = document.getElementById('capacity').value;
-      const price = document.getElementById('price').value;
-      const description = document.getElementById('description').value;
+  const Experience_title = document.getElementById('name').value;
+  const Capacity = document.getElementById('capacity').value;
+  const Price = document.getElementById('price').value;
+  const Experience_description = document.getElementById('description').value;
       try {
         const res = await fetch(API_URL, {
           method: 'POST',
@@ -283,10 +283,10 @@
             // 'Authorization': 'Bearer TU_TOKEN' // Si usas autenticación
           },
           body: JSON.stringify({
-            name,
-            capacity,
-            price,
-            description
+            Experience_title,
+            Experience_description,
+            Price,
+            Capacity
           })
         });
         if (!res.ok) throw new Error('Error al crear experiencia');
