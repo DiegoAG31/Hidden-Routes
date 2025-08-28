@@ -13,7 +13,7 @@ export const getExperiences = async (req, res) => {
 // Obtener una experiencia por ID
 export const getExperienceById = async (req, res) => {
     try {
-        const experience = await Experience.findByPk(req.params.id);
+        const experience = await Experience.findOne({ where: { Experience_id: req.params.id } });
         if (!experience) return res.status(404).json({ error: 'Experiencia no encontrada' });
         res.json(experience);
     } catch (error) {
@@ -24,7 +24,15 @@ export const getExperienceById = async (req, res) => {
 // Crear una nueva experiencia
 export const createExperience = async (req, res) => {
     try {
-        const { Experience_title, Experience_description, Price, Capacity, user_id } = req.body;
+        const { Experience_title, Experience_description, Price, Capacity } = req.body;
+
+        if (!Experience_title || !Experience_description || !Price || !Capacity) {
+            return res.status(400).json({ error: 'Todos los campos son obligatorios' });
+        }
+
+        // Asignar user_id fijo para pruebas temporales
+        const user_id = 1;
+
         const newExperience = await Experience.create({
             Experience_title,
             Experience_description,
@@ -32,8 +40,10 @@ export const createExperience = async (req, res) => {
             Capacity,
             user_id
         });
+
         res.status(201).json(newExperience);
     } catch (error) {
+        console.error('Error en createExperience:', error);
         res.status(500).json({ error: 'Error al crear la experiencia' });
     }
 };

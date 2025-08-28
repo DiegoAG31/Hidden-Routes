@@ -28,7 +28,7 @@ const Experience = sequelize.define('Experience', {
         allowNull: false,
     },
 }, {
-    tableName: 'Experiences',
+    tableName: 'experiences',
     timestamps: true,
     createdAt: 'Created_at',
     updatedAt: 'Updated_at',
