@@ -30,12 +30,13 @@ body {
 
 /*COMMENTARY*/
 .logo h1,
-.r-h2, .reservation h2, .container-manager h2{
+.r-h2,
+.reservation h2,
+.container-manager h2 {
   color: #4fa13f;
   margin-bottom: 10px;
   font-size: 25px;
 }
-
 
 /*COMMENTARY*/
 .nav-link {
@@ -52,11 +53,9 @@ body {
   color: #000000;
 }
 
-
-.nav-link button a{
+.nav-link button a {
   color: #ffffff;
 }
-
 
 /*COMMENTARY*/
 #btnlogin {
@@ -182,7 +181,7 @@ body {
   background-color: #ffffff;
   overflow: hidden;
   padding: 10px;
-  border-radius: 10PX;
+  border-radius: 10px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -314,7 +313,7 @@ body {
   background-color: #ffffff;
 }
 
-#exp-h1  {
+#exp-h1 {
   color: #4fa13f;
   margin-top: 2.5rem;
   margin-left: 40px;
@@ -422,7 +421,7 @@ body {
   margin-top: 10px;
 }
 
-.tittle-review{
+.tittle-review {
   margin-bottom: 40px;
   font-size: 0.9rem;
 }
@@ -441,13 +440,12 @@ body {
 }
 
 /*COMMENTARY*/
-.review-header{
+.review-header {
   display: flex;
   align-items: center;
   gap: 1rem;
   margin-bottom: 1rem;
 }
-
 
 /*COMMENTARY*/
 .review-avatar {
@@ -465,12 +463,10 @@ body {
   margin: 0;
 }
 
-
 .review-location {
   font-size: 0.9rem;
   color: #666;
 }
-
 
 /*COMMENTARY*/
 .review-body {
@@ -480,9 +476,10 @@ body {
   margin-bottom: 1rem;
 }
 
-
 /*COMMENTARY*/
-.reservation, .container-manager, .created-experiences{
+.reservation,
+.container-manager,
+.created-experiences, .form-profile {
   padding: 3rem 5rem;
   border-radius: 8px;
   width: 100%;
@@ -491,24 +488,27 @@ body {
   margin-bottom: 5rem;
 }
 /*COMMENTARY*/
-.reservation-form{
+.reservation-form {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
+  margin-bottom: 20px;
+  padding: 10px;
 }
 
-.reservation-form label{
+.reservation-form label {
   margin-top: 20px;
   color: #656565;
 }
 
-.reservation-form select, .reservation-form input{
-padding: 0.75rem;
-border-radius: 10px;
-border: solid 1px #656565;
-font-size: 1rem;
-outline: none;
-transition: border 0.2s, box-shadow 0.2s;
+.reservation-form select,
+.reservation-form input {
+  padding: 0.75rem;
+  border-radius: 10px;
+  border: solid 1px #656565;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
 }
 
 .reservation-form select:focus,
@@ -518,14 +518,14 @@ transition: border 0.2s, box-shadow 0.2s;
 }
 
 /*COMMENTARY*/
-.terms a{
+.terms a {
   text-decoration: none;
   color: #326728;
 }
 
 /*COMMENTARY*/
-.btn-submit{
-    padding: 1rem;
+.btn-submit {
+  padding: 1rem;
   background-color: #4fa13f;
   color: white;
   border: solid 1px black;
@@ -534,6 +534,7 @@ transition: border 0.2s, box-shadow 0.2s;
   font-weight: bold;
   cursor: pointer;
   transition: background 0.2s, transform 0.1s;
+  margin-top: 10px;
 }
 
 .btn-submit:hover {
@@ -541,9 +542,8 @@ transition: border 0.2s, box-shadow 0.2s;
   transform: scale(1.02);
 }
 
-
 /*COMMENTARY*/
-.create-experience-form {
+.create-experience-form{
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
@@ -551,15 +551,14 @@ transition: border 0.2s, box-shadow 0.2s;
   margin-top: 20px;
 }
 
-
-.created-experiences h2{
+.created-experiences h2, .form-profile h2 {
   color: #4fa13f;
   margin-bottom: 10px;
   font-size: 25px;
   margin-top: 30px;
 }
 
-.create-experience-form label {
+.create-experience-form label, .form-profile label {
   font-size: 0.85rem;
   color: #4fa13f;
   font-weight: 600;
@@ -567,8 +566,8 @@ transition: border 0.2s, box-shadow 0.2s;
 
 /*COMMENTARY*/
 .create-experience-form input,
- .create-experience-form select,
-.create-experience-form textarea {
+.create-experience-form select,
+.create-experience-form textarea, .form-profile input{
   padding: 8px 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -601,17 +600,16 @@ transition: border 0.2s, box-shadow 0.2s;
   background-color: #3b7d2a;
 }
 
+.created-experiences {
+  border-top: 1px solid #ccc;
+  padding-top: 1rem;
+}
 
-    .created-experiences {
-      border-top: 1px solid #ccc;
-      padding-top: 1rem;
-    }
-
- /*COMMENTARY*/
-  .cards-container {
+/*COMMENTARY*/
+.cards-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); 
-  gap: 1rem; 
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
 }
 .card {
   margin-top: 20px;
@@ -619,77 +617,96 @@ transition: border 0.2s, box-shadow 0.2s;
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 20px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.07);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.07);
   color: #333;
 }
 
-    .card h3 {
-      margin-top: 0;
-      color: #4fa13f;
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
+.card h3 {
+  margin-top: 0;
+  color: #4fa13f;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
 
-   /*COMMENTARY*/
-    .card label {
-      font-size: 0.75rem;
-      color: #4fa13f;
-      font-weight: 600;
-      margin-top: 0.6rem;
-      display: block;
-    }
+/*COMMENTARY*/
+.card label {
+  font-size: 0.75rem;
+  color: #4fa13f;
+  font-weight: 600;
+  margin-top: 0.6rem;
+  display: block;
+}
 
-   /*COMMENTARY*/
-    .card input,
-    .card textarea {
-      width: 100%;
-      font-family: inherit;
-      font-size: 0.9rem;
-      padding: 6px 8px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      resize: vertical;
-      margin-top: 3px;
-    }
+/*COMMENTARY*/
+.card input,
+.card textarea {
+  width: 100%;
+  font-family: inherit;
+  font-size: 0.9rem;
+  padding: 6px 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  margin-top: 3px;
+}
 
-    .card textarea {
-      height: 60px;
-    }
+.card textarea {
+  height: 60px;
+}
 
-    /*COMMENTARY*/
-    .actions {
-      margin-top: 1rem;
-      display: flex;
-      gap: 0.5rem;
-      justify-content: space-between;
-    }
+/*COMMENTARY*/
+.actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-between;
+}
 
-    .btn-edit {
-      flex: 1;
-      background-color: #4fa13f;
-      border: none;
-      color: white;
-      padding: 8px 0;
-      border-radius: 5px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    .btn-edit:hover {
-      background-color: #3b7d2a;
-    }
+.btn-edit {
+  flex: 1;
+  background-color: #4fa13f;
+  border: none;
+  color: white;
+  padding: 8px 0;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.btn-edit:hover {
+  background-color: #3b7d2a;
+}
 
-    .btn-delete {
-      flex: 1;
-      background-color: #d32f2f;
-      border: none;
-      color: white;
-      padding: 8px 0;
-      border-radius: 5px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    .btn-delete:hover {
-      background-color: #a52828;
-    }
+.btn-delete {
+  flex: 1;
+  background-color: #d32f2f;
+  border: none;
+  color: white;
+  padding: 8px 0;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.btn-delete:hover {
+  background-color: #a52828;
+}
+
+.container-profile{
+  background-color: #ccc9c95d;
+  height: 450px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+.container-profile img{
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ddd;
+}
