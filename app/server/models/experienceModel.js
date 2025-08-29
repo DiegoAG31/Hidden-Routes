@@ -1,5 +1,7 @@
+
 import { DataTypes } from 'sequelize';
 import sequelize from '../database.js';
+import Destination from './destinationModel.js';
 
 const Experience = sequelize.define('Experience', {
     Experience_id: {
@@ -31,11 +33,21 @@ const Experience = sequelize.define('Experience', {
         type: DataTypes.STRING(255),
         allowNull: true,
     },
+    destination_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+            model: Destination,
+            key: 'destination_id'
+        }
+    }
 }, {
     tableName: 'experiences',
     timestamps: true,
     createdAt: 'Created_at',
     updatedAt: 'Updated_at',
 });
+
+Experience.belongsTo(Destination, { foreignKey: 'destination_id', as: 'destination' });
 
 export default Experience;

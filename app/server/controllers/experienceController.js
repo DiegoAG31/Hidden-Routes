@@ -3,7 +3,12 @@ import Experience from '../models/experienceModel.js';
 // Obtener todas las experiencias
 export const getExperiences = async (req, res) => {
     try {
-        const experiences = await Experience.findAll();
+        const experiences = await Experience.findAll({
+            include: [{
+                association: 'destination',
+                attributes: ['destination_name']
+            }]
+        });
         res.json(experiences);
     } catch (error) {
         res.status(500).json({ error: 'Error al obtener experiencias' });
@@ -24,9 +29,9 @@ export const getExperienceById = async (req, res) => {
 // Crear una nueva experiencia
 export const createExperience = async (req, res) => {
     try {
-        const { Experience_title, Experience_description, Price, Capacity } = req.body;
+        const { Experience_title, Experience_description, Price, Capacity, destination_id } = req.body;
 
-        if (!Experience_title || !Experience_description || !Price || !Capacity) {
+        if (!Experience_title || !Experience_description || !Price || !Capacity || !destination_id) {
             return res.status(400).json({ error: 'Todos los campos son obligatorios' });
         }
 
@@ -44,6 +49,7 @@ export const createExperience = async (req, res) => {
             Experience_description,
             Price,
             Capacity,
+            destination_id,
             user_id,
             experience_img
         });

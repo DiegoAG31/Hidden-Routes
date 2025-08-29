@@ -42,7 +42,7 @@ function applyFilters() {
   if (citySelect && citySelect.value) {
     filtered = filtered.filter(exp => {
       // Asume que la experiencia tiene una propiedad city_name
-      return (exp.city_name || '').toLowerCase() === citySelect.value.toLowerCase();
+      return String(exp.destination_id) === String(citySelect.value);
     });
   }
   if (placesRange) {
@@ -97,7 +97,7 @@ async function fetchCities() {
     if (select) {
       select.innerHTML = '<option value="">All cities</option>';
       cities.forEach(city => {
-        select.innerHTML += `<option value="${city}">${city}</option>`;
+        select.innerHTML += `<option value="${city.destination_id}">${city.destination_name}</option>`;
       });
     }
   } catch (err) {

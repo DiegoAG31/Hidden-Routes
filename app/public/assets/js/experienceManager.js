@@ -34,6 +34,29 @@ async function fetchExperiences() {
     const res = await fetch(API_URL);
     const data = await res.json();
     renderExperiences(data);
+      fetchCities();
+
+  async function fetchCities() {
+    try {
+      const res = await fetch('http://localhost:3000/api/destinations/cities');
+      const cities = await res.json();
+      const select = document.getElementById('citySelect');
+      if (select) {
+        select.innerHTML = '<option value="">Select city</option>';
+        cities.forEach(city => {
+          // Si la API devuelve objetos, usa city.destination_id y city.destination_name
+          if (typeof city === 'object') {
+            select.innerHTML += `<option value="${city.destination_id}">${city.destination_name}</option>`;
+          } else {
+            // Si la API devuelve solo el nombre, usa el nombre como value
+            select.innerHTML += `<option value="${city}">${city}</option>`;
+          }
+        });
+      }
+    } catch (err) {
+      // Si hay error, deja el select con la opción por defecto
+    }
+  }
   } catch (err) {
     alert('Error al cargar experiencias');
   }
@@ -45,12 +68,14 @@ document.getElementById('createExperienceForm').addEventListener('submit', async
   const Capacity = document.getElementById('capacity').value;
   const Price = document.getElementById('price').value;
   const Experience_description = document.getElementById('description').value;
-  const experience_img = document.getElementById('experience_img').files[0];
+    const destination_id = document.getElementById('citySelect').value;
+    const experience_img = document.getElementById('experience_img').files[0];
   const formData = new FormData();
   formData.append('Experience_title', Experience_title);
   formData.append('Capacity', Capacity);
   formData.append('Price', Price);
   formData.append('Experience_description', Experience_description);
+    formData.append('destination_id', destination_id);
   if (experience_img) {
     formData.append('experience_img', experience_img);
   }

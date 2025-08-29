@@ -7,7 +7,7 @@ const Destination = sequelize.define('Destination', {
         primaryKey: true,
         autoIncrement: true,
     },
-    city_name: {
+    destination_name: {
         type: DataTypes.STRING(100),
         allowNull: false,
     }
