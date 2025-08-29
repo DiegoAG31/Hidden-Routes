@@ -551,7 +551,7 @@ body {
   margin-top: 20px;
 }
 
-.created-experiences h2, .form-profile h2 {
+.created-experiences h2, .form-profile h2, .container-profile h2 {
   color: #4fa13f;
   margin-bottom: 10px;
   font-size: 25px;
@@ -696,7 +696,7 @@ body {
   background-color: #ccc9c95d;
   height: 450px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 20px;
@@ -709,4 +709,12 @@ body {
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid #ddd;
+}
+
+
+/*COMMENTARY*/
+#verificate{
+  width: 35px;
+  height: 35px;
+  border: none;
 }
