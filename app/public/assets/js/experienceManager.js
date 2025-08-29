@@ -8,10 +8,12 @@ function renderExperiences(experiences) {
   container.innerHTML = '';
   experiences.forEach(exp => {
     const imgSrc = exp.experience_img ? exp.experience_img : '../assets/img/playacristal.webp';
+    const destinationName = exp.destination && exp.destination.destination_name ? exp.destination.destination_name : 'Sin destino';
     container.innerHTML += `
       <div class="card" data-id="${exp.Experience_id || exp.id}">
         <img src="${imgSrc}" alt="experience-img" style="width:100%;max-height:180px;object-fit:cover;border-radius:8px;margin-bottom:10px;" />
         <h3>${exp.Experience_title || exp.name}</h3>
+        <p><strong>Destination:</strong> ${destinationName}</p>
         <label>Name</label>
         <input type="text" value="${exp.Experience_title || exp.name}" class="input-name" />
         <label>Places</label>

@@ -77,7 +77,18 @@ async function fetchExperiences() {
 
 document.addEventListener('DOMContentLoaded', () => {
   fetchExperiences();
-  fetchCities();
+  fetchCities().then(() => {
+    // Leer el parámetro destination_id de la URL
+    const params = new URLSearchParams(window.location.search);
+    const destId = params.get('destination_id');
+    const select = document.getElementById('citySelect');
+    if (destId && select) {
+      select.value = destId;
+      // Solo filtrar por ciudad al cargar desde dashboard
+      const filtered = allExperiences.filter(exp => String(exp.destination_id) === String(destId));
+      renderExperiences(filtered);
+    }
+  });
   const placesRange = document.getElementById('quotasrange');
   const priceRange = document.getElementById('pricerange');
   if (placesRange) placesRange.addEventListener('input', updateSliderLabels);
@@ -103,4 +114,6 @@ async function fetchCities() {
   } catch (err) {
     // Si hay error, deja el select con la opción por defecto
   }
+  // Permitir encadenar con .then()
+  return Promise.resolve();
 }
