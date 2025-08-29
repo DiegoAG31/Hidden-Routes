@@ -717,7 +717,7 @@ body {
 
 }
 
-.login {
+.login, .register {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -728,25 +728,25 @@ body {
 }
 
 /* Formulario */
-.form-login {
+.form-login, .form-register {
   width: 400px;
   border: 1px solid #6565658c;
   border-radius: 8px;
   padding: 20px 30px;
 }
 
-.form-login form {
+.form-login form, .form-register form {
   display: flex;
   flex-direction: column;
 }
 
-.form-login label {
+.form-login label, .form-register label {
   font-weight: 600;
   margin-bottom: 5px;
   color: #333;
 }
 
-.form-login input {
+.form-login input, .form-register input {
   padding: 10px;
   margin-bottom: 20px;
   border: 1px solid #ccc;
