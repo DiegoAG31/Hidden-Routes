@@ -32,6 +32,10 @@
       <h2>Creating experiences</h2>
       <small>Add a new experience</small>
       <form class="create-experience-form" id="createExperienceForm" enctype="multipart/form-data">
+        <label for="citySelect">City</label>
+        <select id="citySelect" name="city_name" required>
+          <option value="">Select city</option>
+        </select>
         <label for="name">Name of the experience</label>
         <input type="text" id="name" name="name" placeholder="Name" required />
 

@@ -10,11 +10,13 @@ function renderExperiences(experiences) {
   container.innerHTML = '';
   experiences.forEach(exp => {
     const imgSrc = exp.experience_img ? exp.experience_img : '../assets/img/playacristal.webp';
+    const destinationName = exp.destination && exp.destination.destination_name ? exp.destination.destination_name : 'Sin destino';
     container.innerHTML += `
       <div class="grid-exp-card">
         <img src="${imgSrc}" alt="experience-img" />
         <h2>${exp.Experience_title || exp.name}</h2>
         <p>
+          <strong>Destination:</strong> ${destinationName}<br><br>
           ${exp.Experience_description || exp.description}<br><br>
           <strong>Places:</strong> ${exp.Capacity || exp.capacity}<br><br>
           <strong>Price per person:</strong> $${exp.Price || exp.price}<br><br>
@@ -37,7 +39,14 @@ function updateSliderLabels() {
 function applyFilters() {
   const placesRange = document.getElementById('quotasrange');
   const priceRange = document.getElementById('pricerange');
+  const citySelect = document.getElementById('citySelect');
   let filtered = allExperiences;
+  if (citySelect && citySelect.value) {
+    filtered = filtered.filter(exp => {
+      // Asume que la experiencia tiene una propiedad city_name
+      return String(exp.destination_id) === String(citySelect.value);
+    });
+  }
   if (placesRange) {
     const placesValue = parseInt(placesRange.value, 10);
     filtered = filtered.filter(exp => {
@@ -70,6 +79,18 @@ async function fetchExperiences() {
 
 document.addEventListener('DOMContentLoaded', () => {
   fetchExperiences();
+  fetchCities().then(() => {
+    // Leer el parámetro destination_id de la URL
+    const params = new URLSearchParams(window.location.search);
+    const destId = params.get('destination_id');
+    const select = document.getElementById('citySelect');
+    if (destId && select) {
+      select.value = destId;
+      // Solo filtrar por ciudad al cargar desde dashboard
+      const filtered = allExperiences.filter(exp => String(exp.destination_id) === String(destId));
+      renderExperiences(filtered);
+    }
+  });
   const placesRange = document.getElementById('quotasrange');
   const priceRange = document.getElementById('pricerange');
   if (placesRange) placesRange.addEventListener('input', updateSliderLabels);
@@ -80,3 +101,21 @@ document.addEventListener('DOMContentLoaded', () => {
     applyFilters();
   });
 });
+
+async function fetchCities() {
+  try {
+    const res = await fetch('http://localhost:3000/api/destinations/cities');
+    const cities = await res.json();
+    const select = document.getElementById('citySelect');
+    if (select) {
+      select.innerHTML = '<option value="">All cities</option>';
+      cities.forEach(city => {
+        select.innerHTML += `<option value="${city.destination_id}">${city.destination_name}</option>`;
+      });
+    }
+  } catch (err) {
+    // Si hay error, deja el select con la opción por defecto
+  }
+  // Permitir encadenar con .then()
+  return Promise.resolve();
+}

@@ -24,18 +24,29 @@ CREATE TABLE users (
         ON DELETE SET NULL ON UPDATE CASCADE
 );
 
+DROP TABLE IF EXISTS destinations;
+CREATE TABLE destinations (
+    destination_id INT AUTO_INCREMENT PRIMARY KEY,
+    destination_name VARCHAR(100)
+);
+
 DROP TABLE IF EXISTS experiences;
 CREATE TABLE experiences (
-	experience_id INT AUTO_INCREMENT PRIMARY KEY,
+    experience_id INT AUTO_INCREMENT PRIMARY KEY,
     experience_title VARCHAR(150),
     experience_description TEXT,
     price DECIMAL(15 , 2 ),
     capacity INT NULL,
     user_id INT,
+    destination_id INT,
+    experience_img VARCHAR(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id)
         REFERENCES users (user_id)
+        ON DELETE SET NULL ON UPDATE CASCADE,
+    FOREIGN KEY (destination_id)
+        REFERENCES destinations (destination_id)
         ON DELETE SET NULL ON UPDATE CASCADE
 );
 
@@ -52,7 +63,7 @@ CREATE TABLE bookings (
     booking_id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT,
     experience_id INT,
-    quotes INT,
+    places INT,
     booking_status_id INT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,

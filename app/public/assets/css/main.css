@@ -30,6 +30,7 @@ body {
 
 /*COMMENTARY*/
 .logo h1,
+
 .r-h2,
 .reservation h2,
 .container-manager h2 {
@@ -52,6 +53,7 @@ body {
   text-decoration: none;
   color: #000000;
 }
+
 
 .nav-link button a {
   color: #ffffff;
@@ -150,6 +152,7 @@ body {
 }
 
 .grid-exp-card img {
+
   width: 100%;
   height: 380px;
   object-fit: cover;
@@ -325,8 +328,11 @@ body {
 .filter {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 30px;
+  margin-bottom: 20px;
 }
 
 /*COMMENTARY*/
@@ -344,7 +350,10 @@ body {
 /*COMMENTARY*/
 
 .range-container {
-  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 20px;
 }
 
 .slider {
@@ -353,35 +362,43 @@ body {
 }
 
 .label-l {
-  float: left;
+  display: block;
   font-size: 14px;
   color: #4fa13f;
+  text-align: left;
 }
 
 .label-r {
-  float: right;
+  display: block;
   font-size: 14px;
   color: #4fa13f;
+  text-align: right;
 }
 
 .value-filter {
   font-size: 14px;
   color: #929292;
-  clear: both;
+  text-align: center;
+  margin-top: 5px;
 }
 
 /*COMMENTARY*/
-
 .btn-filter button {
   background-color: #4fa13f;
   border: 1.5px solid black;
   margin-top: 20px;
-  margin-right: 20px;
+  margin-right: 0;
   padding: 8px 15px;
   border-radius: 5px;
   color: white;
   cursor: pointer;
   font-size: 18px;
+}
+/* Centrado del contenedor de botón de filtro */
+.btn-filter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .btn-filter button:hover {
@@ -481,7 +498,7 @@ body {
 /*COMMENTARY*/
 .reservation,
 .container-manager,
-.created-experiences, .form-profile {
+.created-experiences {
   padding: 3rem 5rem;
   border-radius: 8px;
   width: 100%;
@@ -498,6 +515,7 @@ body {
   margin-bottom: 20px;
   padding: 10px;
 }
+
 
 .reservation-form label {
   margin-top: 20px;
@@ -554,7 +572,8 @@ body {
   margin-top: 20px;
 }
 
-.created-experiences h2, .form-profile h2 {
+
+.created-experiences h2 {
   color: #4fa13f;
   margin-bottom: 10px;
   font-size: 25px;
@@ -570,7 +589,7 @@ body {
 /*COMMENTARY*/
 .create-experience-form input,
 .create-experience-form select,
-.create-experience-form textarea, .form-profile input{
+.create-experience-form textarea {
   padding: 8px 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -603,6 +622,7 @@ body {
   background-color: #3b7d2a;
 }
 
+
 .created-experiences {
   border-top: 1px solid #ccc;
   padding-top: 1rem;
@@ -614,6 +634,7 @@ body {
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
+
 .card {
   margin-top: 20px;
   background-color: #fff;
@@ -702,14 +723,78 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
-  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 60px;
+
 }
 
-.container-profile img{
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #ddd;
+.login, .register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login img {
+  max-width: 400px;
+}
+
+/* Formulario */
+.form-login, .form-register {
+  width: 400px;
+  border: 1px solid #6565658c;
+  border-radius: 8px;
+  padding: 20px 30px;
+}
+
+.form-login form, .form-register form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-login label, .form-register label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.form-login input, .form-register input {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border 0.3s ease;
+}
+
+
+
+/* Botón de inicio de sesión */
+.sign-in-button {
+  padding: 12px;
+  background-color: #3b7d2a;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sign-in-button:hover {
+  background-color: #0056b3;
+}
+
+/* Enlace de "Forgot password" */
+.register-prompt,
+.login-prompt {
+  margin-top: 15px;
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.register-prompt:hover,
+.login-prompt:hover {
+  text-decoration: underline;
 }
