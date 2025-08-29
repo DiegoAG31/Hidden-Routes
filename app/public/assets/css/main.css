@@ -30,7 +30,10 @@ body {
 
 /*COMMENTARY*/
 .logo h1,
-.r-h2, .reservation h2, .container-manager h2{
+
+.r-h2,
+.reservation h2,
+.container-manager h2 {
   color: #4fa13f;
   margin-bottom: 10px;
   font-size: 25px;
@@ -53,7 +56,7 @@ body {
 }
 
 
-.nav-link button a{
+.nav-link button a {
   color: #ffffff;
 }
 
@@ -86,8 +89,7 @@ body {
   margin: 20px 80px 20px 80px;
   border-radius: 10px;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("https://imgs.search.brave.com/4BIRoQU9EGO8lyCpuI_RPQDpjzyJ6x80Z84VS8f-eE4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvOTg3/OTMwNzYwL3Bob3Rv/L2NhcnRhZ2VuYS1j/b2xvbWJpYS1hZnJv/LWNvbG9tYmlhbi1n/aXJscy1kcmVzc2Vk/LWluLXRoZS10cmFk/aXRpb25hbC1wYWxl/bnF1ZXJhLWNvc3R1/bWUtcG9zZS1mb3Iu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PTY0ZlI2TEd0NUhF/OXJMTUVCMEhVNFBq/bHVWeUNUbTh4b0lU/dURlX29IWlk9")
-      center/cover no-repeat;
+    url("https://imgs.search.brave.com/4BIRoQU9EGO8lyCpuI_RPQDpjzyJ6x80Z84VS8f-eE4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvOTg3/OTMwNzYwL3Bob3Rv/L2NhcnRhZ2VuYS1j/b2xvbWJpYS1hZnJv/LWNvbG9tYmlhbi1n/aXJscy1kcmVzc2Vk/LWluLXRoZS10cmFk/aXRpb25hbC1wYWxl/bnF1ZXJhLWNvc3R1/bWUtcG9zZS1mb3Iu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PTY0ZlI2TEd0NUhF/OXJMTUVCMEhVNFBq/bHVWeUNUbTh4b0lU/dURlX29IWlk9") center/cover no-repeat;
   color: white;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
@@ -142,20 +144,17 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 45px;
   margin-top: 40px;
-  align-items: stretch;
 }
+
 /*COMMENTARY*/
 .grid-exp-card {
   background-color: #ffffff;
   overflow: hidden;
   padding: 20px;
-  display: flex;
-  flex-direction: column;
-  min-height: 540px;
-  height: 100%;
 }
 
 .grid-exp-card img {
+
   width: 100%;
   height: 380px;
   object-fit: cover;
@@ -166,13 +165,6 @@ body {
 .grid-exp-card h2 {
   margin: 15px 10px 5px;
   color: black;
-}
-
-.grid-exp-card p {
-  margin: 10px;
-  color: grey;
-  font-size: 0.9rem;
-  flex: 1 1 auto;
 }
 
 .grid-exp-card p {
@@ -228,6 +220,7 @@ body {
   color: #ffffff;
   text-decoration: none;
   padding: 8px 10px;
+  border-radius: 8px;
 }
 
 /*COMMENTARY*/
@@ -303,6 +296,7 @@ body {
 .social-footer a img {
   max-width: 25px;
 }
+
 /*COMMENTARY*/
 
 .info-footer a {
@@ -325,7 +319,7 @@ body {
   background-color: #ffffff;
 }
 
-#exp-h1  {
+#exp-h1 {
   color: #4fa13f;
   margin-top: 2.5rem;
   margin-left: 40px;
@@ -336,16 +330,13 @@ body {
 .filter {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: flex-end;
-  gap: 2.5rem;
+  justify-content: space-between;
   margin-top: 20px;
-  flex-wrap: wrap;
 }
 
 /*COMMENTARY*/
 .select-city {
-  margin: 10px 0;
+  margin: 10px;
 }
 
 .select-city select {
@@ -385,26 +376,16 @@ body {
 }
 
 /*COMMENTARY*/
-
-.btn-filter {
-  display: flex;
-  align-items: center;
-  height: 32px;
-  margin-bottom: 0;
-}
-
 .btn-filter button {
   background-color: #4fa13f;
   border: 1.5px solid black;
-  margin: 0 10px 0 0;
-  padding: 4px 12px;
+  margin-top: 20px;
+  margin-right: 20px;
+  padding: 8px 15px;
   border-radius: 5px;
   color: white;
   cursor: pointer;
-  font-size: 15px;
-  height: 32px;
-  display: flex;
-  align-items: center;
+  font-size: 18px;
 }
 
 .btn-filter button:hover {
@@ -414,20 +395,16 @@ body {
 /*COMMENTARY*/
 
 #btn-exp-card {
-  margin-top: auto;
-  align-self: center;
+  display: inline-block;
+  margin: 10px;
   background-color: #4fa13f;
   color: #ffffff;
-  padding: 6px 18px;
-  font-size: 1rem;
+  padding: 8px 10px;
+  font-size: 1.5rem;
   border-radius: 8px;
   cursor: pointer;
   transition: background 0.3s, transform 0.3s;
   border: none;
-  min-width: 110px;
-  max-width: 150px;
-  display: block;
-  margin-bottom: 0;
 }
 
 #btn-exp-card:hover {
@@ -449,7 +426,7 @@ body {
   margin-top: 10px;
 }
 
-.tittle-review{
+.tittle-review {
   margin-bottom: 40px;
   font-size: 0.9rem;
 }
@@ -468,7 +445,7 @@ body {
 }
 
 /*COMMENTARY*/
-.review-header{
+.review-header {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -480,7 +457,8 @@ body {
 .review-avatar {
   width: 50px;
   height: 50px;
-  border-radius: 50%; /* avatar circular */
+  border-radius: 50%;
+  /* avatar circular */
   object-fit: cover;
   border: 2px solid #ddd;
 }
@@ -509,7 +487,9 @@ body {
 
 
 /*COMMENTARY*/
-.reservation, .container-manager, .created-experiences{
+.reservation,
+.container-manager,
+.created-experiences {
   padding: 3rem 5rem;
   border-radius: 8px;
   width: 100%;
@@ -517,25 +497,28 @@ body {
   margin-top: 3rem;
   margin-bottom: 5rem;
 }
+
 /*COMMENTARY*/
-.reservation-form{
+.reservation-form {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
 }
 
-.reservation-form label{
+
+.reservation-form label {
   margin-top: 20px;
   color: #656565;
 }
 
-.reservation-form select, .reservation-form input{
-padding: 0.75rem;
-border-radius: 10px;
-border: solid 1px #656565;
-font-size: 1rem;
-outline: none;
-transition: border 0.2s, box-shadow 0.2s;
+.reservation-form select,
+.reservation-form input {
+  padding: 0.75rem;
+  border-radius: 10px;
+  border: solid 1px #656565;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
 }
 
 .reservation-form select:focus,
@@ -545,14 +528,14 @@ transition: border 0.2s, box-shadow 0.2s;
 }
 
 /*COMMENTARY*/
-.terms a{
+.terms a {
   text-decoration: none;
   color: #326728;
 }
 
 /*COMMENTARY*/
-.btn-submit{
-    padding: 1rem;
+.btn-submit {
+  padding: 1rem;
   background-color: #4fa13f;
   color: white;
   border: solid 1px black;
@@ -579,7 +562,7 @@ transition: border 0.2s, box-shadow 0.2s;
 }
 
 
-.created-experiences h2{
+.created-experiences h2 {
   color: #4fa13f;
   margin-bottom: 10px;
   font-size: 25px;
@@ -594,7 +577,7 @@ transition: border 0.2s, box-shadow 0.2s;
 
 /*COMMENTARY*/
 .create-experience-form input,
- .create-experience-form select,
+.create-experience-form select,
 .create-experience-form textarea {
   padding: 8px 10px;
   border: 1px solid #ccc;
@@ -629,94 +612,179 @@ transition: border 0.2s, box-shadow 0.2s;
 }
 
 
-    .created-experiences {
-      border-top: 1px solid #ccc;
-      padding-top: 1rem;
-    }
-
- /*COMMENTARY*/
-  .cards-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); 
-  gap: 1rem; 
+.created-experiences {
+  border-top: 1px solid #ccc;
+  padding-top: 1rem;
 }
+
+/*COMMENTARY*/
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
 .card {
   margin-top: 20px;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 20px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.07);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.07);
   color: #333;
 }
 
-    .card h3 {
-      margin-top: 0;
-      color: #4fa13f;
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
+.card h3 {
+  margin-top: 0;
+  color: #4fa13f;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
 
-   /*COMMENTARY*/
-    .card label {
-      font-size: 0.75rem;
-      color: #4fa13f;
-      font-weight: 600;
-      margin-top: 0.6rem;
-      display: block;
-    }
+/*COMMENTARY*/
+.card label {
+  font-size: 0.75rem;
+  color: #4fa13f;
+  font-weight: 600;
+  margin-top: 0.6rem;
+  display: block;
+}
 
-   /*COMMENTARY*/
-    .card input,
-    .card textarea {
-      width: 100%;
-      font-family: inherit;
-      font-size: 0.9rem;
-      padding: 6px 8px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      resize: vertical;
-      margin-top: 3px;
-    }
+/*COMMENTARY*/
+.card input,
+.card textarea {
+  width: 100%;
+  font-family: inherit;
+  font-size: 0.9rem;
+  padding: 6px 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  margin-top: 3px;
+}
 
-    .card textarea {
-      height: 60px;
-    }
+.card textarea {
+  height: 60px;
+}
 
-    /*COMMENTARY*/
-    .actions {
-      margin-top: 1rem;
-      display: flex;
-      gap: 0.5rem;
-      justify-content: space-between;
-    }
+/*COMMENTARY*/
+.actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-between;
+}
 
-    .btn-edit {
-      flex: 1;
-      background-color: #4fa13f;
-      border: none;
-      color: white;
-      padding: 8px 0;
-      border-radius: 5px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    .btn-edit:hover {
-      background-color: #3b7d2a;
-    }
+.btn-edit {
+  flex: 1;
+  background-color: #4fa13f;
+  border: none;
+  color: white;
+  padding: 8px 0;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
-    .btn-delete {
-      flex: 1;
-      background-color: #d32f2f;
-      border: none;
-      color: white;
-      padding: 8px 0;
-      border-radius: 5px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    .btn-delete:hover {
-      background-color: #a52828;
-    }
+.btn-edit:hover {
+  background-color: #3b7d2a;
+}
+
+.btn-delete {
+  flex: 1;
+  background-color: #d32f2f;
+  border: none;
+  color: white;
+  padding: 8px 0;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-delete:hover {
+  background-color: #a52828;
+}
+
+/*COMMENTARY*/
+
+.container-login {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 60px;
+
+}
+
+.login, .register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login img {
+  max-width: 400px;
+}
+
+/* Formulario */
+.form-login, .form-register {
+  width: 400px;
+  border: 1px solid #6565658c;
+  border-radius: 8px;
+  padding: 20px 30px;
+}
+
+.form-login form, .form-register form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-login label, .form-register label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.form-login input, .form-register input {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border 0.3s ease;
+}
+
+
+
+/* Botón de inicio de sesión */
+.sign-in-button {
+  padding: 12px;
+  background-color: #3b7d2a;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sign-in-button:hover {
+  background-color: #0056b3;
+}
+
+/* Enlace de "Forgot password" */
+.forgot-password-link {
+  margin-top: 15px;
+  text-align: center;
+  display: block;
+  color: #007bff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.forgot-password-link:hover {
+  text-decoration: underline;
+}
