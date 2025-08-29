@@ -4,6 +4,7 @@ import cors from 'cors';
 import authRoutes from './routes/auth.js';
 import bookingRoutes from './routes/bookings.js';
 import experienceRoutes from './routes/experiences.js';
+import destinationRoutes from './routes/destinations.js';
 // import reviewRoutes from './routes/reviews.js';
 import sequelize from './database.js';
 
@@ -15,6 +16,7 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/bookings', bookingRoutes);
 app.use('/api/experiences', experienceRoutes);
+app.use('/api/destinations', destinationRoutes);
 // app.use('/api/reviews', reviewRoutes);
 
 app.use(express.static(path.join(process.cwd(), 'app/public')));

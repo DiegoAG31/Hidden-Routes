@@ -37,7 +37,14 @@ function updateSliderLabels() {
 function applyFilters() {
   const placesRange = document.getElementById('quotasrange');
   const priceRange = document.getElementById('pricerange');
+  const citySelect = document.getElementById('citySelect');
   let filtered = allExperiences;
+  if (citySelect && citySelect.value) {
+    filtered = filtered.filter(exp => {
+      // Asume que la experiencia tiene una propiedad city_name
+      return (exp.city_name || '').toLowerCase() === citySelect.value.toLowerCase();
+    });
+  }
   if (placesRange) {
     const placesValue = parseInt(placesRange.value, 10);
     filtered = filtered.filter(exp => {
@@ -70,6 +77,7 @@ async function fetchExperiences() {
 
 document.addEventListener('DOMContentLoaded', () => {
   fetchExperiences();
+  fetchCities();
   const placesRange = document.getElementById('quotasrange');
   const priceRange = document.getElementById('pricerange');
   if (placesRange) placesRange.addEventListener('input', updateSliderLabels);
@@ -80,3 +88,19 @@ document.addEventListener('DOMContentLoaded', () => {
     applyFilters();
   });
 });
+
+async function fetchCities() {
+  try {
+    const res = await fetch('http://localhost:3000/api/destinations/cities');
+    const cities = await res.json();
+    const select = document.getElementById('citySelect');
+    if (select) {
+      select.innerHTML = '<option value="">All cities</option>';
+      cities.forEach(city => {
+        select.innerHTML += `<option value="${city}">${city}</option>`;
+      });
+    }
+  } catch (err) {
+    // Si hay error, deja el select con la opción por defecto
+  }
+}
