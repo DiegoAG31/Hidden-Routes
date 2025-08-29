@@ -1,4 +1,5 @@
 import Experience from '../models/experienceModel.js';
+import path from 'path';
 
 // Obtener todas las experiencias
 export const getExperiences = async (req, res) => {
@@ -80,12 +81,20 @@ export const updateExperience = async (req, res) => {
 export const deleteExperience = async (req, res) => {
     try {
         const { id } = req.params;
-        // Forzar user_id = 1 temporalmente
-        const user_id = 1;
-        // Si quieres filtrar por user_id, descomenta la siguiente línea y comenta la actual:
-        // const deleted = await Experience.destroy({ where: { Experience_id: id, user_id } });
-        const deleted = await Experience.destroy({ where: { Experience_id: id } });
-        if (!deleted) return res.status(404).json({ error: 'Experiencia no encontrada' });
+        // Buscar la experiencia para obtener la ruta de la imagen
+        const experience = await Experience.findByPk(id);
+        if (!experience) return res.status(404).json({ error: 'Experiencia no encontrada' });
+        // Eliminar la imagen física si existe
+        if (experience.experience_img) {
+            const fs = await import('fs');
+            const imgPath = path.resolve('app/public', experience.experience_img.replace(/^\/+/, ''));
+            fs.unlink(imgPath, (err) => {
+                // Si hay error al borrar la imagen, solo loguea
+                if (err) console.error('Error al eliminar imagen:', err);
+            });
+        }
+        // Eliminar la experiencia de la base de datos
+        await Experience.destroy({ where: { Experience_id: id } });
         res.json({ message: 'Experiencia eliminada' });
     } catch (error) {
         res.status(500).json({ error: 'Error al eliminar la experiencia' });

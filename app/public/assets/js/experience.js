@@ -10,11 +10,13 @@ function renderExperiences(experiences) {
   container.innerHTML = '';
   experiences.forEach(exp => {
     const imgSrc = exp.experience_img ? exp.experience_img : '../assets/img/playacristal.webp';
+    const destinationName = exp.destination && exp.destination.destination_name ? exp.destination.destination_name : 'Sin destino';
     container.innerHTML += `
       <div class="grid-exp-card">
         <img src="${imgSrc}" alt="experience-img" />
         <h2>${exp.Experience_title || exp.name}</h2>
         <p>
+          <strong>Destination:</strong> ${destinationName}<br><br>
           ${exp.Experience_description || exp.description}<br><br>
           <strong>Places:</strong> ${exp.Capacity || exp.capacity}<br><br>
           <strong>Price per person:</strong> $${exp.Price || exp.price}<br><br>
