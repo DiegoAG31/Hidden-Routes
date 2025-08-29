@@ -330,8 +330,11 @@ body {
 .filter {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 30px;
+  margin-bottom: 20px;
 }
 
 /*COMMENTARY*/
@@ -349,7 +352,10 @@ body {
 /*COMMENTARY*/
 
 .range-container {
-  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 20px;
 }
 
 .slider {
@@ -358,21 +364,24 @@ body {
 }
 
 .label-l {
-  float: left;
+  display: block;
   font-size: 14px;
   color: #4fa13f;
+  text-align: left;
 }
 
 .label-r {
-  float: right;
+  display: block;
   font-size: 14px;
   color: #4fa13f;
+  text-align: right;
 }
 
 .value-filter {
   font-size: 14px;
   color: #929292;
-  clear: both;
+  text-align: center;
+  margin-top: 5px;
 }
 
 /*COMMENTARY*/
@@ -380,12 +389,18 @@ body {
   background-color: #4fa13f;
   border: 1.5px solid black;
   margin-top: 20px;
-  margin-right: 20px;
+  margin-right: 0;
   padding: 8px 15px;
   border-radius: 5px;
   color: white;
   cursor: pointer;
   font-size: 18px;
+}
+/* Centrado del contenedor de botón de filtro */
+.btn-filter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .btn-filter button:hover {
@@ -776,15 +791,16 @@ body {
 }
 
 /* Enlace de "Forgot password" */
-.forgot-password-link {
+.register-prompt,
+.login-prompt {
   margin-top: 15px;
   text-align: center;
   display: block;
-  color: #007bff;
   text-decoration: none;
   font-size: 14px;
 }
 
-.forgot-password-link:hover {
+.register-prompt:hover,
+.login-prompt:hover {
   text-decoration: underline;
 }
