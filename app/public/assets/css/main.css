@@ -1,3 +1,5 @@
+/*-----------------------------------------------------------INIT--------------------------------------------------------------------------*/
+/* Reset margins, paddings and set default font */
 * {
   margin: 0;
   padding: 0;
@@ -5,6 +7,7 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Main body setup: full screen, flexbox column, centered content */
 body {
   width: 100vw;
   height: 100vh;
@@ -13,13 +16,14 @@ body {
   align-items: center;
 }
 
-/*COMMENTARY*/
+/* Main content wrapper with max width */
 .container {
   max-width: 80%;
   width: 100%;
 }
 
-/*COMMENTARY*/
+/*-----------------------------------------------------------NAVBAR--------------------------------------------------------------------------*/
+/* Top navigation bar */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -28,17 +32,12 @@ body {
   padding: 20px 50px;
 }
 
-/*COMMENTARY*/
-.logo h1,
-.r-h2,
-.reservation h2,
-.container-manager h2 {
+.logo h1, .form-profile h2 {
   color: #4fa13f;
   margin-bottom: 10px;
   font-size: 25px;
 }
-
-/*COMMENTARY*/
+/* Navigation links container */
 .nav-link {
   display: flex;
   list-style: none;
@@ -57,7 +56,7 @@ body {
   color: #ffffff;
 }
 
-/*COMMENTARY*/
+/* Login button */
 #btnlogin {
   background-color: #4fa13f;
   border: none;
@@ -73,8 +72,10 @@ body {
   background-color: #929292;
 }
 
-/*COMMENTARY*/
+/*------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------MAIN VIEW SECTION--------------------------------------------------------------------------*/
 
+/* Hero section with background image, gradient overlay, padding and shadow */
 .main-view {
   height: 65vh;
   display: flex;
@@ -85,27 +86,24 @@ body {
   margin: 20px 80px 20px 80px;
   border-radius: 10px;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("https://imgs.search.brave.com/4BIRoQU9EGO8lyCpuI_RPQDpjzyJ6x80Z84VS8f-eE4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvOTg3/OTMwNzYwL3Bob3Rv/L2NhcnRhZ2VuYS1j/b2xvbWJpYS1hZnJv/LWNvbG9tYmlhbi1n/aXJscy1kcmVzc2Vk/LWluLXRoZS10cmFk/aXRpb25hbC1wYWxl/bnF1ZXJhLWNvc3R1/bWUtcG9zZS1mb3Iu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PTY0ZlI2TEd0NUhF/OXJMTUVCMEhVNFBq/bHVWeUNUbTh4b0lU/dURlX29IWlk9")
-      center/cover no-repeat;
+    url("https://imgs.search.brave.com/4BIRoQU9EGO8lyCpuI_RPQDpjzyJ6x80Z84VS8f-eE4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvOTg3/OTMwNzYwL3Bob3Rv/L2NhcnRhZ2VuYS1j/b2xvbWJpYS1hZnJv/LWNvbG9tYmlhbi1n/aXJscy1kcmVzc2Vk/LWluLXRoZS10cmFk/aXRpb25hbC1wYWxl/bnF1ZXJhLWNvc3R1/bWUtcG9zZS1mb3Iu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PTY0ZlI2TEd0NUhF/OXJMTUVCMEhVNFBq/bHVWeUNUbTh4b0lU/dURlX29IWlk9") center/cover no-repeat;
   color: white;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
 
-/*COMMENTARY ------------------------------------------------------------------------------------*/
-.container-main {
-  margin-top: 5em;
-}
-
+/* Title inside main view */
 .main-view h1 {
   font-size: 3rem;
   margin-bottom: 20px;
 }
 
+/* Paragraph text inside main view */
 .main-view p {
   font-size: 1.1rem;
   margin-top: 25px;
 }
 
+/* Button inside main view */
 .main-view button {
   background-color: #4fa13f;
   padding: 12px 50px;
@@ -118,31 +116,37 @@ body {
   margin-top: 20px;
 }
 
+/* Button hover effect */
 .main-view button:hover {
   transform: scale(1.05);
   background-color: #929292;
 }
 
-/*COMMENTARY*/
+/*-----------------------------------------------------------ZONES SECTION--------------------------------------------------------------------------*/
 
+/* Section for zones */
 .zones {
   padding: 60px 50px;
 }
 
+/* Title inside zones section */
 .zones h1 {
   font-size: 25px;
   margin-bottom: 40px;
   color: #4fa13f;
 }
 
-.container-prin,
-.container-prin-exp {
+
+/*------------------------------------- CARDS ZONES & EXPERIENCES -------------------------------------------------------------------------------*/
+
+/* Hero section with background image, gradient overlay, padding and shadow */
+.container-prin {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 45px;
   margin-top: 40px;
 }
-/*COMMENTARY*/
+
 .grid-exp-card {
   background-color: #ffffff;
   overflow: hidden;
@@ -176,7 +180,7 @@ body {
   border-radius: 8px;
 }
 
-/*COMMENTARY*/
+/* General grid card style with hover animation */
 .grid-prin {
   background-color: #ffffff;
   overflow: hidden;
@@ -186,11 +190,12 @@ body {
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
+/* Hover effect: zoom in */
 .grid-prin:hover {
   transform: scale(1.05);
 }
 
-/*COMMENTARY*/
+/* Image inside grid card */
 .grid-prin img {
   width: 100%;
   height: 380px;
@@ -209,6 +214,7 @@ body {
   font-size: 0.9rem;
 }
 
+/* Button/link inside grid card */
 .grid-prin a {
   display: inline-block;
   margin: 10px;
@@ -218,97 +224,16 @@ body {
   border-radius: 8px;
 }
 
-/*COMMENTARY*/
-
-.exit-section {
-  background-color: #ccc9c94b;
-  height: 10em;
-  display: flex;
-  flex-direction: row;
-  justify-content: right;
-  margin-top: 20px;
+/*------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*COMMENTARY ------------------------------------------------ MAIN - EXPERIENCES ----------------------------------------------------------------*/
+/* Grid container for experience cards */
+.container-prin-exp {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 45px;
+  margin-top: 40px;
 }
 
-.exit {
-  margin-top: 3em;
-  margin-right: 8em;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-/*COMMENTARY*/
-
-.exit .btnprofile {
-  padding: 20px 45px;
-  background-color: #4fa13f;
-  border-radius: 8px;
-  border: none;
-  font-size: 1rem;
-  color: #ffffff;
-  cursor: pointer;
-  transition: transform 0.3s, background 0.3s;
-}
-
-.exit .btnlogout {
-  padding: 20px 45px;
-  background-color: #9292929c;
-  border-radius: 8px;
-  border: none;
-  font-size: 1rem;
-  color: #000000;
-  cursor: pointer;
-  transition: transform 0.3s, background 0.3s;
-}
-
-.exit .btnprofile:hover {
-  background-color: #326728;
-}
-
-.exit .btnlogout:hover {
-  background-color: #656565;
-}
-
-/*COMMENTARY*/
-
-.container-footer {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-}
-
-.logo-footer img {
-  margin-left: 20px;
-  width: 100px;
-  height: auto;
-}
-
-.social-footer {
-  display: flex;
-  gap: 15px;
-}
-
-.social-footer a img {
-  max-width: 25px;
-}
-/*COMMENTARY*/
-
-.info-footer a {
-  display: flex;
-  justify-content: center;
-  margin-top: 1.5em;
-  margin-right: 3em;
-  font-size: 1rem;
-  text-decoration: none;
-  color: #000000;
-}
-
-.footer-copy {
-  text-align: center;
-  padding: 10px;
-}
-
-/*COMMENTARY*/
 .container-experiences {
   background-color: #ffffff;
 }
@@ -320,15 +245,14 @@ body {
   font-size: 20px;
 }
 
-/*COMMENTARY*/
+/* Filter section container */
 .filter {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-top: 20px;
 }
-
-/*COMMENTARY*/
+/* City dropdown select */
 .select-city {
   margin: 10px;
 }
@@ -340,7 +264,7 @@ body {
   padding: 8px 12px;
 }
 
-/*COMMENTARY*/
+/* Wrapper for range slider */  
 
 .range-container {
   margin: 10px;
@@ -368,9 +292,7 @@ body {
   color: #929292;
   clear: both;
 }
-
-/*COMMENTARY*/
-
+/* Filter button wrapper */
 .btn-filter button {
   background-color: #4fa13f;
   border: 1.5px solid black;
@@ -387,7 +309,7 @@ body {
   background-color: #929292;
 }
 
-/*COMMENTARY*/
+/* Button inside experience card */
 
 #btn-exp-card {
   display: inline-block;
@@ -402,84 +324,17 @@ body {
   border: none;
 }
 
+/* Hover effect for experience card button */
+
 #btn-exp-card:hover {
   background-color: #929292;
 }
 
-/*COMMENTARY*/
-.reviews {
-  padding: 3rem 1rem;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  margin-top: 3rem;
-}
+/*------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------ MAIN - BOOKING --------------------------------------------------------------*/
 
-.reviews-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-top: 10px;
-}
-
-.tittle-review {
-  margin-bottom: 40px;
-  font-size: 0.9rem;
-}
-
-.review-card {
-  background-color: #ffffff;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.review-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-}
-
-/*COMMENTARY*/
-.review-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-/*COMMENTARY*/
-.review-avatar {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%; /* avatar circular */
-  object-fit: cover;
-  border: 2px solid #ddd;
-}
-
-/*COMMENTARY*/
-.review-user {
-  font-size: 1.1rem;
-  font-weight: bold;
-  margin: 0;
-}
-
-.review-location {
-  font-size: 0.9rem;
-  color: #666;
-}
-
-/*COMMENTARY*/
-.review-body {
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: #333;
-  margin-bottom: 1rem;
-}
-
-/*COMMENTARY*/
-.reservation,
-.container-manager,
-.created-experiences, .form-profile {
+/* Main reservation section container */
+.reservation {
   padding: 3rem 5rem;
   border-radius: 8px;
   width: 100%;
@@ -487,7 +342,14 @@ body {
   margin-top: 3rem;
   margin-bottom: 5rem;
 }
-/*COMMENTARY*/
+
+.reservation h2 {
+  color: #4fa13f;
+  margin-bottom: 10px;
+  font-size: 25px;
+}
+
+/* Reservation form container */
 .reservation-form {
   display: flex;
   flex-direction: column;
@@ -511,19 +373,21 @@ body {
   transition: border 0.2s, box-shadow 0.2s;
 }
 
+
+/* Focus state for form inputs and selects */
 .reservation-form select:focus,
 .reservation-form input:focus {
   border: 1px solid #326728;
   box-shadow: 0 0 5px #4fa13f;
 }
 
-/*COMMENTARY*/
+/* Submit button inside reservation form */
 .terms a {
   text-decoration: none;
   color: #326728;
 }
 
-/*COMMENTARY*/
+/* Submit button inside reservation form */
 .btn-submit {
   padding: 1rem;
   background-color: #4fa13f;
@@ -542,8 +406,27 @@ body {
   transform: scale(1.02);
 }
 
-/*COMMENTARY*/
-.create-experience-form{
+/*------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------ MAIN - MANAGE EXPERIENCES ---------------------------------------------------------------*/
+
+/* Container styles for manager and created experiences section */
+.container-manager,
+.created-experiences {
+  padding: 3rem 5rem;
+  border-radius: 8px;
+  width: 100%;
+  border: solid 1px #6565659d;
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+}
+
+.container-manager h2 {
+  color: #4fa13f;
+  margin-bottom: 10px;
+  font-size: 25px;
+}
+/* Form styles for creating a new experience */
+.create-experience-form {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
@@ -551,23 +434,24 @@ body {
   margin-top: 20px;
 }
 
-.created-experiences h2, .form-profile h2, .container-profile h2 {
+/* Section title inside created experiences */
+.created-experiences h2 {
   color: #4fa13f;
   margin-bottom: 10px;
   font-size: 25px;
   margin-top: 30px;
 }
 
-.create-experience-form label, .form-profile label {
+.create-experience-form label {
   font-size: 0.85rem;
   color: #4fa13f;
   font-weight: 600;
 }
 
-/*COMMENTARY*/
+/* Inputs, selects and textareas in create experience form */
 .create-experience-form input,
 .create-experience-form select,
-.create-experience-form textarea, .form-profile input{
+.create-experience-form textarea {
   padding: 8px 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -576,14 +460,17 @@ body {
   font-family: inherit;
 }
 
+/* Dropdown select styling */
 .create-experience-form select {
   cursor: pointer;
 }
 
+/* Textarea specific height */
 .create-experience-form textarea {
   height: 70px;
 }
 
+/* Submit button styles for create experience form */
 .create-experience-form button {
   background-color: #4fa13f;
   border: none;
@@ -600,17 +487,20 @@ body {
   background-color: #3b7d2a;
 }
 
+/* Separator line for created experiences section */
 .created-experiences {
   border-top: 1px solid #ccc;
   padding-top: 1rem;
 }
 
-/*COMMENTARY*/
+/* Grid container for displaying experience cards */
 .cards-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
+
+/* Individual card styles */
 .card {
   margin-top: 20px;
   background-color: #fff;
@@ -628,7 +518,6 @@ body {
   margin-bottom: 10px;
 }
 
-/*COMMENTARY*/
 .card label {
   font-size: 0.75rem;
   color: #4fa13f;
@@ -637,7 +526,7 @@ body {
   display: block;
 }
 
-/*COMMENTARY*/
+/* Inputs and textareas inside cards */
 .card input,
 .card textarea {
   width: 100%;
@@ -654,7 +543,7 @@ body {
   height: 60px;
 }
 
-/*COMMENTARY*/
+/* Actions container inside cards (buttons edit/delete) */
 .actions {
   margin-top: 1rem;
   display: flex;
@@ -662,6 +551,7 @@ body {
   justify-content: space-between;
 }
 
+/* Edit button styles */
 .btn-edit {
   flex: 1;
   background-color: #4fa13f;
@@ -673,10 +563,12 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+
 .btn-edit:hover {
   background-color: #3b7d2a;
 }
 
+/* Delete button styles */
 .btn-delete {
   flex: 1;
   background-color: #d32f2f;
@@ -688,11 +580,16 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+
 .btn-delete:hover {
   background-color: #a52828;
 }
 
-.container-profile{
+/*------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*COMMENTARY ----------------------------------------------------- MAIN - PROFILE --------------------------------------------------------------*/
+
+/* Profile container: Centers profile picture and content inside a styled box */
+.container-profile {
   background-color: #ccc9c95d;
   height: 450px;
   display: flex;
@@ -703,7 +600,8 @@ body {
   border-radius: 5px;
 }
 
-.container-profile img{
+/* Profile image: Large circular profile photo with border */
+.container-profile img {
   width: 250px;
   height: 250px;
   border-radius: 50%;
@@ -712,9 +610,121 @@ body {
 }
 
 
-/*COMMENTARY*/
-#verificate{
+/* Verification button: Small square button for verification action */
+#verificate {
   width: 35px;
   height: 35px;
   border: none;
 }
+
+/* Profile form container: Styled form area with spacing and borders */
+.form-profile {
+  padding: 3rem 5rem;
+  border-radius: 8px;
+  width: 100%;
+  border: solid 1px #6565659d;
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+}
+
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*COMMENTARY ------------------------------------------------------ EXIT SECTION  ---------------------------------------------------------------*/
+
+/* Exit section container: Horizontal section that aligns exit options to the right */
+.exit-section {
+  background-color: #ccc9c94b;
+  height: 10em;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  margin-top: 20px;
+}
+
+/* Exit content: Aligns profile and logout buttons with spacing */
+.exit {
+  margin-top: 3em;
+  margin-right: 8em;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Profile button: Green styled button for profile navigation */
+.exit .btnprofile {
+  padding: 20px 45px;
+  background-color: #4fa13f;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  color: #ffffff;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+}
+
+/* Logout button: Gray styled button for logging out */
+.exit .btnlogout {
+  padding: 20px 45px;
+  background-color: #9292929c;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  color: #000000;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+}
+
+/* Hover effect for profile button: Darker green */
+.exit .btnprofile:hover {
+  background-color: #326728;
+}
+
+/* Hover effect for logout button: Darker gray */
+.exit .btnlogout:hover {
+  background-color: #656565;
+} 
+/*COMMENTARY---------------------------------------------------- FOOTER --------------------------------------------------------------*/
+
+/* Footer container: Organizes footer content with spacing between elements */
+.container-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.logo-footer img {
+  margin-left: 20px;
+  width: 100px;
+  height: auto;
+}
+
+/* Social footer container: Displays social media icons in a row with spacing */
+.social-footer {
+  display: flex;
+  gap: 15px;
+}
+
+.social-footer a img {
+  max-width: 25px;
+}
+
+/*COMMENTARY*/
+
+.info-footer a {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5em;
+  margin-right: 3em;
+  font-size: 1rem;
+  text-decoration: none;
+  color: #000000;
+}
+
+/* Footer copy: Text at the bottom of the footer */
+.footer-copy {
+  text-align: center;
+  padding: 10px;
+}
+
+/*-----------------------------------------------------------END--------------------------------------------------------------------------*/
