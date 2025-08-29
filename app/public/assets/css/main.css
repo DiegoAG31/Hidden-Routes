@@ -38,7 +38,6 @@ body {
   font-size: 25px;
 }
 
-
 /*COMMENTARY*/
 .nav-link {
   display: flex;
@@ -54,11 +53,9 @@ body {
   color: #000000;
 }
 
-
 .nav-link button a {
   color: #ffffff;
 }
-
 
 /*COMMENTARY*/
 #btnlogin {
@@ -184,7 +181,7 @@ body {
   background-color: #ffffff;
   overflow: hidden;
   padding: 10px;
-  border-radius: 10PX;
+  border-radius: 10px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -451,7 +448,6 @@ body {
   margin-bottom: 1rem;
 }
 
-
 /*COMMENTARY*/
 .review-avatar {
   width: 50px;
@@ -469,12 +465,10 @@ body {
   margin: 0;
 }
 
-
 .review-location {
   font-size: 0.9rem;
   color: #666;
 }
-
 
 /*COMMENTARY*/
 .review-body {
@@ -484,11 +478,10 @@ body {
   margin-bottom: 1rem;
 }
 
-
 /*COMMENTARY*/
 .reservation,
 .container-manager,
-.created-experiences {
+.created-experiences, .form-profile {
   padding: 3rem 5rem;
   border-radius: 8px;
   width: 100%;
@@ -502,6 +495,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
+  margin-bottom: 20px;
+  padding: 10px;
 }
 
 .reservation-form label {
@@ -542,6 +537,7 @@ body {
   font-weight: bold;
   cursor: pointer;
   transition: background 0.2s, transform 0.1s;
+  margin-top: 10px;
 }
 
 .btn-submit:hover {
@@ -549,9 +545,8 @@ body {
   transform: scale(1.02);
 }
 
-
 /*COMMENTARY*/
-.create-experience-form {
+.create-experience-form{
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
@@ -559,15 +554,14 @@ body {
   margin-top: 20px;
 }
 
-
-.created-experiences h2 {
+.created-experiences h2, .form-profile h2 {
   color: #4fa13f;
   margin-bottom: 10px;
   font-size: 25px;
   margin-top: 30px;
 }
 
-.create-experience-form label {
+.create-experience-form label, .form-profile label {
   font-size: 0.85rem;
   color: #4fa13f;
   font-weight: 600;
@@ -576,7 +570,7 @@ body {
 /*COMMENTARY*/
 .create-experience-form input,
 .create-experience-form select,
-.create-experience-form textarea {
+.create-experience-form textarea, .form-profile input{
   padding: 8px 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -609,7 +603,6 @@ body {
   background-color: #3b7d2a;
 }
 
-
 .created-experiences {
   border-top: 1px solid #ccc;
   padding-top: 1rem;
@@ -621,7 +614,6 @@ body {
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
-
 .card {
   margin-top: 20px;
   background-color: #fff;
@@ -684,7 +676,6 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-
 .btn-edit:hover {
   background-color: #3b7d2a;
 }
@@ -700,89 +691,25 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-
 .btn-delete:hover {
   background-color: #a52828;
 }
 
-/*COMMENTARY*/
-
-.container-login {
-  width: 100%;
+.container-profile{
+  background-color: #ccc9c95d;
+  height: 450px;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 10px;
-  margin-bottom: 60px;
-
+  margin-top: 20px;
+  border-radius: 5px;
 }
 
-.login, .register {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.login img {
-  max-width: 400px;
-}
-
-/* Formulario */
-.form-login, .form-register {
-  width: 400px;
-  border: 1px solid #6565658c;
-  border-radius: 8px;
-  padding: 20px 30px;
-}
-
-.form-login form, .form-register form {
-  display: flex;
-  flex-direction: column;
-}
-
-.form-login label, .form-register label {
-  font-weight: 600;
-  margin-bottom: 5px;
-  color: #333;
-}
-
-.form-login input, .form-register input {
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 16px;
-  transition: border 0.3s ease;
-}
-
-
-
-/* Botón de inicio de sesión */
-.sign-in-button {
-  padding: 12px;
-  background-color: #3b7d2a;
-  color: white;
-  font-weight: bold;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.sign-in-button:hover {
-  background-color: #0056b3;
-}
-
-/* Enlace de "Forgot password" */
-.forgot-password-link {
-  margin-top: 15px;
-  text-align: center;
-  display: block;
-  color: #007bff;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.forgot-password-link:hover {
-  text-decoration: underline;
+.container-profile img{
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ddd;
 }
