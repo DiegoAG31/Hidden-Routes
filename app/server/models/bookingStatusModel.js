@@ -1,5 +1,5 @@
-const { DataTypes } = require('sequelize');
-const sequelize = require('../database.js');
+import { DataTypes } from 'sequelize';
+import sequelize from '../database.js';
 
 const BookingStatus = sequelize.define('BookingStatus', {
     Booking_status_id: {
@@ -12,10 +12,11 @@ const BookingStatus = sequelize.define('BookingStatus', {
         allowNull: false,
     },
 }, {
-    tableName: 'Booking_status',
+    tableName: 'booking_status',
     timestamps: true,
     createdAt: 'Created_at',
     updatedAt: 'Updated_at',
 });
 
-module.exports = BookingStatus;
+export default BookingStatus;
+

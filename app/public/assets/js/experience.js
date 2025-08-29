@@ -1,0 +1,82 @@
+// experience.js - Renderizar experiencias dinámicamente desde la base de datos
+
+
+const API_URL = 'http://localhost:3000/api/experiences';
+let allExperiences = [];
+
+function renderExperiences(experiences) {
+  const container = document.getElementById('experiencesContainer');
+  if (!container) return;
+  container.innerHTML = '';
+  experiences.forEach(exp => {
+    const imgSrc = exp.experience_img ? exp.experience_img : '../assets/img/playacristal.webp';
+    container.innerHTML += `
+      <div class="grid-exp-card">
+        <img src="${imgSrc}" alt="experience-img" />
+        <h2>${exp.Experience_title || exp.name}</h2>
+        <p>
+          ${exp.Experience_description || exp.description}<br><br>
+          <strong>Places:</strong> ${exp.Capacity || exp.capacity}<br><br>
+          <strong>Price per person:</strong> $${exp.Price || exp.price}<br><br>
+        </p>
+        <a href="./booking.html"><button type="button" id="btn-exp-card">Reserve</button></a>
+      </div>
+    `;
+  });
+}
+
+function updateSliderLabels() {
+  const placesRange = document.getElementById('quotasrange');
+  const priceRange = document.getElementById('pricerange');
+  const valuePlaces = document.getElementById('valuequota');
+  const valuePrice = document.getElementById('valueprice');
+  if (placesRange && valuePlaces) valuePlaces.textContent = `${placesRange.value}`;
+  if (priceRange && valuePrice) valuePrice.textContent = `$${priceRange.value}`;
+}
+
+function applyFilters() {
+  const placesRange = document.getElementById('quotasrange');
+  const priceRange = document.getElementById('pricerange');
+  let filtered = allExperiences;
+  if (placesRange) {
+    const placesValue = parseInt(placesRange.value, 10);
+    filtered = filtered.filter(exp => {
+      const cap = parseInt(exp.Capacity || exp.capacity || 0, 10);
+      return cap >= placesValue;
+    });
+  }
+  if (priceRange) {
+    const priceValue = parseFloat(priceRange.value);
+    filtered = filtered.filter(exp => {
+      const price = parseFloat(exp.Price || exp.price || 0);
+      return price <= priceValue;
+    });
+  }
+  renderExperiences(filtered);
+}
+
+async function fetchExperiences() {
+  try {
+    const res = await fetch(API_URL);
+    const data = await res.json();
+    allExperiences = data;
+    renderExperiences(data);
+    updateSliderLabels();
+  } catch (err) {
+    const container = document.getElementById('experiencesContainer');
+    if (container) container.innerHTML = '<p>No experiences found.</p>';
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  fetchExperiences();
+  const placesRange = document.getElementById('quotasrange');
+  const priceRange = document.getElementById('pricerange');
+  if (placesRange) placesRange.addEventListener('input', updateSliderLabels);
+  if (priceRange) priceRange.addEventListener('input', updateSliderLabels);
+  const filterBtn = document.querySelector('.btn-filter button');
+  if (filterBtn) filterBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    applyFilters();
+  });
+});

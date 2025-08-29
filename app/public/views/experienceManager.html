@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <!--COMMENTARY-->
+  <header class="navbar container">
+    <div class="logo">
+      <h1>Hidden Routes</h1>
+    </div>
+    <nav>
+      <ul class="nav-link">
+        <li><a href="../dashboard.html">Home</a></li>
+        <li><a href="./experience.html">Experiences</a></li>
+        <li>
+          <button type="button" id="btnlogin">
+            <a href="./login.html">Login</a>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main class="container">
+    <!--COMMENTARY-->
+    <section class="container-manager">
+      <h2>Creating experiences</h2>
+      <small>Add a new experience</small>
+      <form class="create-experience-form" id="createExperienceForm" enctype="multipart/form-data">
+        <label for="name">Name of the experience</label>
+        <input type="text" id="name" name="name" placeholder="Name" required />
+
+        <label for="capacity">Places</label>
+        <input type="number" id="capacity" name="capacity" placeholder="Places" min="1" max="100" required />
+
+        <label for="price">Price per person</label>
+        <input type="number" id="price" name="price" placeholder="Price" min="0" max="1000000" required />
+
+        <label for="description">Description of the experience</label>
+        <textarea id="description" name="description" placeholder="Description" required></textarea>
+
+        <label for="experience_img">Image (only .webp format accepted)</label>
+        <input type="file" id="experience_img" name="experience_img" accept="image/webp" required />
+
+        <button type="submit">Create</button>
+      </form>
+    </section>
+    <!--COMMENTARY-->
+    <section class="created-experiences">
+      <h2>Experiences created</h2>
+      <small>Manage your experiences</small>
+
+      <div class="cards-container" id="experienceList">
+        <!-- Experiences are rendered here-->
+      </div>
+    </section>
+  </div>
+  </main>
+   <footer class="container">
+      <section class="container-footer">
+        <div class="sf-footer">
+          <div class="logo-footer">
+            <img src="../assets/img/logo.webp" alt="logo footer" />
+          </div>
+          <div class="social-footer">
+            <a href="#"><img src="../assets/img/github.png" alt="github" /></a>
+            <a href="#"
+              ><img src="../assets/img/facebook.png" alt="facebook"
+            /></a>
+            <a href="#"
+              ><img src="../assets/img/youtube.png" alt="youtube"
+            /></a>
+            <a href="#"
+              ><img src="../assets/img/instagram.png" alt="instagram"
+            /></a>
+          </div>
+        </div>
+        <div class="info-footer">
+          <a href="#">About us</a>
+          <a href="#">Contact</a>
+          <a href="#">Privacy</a>
+          <a href="#">TyC</a>
+        </div>
+      </section>
+      <p class="footer-copy">
+        © 2025 Colombia Hidden Routes - All rights reserved.
+      </p>
+    </footer>
+  <script src="../assets/js/experienceManager.js"></script>
+</body>
+
+</html>
