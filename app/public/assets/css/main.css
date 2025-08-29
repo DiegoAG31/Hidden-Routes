@@ -30,7 +30,9 @@ body {
 
 /*COMMENTARY*/
 .logo h1,
-.r-h2, .reservation h2, .container-manager h2{
+.r-h2,
+.reservation h2,
+.container-manager h2 {
   color: #4fa13f;
   margin-bottom: 10px;
   font-size: 25px;
@@ -53,7 +55,7 @@ body {
 }
 
 
-.nav-link button a{
+.nav-link button a {
   color: #ffffff;
 }
 
@@ -141,17 +143,13 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 45px;
   margin-top: 40px;
-  align-items: stretch;
 }
+
 /*COMMENTARY*/
 .grid-exp-card {
   background-color: #ffffff;
   overflow: hidden;
   padding: 20px;
-  display: flex;
-  flex-direction: column;
-  min-height: 540px;
-  height: 100%;
 }
 
 .grid-exp-card img {
@@ -165,13 +163,6 @@ body {
 .grid-exp-card h2 {
   margin: 15px 10px 5px;
   color: black;
-}
-
-.grid-exp-card p {
-  margin: 10px;
-  color: grey;
-  font-size: 0.9rem;
-  flex: 1 1 auto;
 }
 
 .grid-exp-card p {
@@ -227,6 +218,7 @@ body {
   color: #ffffff;
   text-decoration: none;
   padding: 8px 10px;
+  border-radius: 8px;
 }
 
 /*COMMENTARY*/
@@ -325,11 +317,7 @@ body {
   background-color: #ffffff;
 }
 
-<<<<<<< HEAD
 #exp-h1 {
-=======
-#exp-h1  {
->>>>>>> 49119d63e31d0745b81e4d4241bb22c26748264a
   color: #4fa13f;
   margin-top: 2.5rem;
   margin-left: 40px;
@@ -340,25 +328,13 @@ body {
 .filter {
   display: flex;
   flex-direction: row;
-<<<<<<< HEAD
   justify-content: space-between;
   margin-top: 20px;
-=======
-  justify-content: center;
-  align-items: flex-end;
-  gap: 2.5rem;
-  margin-top: 20px;
-  flex-wrap: wrap;
->>>>>>> 49119d63e31d0745b81e4d4241bb22c26748264a
 }
 
 /*COMMENTARY*/
 .select-city {
-<<<<<<< HEAD
   margin: 10px;
-=======
-  margin: 10px 0;
->>>>>>> 49119d63e31d0745b81e4d4241bb22c26748264a
 }
 
 .select-city select {
@@ -399,7 +375,6 @@ body {
 
 /*COMMENTARY*/
 
-<<<<<<< HEAD
 .btn-filter button {
   background-color: #4fa13f;
   border: 1.5px solid black;
@@ -410,27 +385,6 @@ body {
   color: white;
   cursor: pointer;
   font-size: 18px;
-=======
-.btn-filter {
-  display: flex;
-  align-items: center;
-  height: 32px;
-  margin-bottom: 0;
-}
-
-.btn-filter button {
-  background-color: #4fa13f;
-  border: 1.5px solid black;
-  margin: 0 10px 0 0;
-  padding: 4px 12px;
-  border-radius: 5px;
-  color: white;
-  cursor: pointer;
-  font-size: 15px;
-  height: 32px;
-  display: flex;
-  align-items: center;
->>>>>>> 49119d63e31d0745b81e4d4241bb22c26748264a
 }
 
 .btn-filter button:hover {
@@ -440,32 +394,16 @@ body {
 /*COMMENTARY*/
 
 #btn-exp-card {
-<<<<<<< HEAD
   display: inline-block;
   margin: 10px;
   background-color: #4fa13f;
   color: #ffffff;
   padding: 8px 10px;
   font-size: 1.5rem;
-=======
-  margin-top: auto;
-  align-self: center;
-  background-color: #4fa13f;
-  color: #ffffff;
-  padding: 6px 18px;
-  font-size: 1rem;
->>>>>>> 49119d63e31d0745b81e4d4241bb22c26748264a
   border-radius: 8px;
   cursor: pointer;
   transition: background 0.3s, transform 0.3s;
   border: none;
-<<<<<<< HEAD
-=======
-  min-width: 110px;
-  max-width: 150px;
-  display: block;
-  margin-bottom: 0;
->>>>>>> 49119d63e31d0745b81e4d4241bb22c26748264a
 }
 
 #btn-exp-card:hover {
@@ -487,11 +425,7 @@ body {
   margin-top: 10px;
 }
 
-<<<<<<< HEAD
 .tittle-review {
-=======
-.tittle-review{
->>>>>>> 49119d63e31d0745b81e4d4241bb22c26748264a
   margin-bottom: 40px;
   font-size: 0.9rem;
 }
@@ -510,11 +444,7 @@ body {
 }
 
 /*COMMENTARY*/
-<<<<<<< HEAD
 .review-header {
-=======
-.review-header{
->>>>>>> 49119d63e31d0745b81e4d4241bb22c26748264a
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -526,12 +456,8 @@ body {
 .review-avatar {
   width: 50px;
   height: 50px;
-<<<<<<< HEAD
   border-radius: 50%;
   /* avatar circular */
-=======
-  border-radius: 50%; /* avatar circular */
->>>>>>> 49119d63e31d0745b81e4d4241bb22c26748264a
   object-fit: cover;
   border: 2px solid #ddd;
 }
@@ -560,13 +486,9 @@ body {
 
 
 /*COMMENTARY*/
-<<<<<<< HEAD
 .reservation,
 .container-manager,
 .created-experiences {
-=======
-.reservation, .container-manager, .created-experiences{
->>>>>>> 49119d63e31d0745b81e4d4241bb22c26748264a
   padding: 3rem 5rem;
   border-radius: 8px;
   width: 100%;
@@ -574,29 +496,19 @@ body {
   margin-top: 3rem;
   margin-bottom: 5rem;
 }
-<<<<<<< HEAD
 
 /*COMMENTARY*/
 .reservation-form {
-=======
-/*COMMENTARY*/
-.reservation-form{
->>>>>>> 49119d63e31d0745b81e4d4241bb22c26748264a
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
 }
 
-<<<<<<< HEAD
 .reservation-form label {
-=======
-.reservation-form label{
->>>>>>> 49119d63e31d0745b81e4d4241bb22c26748264a
   margin-top: 20px;
   color: #656565;
 }
 
-<<<<<<< HEAD
 .reservation-form select,
 .reservation-form input {
   padding: 0.75rem;
@@ -605,15 +517,6 @@ body {
   font-size: 1rem;
   outline: none;
   transition: border 0.2s, box-shadow 0.2s;
-=======
-.reservation-form select, .reservation-form input{
-padding: 0.75rem;
-border-radius: 10px;
-border: solid 1px #656565;
-font-size: 1rem;
-outline: none;
-transition: border 0.2s, box-shadow 0.2s;
->>>>>>> 49119d63e31d0745b81e4d4241bb22c26748264a
 }
 
 .reservation-form select:focus,
@@ -623,23 +526,14 @@ transition: border 0.2s, box-shadow 0.2s;
 }
 
 /*COMMENTARY*/
-<<<<<<< HEAD
 .terms a {
-=======
-.terms a{
->>>>>>> 49119d63e31d0745b81e4d4241bb22c26748264a
   text-decoration: none;
   color: #326728;
 }
 
 /*COMMENTARY*/
-<<<<<<< HEAD
 .btn-submit {
   padding: 1rem;
-=======
-.btn-submit{
-    padding: 1rem;
->>>>>>> 49119d63e31d0745b81e4d4241bb22c26748264a
   background-color: #4fa13f;
   color: white;
   border: solid 1px black;
@@ -666,11 +560,7 @@ transition: border 0.2s, box-shadow 0.2s;
 }
 
 
-<<<<<<< HEAD
 .created-experiences h2 {
-=======
-.created-experiences h2{
->>>>>>> 49119d63e31d0745b81e4d4241bb22c26748264a
   color: #4fa13f;
   margin-bottom: 10px;
   font-size: 25px;
@@ -685,11 +575,7 @@ transition: border 0.2s, box-shadow 0.2s;
 
 /*COMMENTARY*/
 .create-experience-form input,
-<<<<<<< HEAD
 .create-experience-form select,
-=======
- .create-experience-form select,
->>>>>>> 49119d63e31d0745b81e4d4241bb22c26748264a
 .create-experience-form textarea {
   padding: 8px 10px;
   border: 1px solid #ccc;
@@ -724,7 +610,6 @@ transition: border 0.2s, box-shadow 0.2s;
 }
 
 
-<<<<<<< HEAD
 .created-experiences {
   border-top: 1px solid #ccc;
   padding-top: 1rem;
@@ -737,26 +622,12 @@ transition: border 0.2s, box-shadow 0.2s;
   gap: 1rem;
 }
 
-=======
-    .created-experiences {
-      border-top: 1px solid #ccc;
-      padding-top: 1rem;
-    }
-
- /*COMMENTARY*/
-  .cards-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); 
-  gap: 1rem; 
-}
->>>>>>> 49119d63e31d0745b81e4d4241bb22c26748264a
 .card {
   margin-top: 20px;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 20px;
-<<<<<<< HEAD
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.07);
   color: #333;
 }
@@ -915,480 +786,3 @@ transition: border 0.2s, box-shadow 0.2s;
 .forgot-password-link:hover {
   text-decoration: underline;
 }
-=======
-  box-shadow: 0 2px 6px rgba(0,0,0,0.07);
-  color: #333;
-}
-
-    .card h3 {
-      margin-top: 0;
-      color: #4fa13f;
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
-
-   /*COMMENTARY*/
-    .card label {
-      font-size: 0.75rem;
-      color: #4fa13f;
-      font-weight: 600;
-      margin-top: 0.6rem;
-      display: block;
-    }
-
-   /*COMMENTARY*/
-    .card input,
-    .card textarea {
-      width: 100%;
-      font-family: inherit;
-      font-size: 0.9rem;
-      padding: 6px 8px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      resize: vertical;
-      margin-top: 3px;
-    }
-
-    .card textarea {
-      height: 60px;
-    }
-
-    /*COMMENTARY*/
-    .actions {
-      margin-top: 1rem;
-      display: flex;
-      gap: 0.5rem;
-      justify-content: space-between;
-    }
-
-    .btn-edit {
-      flex: 1;
-      background-color: #4fa13f;
-      border: none;
-      color: white;
-      padding: 8px 0;
-      border-radius: 5px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    .btn-edit:hover {
-      background-color: #3b7d2a;
-    }
-
-    .btn-delete {
-      flex: 1;
-      background-color: #d32f2f;
-      border: none;
-      color: white;
-      padding: 8px 0;
-      border-radius: 5px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    .btn-delete:hover {
-      background-color: #a52828;
-    }
->>>>>>> 49119d63e31d0745b81e4d4241bb22c26748264a
-
-/*COMMENTARY*/
-.container-experiences {
-  background-color: #ffffff;
-}
-
-#exp-h1  {
-  color: #4fa13f;
-  margin-top: 2.5rem;
-  margin-left: 40px;
-  font-size: 20px;
-}
-
-/*COMMENTARY*/
-.filter {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-end;
-  gap: 2.5rem;
-  margin-top: 20px;
-  flex-wrap: wrap;
-}
-
-/*COMMENTARY*/
-.select-city {
-  margin: 10px 0;
-}
-
-.select-city select {
-  font-size: 18px;
-  width: 250px;
-  border-radius: 8px;
-  padding: 8px 12px;
-}
-
-/*COMMENTARY*/
-
-.range-container {
-  margin: 10px;
-}
-
-.slider {
-  width: 250px;
-  margin-top: 5px;
-}
-
-.label-l {
-  float: left;
-  font-size: 14px;
-  color: #4fa13f;
-}
-
-.label-r {
-  float: right;
-  font-size: 14px;
-  color: #4fa13f;
-}
-
-.value-filter {
-  font-size: 14px;
-  color: #929292;
-  clear: both;
-}
-
-/*COMMENTARY*/
-
-.btn-filter {
-  display: flex;
-  align-items: center;
-  height: 32px;
-  margin-bottom: 0;
-}
-
-.btn-filter button {
-  background-color: #4fa13f;
-  border: 1.5px solid black;
-  margin: 0 10px 0 0;
-  padding: 4px 12px;
-  border-radius: 5px;
-  color: white;
-  cursor: pointer;
-  font-size: 15px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-}
-
-.btn-filter button:hover {
-  background-color: #929292;
-}
-
-/*COMMENTARY*/
-
-#btn-exp-card {
-  margin-top: auto;
-  align-self: center;
-  background-color: #4fa13f;
-  color: #ffffff;
-  padding: 6px 18px;
-  font-size: 1rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s, transform 0.3s;
-  border: none;
-  min-width: 110px;
-  max-width: 150px;
-  display: block;
-  margin-bottom: 0;
-}
-
-#btn-exp-card:hover {
-  background-color: #929292;
-}
-
-/*COMMENTARY*/
-.reviews {
-  padding: 3rem 1rem;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  margin-top: 3rem;
-}
-
-.reviews-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-top: 10px;
-}
-
-.tittle-review{
-  margin-bottom: 40px;
-  font-size: 0.9rem;
-}
-
-.review-card {
-  background-color: #ffffff;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.review-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-}
-
-/*COMMENTARY*/
-.review-header{
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-
-/*COMMENTARY*/
-.review-avatar {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%; /* avatar circular */
-  object-fit: cover;
-  border: 2px solid #ddd;
-}
-
-/*COMMENTARY*/
-.review-user {
-  font-size: 1.1rem;
-  font-weight: bold;
-  margin: 0;
-}
-
-
-.review-location {
-  font-size: 0.9rem;
-  color: #666;
-}
-
-
-/*COMMENTARY*/
-.review-body {
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: #333;
-  margin-bottom: 1rem;
-}
-
-
-/*COMMENTARY*/
-.reservation, .container-manager, .created-experiences{
-  padding: 3rem 5rem;
-  border-radius: 8px;
-  width: 100%;
-  border: solid 1px #6565659d;
-  margin-top: 3rem;
-  margin-bottom: 5rem;
-}
-/*COMMENTARY*/
-.reservation-form{
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-}
-
-.reservation-form label{
-  margin-top: 20px;
-  color: #656565;
-}
-
-.reservation-form select, .reservation-form input{
-padding: 0.75rem;
-border-radius: 10px;
-border: solid 1px #656565;
-font-size: 1rem;
-outline: none;
-transition: border 0.2s, box-shadow 0.2s;
-}
-
-.reservation-form select:focus,
-.reservation-form input:focus {
-  border: 1px solid #326728;
-  box-shadow: 0 0 5px #4fa13f;
-}
-
-/*COMMENTARY*/
-.terms a{
-  text-decoration: none;
-  color: #326728;
-}
-
-/*COMMENTARY*/
-.btn-submit{
-    padding: 1rem;
-  background-color: #4fa13f;
-  color: white;
-  border: solid 1px black;
-  border-radius: 10px;
-  font-size: 1.1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.2s, transform 0.1s;
-}
-
-.btn-submit:hover {
-  background: #929292;
-  transform: scale(1.02);
-}
-
-
-/*COMMENTARY*/
-.create-experience-form {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-  margin-bottom: 2rem;
-  margin-top: 20px;
-}
-
-
-.created-experiences h2{
-  color: #4fa13f;
-  margin-bottom: 10px;
-  font-size: 25px;
-  margin-top: 30px;
-}
-
-.create-experience-form label {
-  font-size: 0.85rem;
-  color: #4fa13f;
-  font-weight: 600;
-}
-
-/*COMMENTARY*/
-.create-experience-form input,
- .create-experience-form select,
-.create-experience-form textarea {
-  padding: 8px 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1rem;
-  resize: vertical;
-  font-family: inherit;
-}
-
-.create-experience-form select {
-  cursor: pointer;
-}
-
-.create-experience-form textarea {
-  height: 70px;
-}
-
-.create-experience-form button {
-  background-color: #4fa13f;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  font-weight: 600;
-  font-size: 1rem;
-  padding: 10px 0;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.create-experience-form button:hover {
-  background-color: #3b7d2a;
-}
-
-
-    .created-experiences {
-      border-top: 1px solid #ccc;
-      padding-top: 1rem;
-    }
-
- /*COMMENTARY*/
-  .cards-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); 
-  gap: 1rem; 
-}
-.card {
-  margin-top: 20px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.07);
-  color: #333;
-}
-
-    .card h3 {
-      margin-top: 0;
-      color: #4fa13f;
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
-
-   /*COMMENTARY*/
-    .card label {
-      font-size: 0.75rem;
-      color: #4fa13f;
-      font-weight: 600;
-      margin-top: 0.6rem;
-      display: block;
-    }
-
-   /*COMMENTARY*/
-    .card input,
-    .card textarea {
-      width: 100%;
-      font-family: inherit;
-      font-size: 0.9rem;
-      padding: 6px 8px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      resize: vertical;
-      margin-top: 3px;
-    }
-
-    .card textarea {
-      height: 60px;
-    }
-
-    /*COMMENTARY*/
-    .actions {
-      margin-top: 1rem;
-      display: flex;
-      gap: 0.5rem;
-      justify-content: space-between;
-    }
-
-    .btn-edit {
-      flex: 1;
-      background-color: #4fa13f;
-      border: none;
-      color: white;
-      padding: 8px 0;
-      border-radius: 5px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    .btn-edit:hover {
-      background-color: #3b7d2a;
-    }
-
-    .btn-delete {
-      flex: 1;
-      background-color: #d32f2f;
-      border: none;
-      color: white;
-      padding: 8px 0;
-      border-radius: 5px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    .btn-delete:hover {
-      background-color: #a52828;
-    }
