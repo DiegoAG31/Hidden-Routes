@@ -1,11 +1,14 @@
-require('dotenv').config();
+import dotenv from 'dotenv';
 
-module.exports = {
-    development: {
-        username: process.env.DB_USER,
+dotenv.config({quiet: true});
+
+export default {
+  development: {
+    username: process.env.DB_USER,
     password: process.env.DB_PASS,
     database: process.env.DB_NAME,
     host: process.env.DB_HOST,
-    dialect: 'mysql',
+    dialect: 'mysql'
   }
 };
+

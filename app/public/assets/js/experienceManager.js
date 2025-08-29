@@ -1,0 +1,117 @@
+// experienceManager.js
+// Lógica de gestión de experiencias para experienceManager.html
+
+const API_URL = 'http://localhost:3000/api/experiences';
+
+function renderExperiences(experiences) {
+  const container = document.getElementById('experienceList');
+  container.innerHTML = '';
+  experiences.forEach(exp => {
+    const imgSrc = exp.experience_img ? exp.experience_img : '../assets/img/playacristal.webp';
+    container.innerHTML += `
+      <div class="card" data-id="${exp.Experience_id || exp.id}">
+        <img src="${imgSrc}" alt="experience-img" style="width:100%;max-height:180px;object-fit:cover;border-radius:8px;margin-bottom:10px;" />
+        <h3>${exp.Experience_title || exp.name}</h3>
+        <label>Name</label>
+        <input type="text" value="${exp.Experience_title || exp.name}" class="input-name" />
+        <label>Places</label>
+        <input type="number" value="${exp.Capacity || exp.capacity}" class="input-capacity" />
+        <label>Price per person</label>
+        <input type="number" value="${exp.Price || exp.price}" class="input-price" />
+        <label>Description</label>
+        <textarea class="input-description">${exp.Experience_description || exp.description}</textarea>
+        <div class="actions">
+          <button class="btn-edit">Edit</button>
+          <button class="btn-delete">Delete</button>
+        </div>
+      </div>
+    `;
+  });
+}
+
+async function fetchExperiences() {
+  try {
+    const res = await fetch(API_URL);
+    const data = await res.json();
+    renderExperiences(data);
+  } catch (err) {
+    alert('Error al cargar experiencias');
+  }
+}
+
+document.getElementById('createExperienceForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const Experience_title = document.getElementById('name').value;
+  const Capacity = document.getElementById('capacity').value;
+  const Price = document.getElementById('price').value;
+  const Experience_description = document.getElementById('description').value;
+  const experience_img = document.getElementById('experience_img').files[0];
+  const formData = new FormData();
+  formData.append('Experience_title', Experience_title);
+  formData.append('Capacity', Capacity);
+  formData.append('Price', Price);
+  formData.append('Experience_description', Experience_description);
+  if (experience_img) {
+    formData.append('experience_img', experience_img);
+  }
+  try {
+    const res = await fetch(API_URL, {
+      method: 'POST',
+      body: formData
+    });
+    if (!res.ok) throw new Error('Error al crear experiencia');
+    await fetchExperiences();
+    this.reset();
+  } catch (err) {
+    alert('No se pudo crear la experiencia');
+  }
+});
+
+document.getElementById('experienceList').addEventListener('click', async function(e) {
+  const card = e.target.closest('.card');
+  if (!card) return;
+  const id = card.getAttribute('data-id');
+  if (e.target.classList.contains('btn-edit')) {
+    const Experience_title = card.querySelector('.input-name').value;
+    const Price = card.querySelector('.input-price').value;
+    const Capacity = card.querySelector('.input-capacity').value;
+    const Experience_description = card.querySelector('.input-description').value;
+    try {
+      const res = await fetch(`${API_URL}/${id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          // 'Authorization': 'Bearer TU_TOKEN' // Si usas autenticación
+        },
+        body: JSON.stringify({
+          Experience_title,
+          Price,
+          Capacity,
+          Experience_description
+        })
+      });
+      if (!res.ok) throw new Error('Error al editar experiencia');
+      await fetchExperiences();
+    } catch (err) {
+      alert('No se pudo editar la experiencia');
+    }
+  }
+  if (e.target.classList.contains('btn-delete')) {
+    if (!confirm('¿Seguro que deseas eliminar esta experiencia?')) return;
+    try {
+      const res = await fetch(`${API_URL}/${id}`, {
+        method: 'DELETE',
+        headers: {
+          // 'Authorization': 'Bearer TU_TOKEN' // Si usas autenticación
+        }
+      });
+      if (!res.ok) throw new Error('Error al eliminar experiencia');
+      await fetchExperiences();
+    } catch (err) {
+      alert('No se pudo eliminar la experiencia');
+    }
+  }
+});
+
+// Inicializar
+fetchExperiences();

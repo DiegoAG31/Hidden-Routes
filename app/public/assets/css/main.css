@@ -30,6 +30,7 @@ body {
 
 /*COMMENTARY*/
 .logo h1,
+
 .r-h2,
 .reservation h2,
 .container-manager h2 {
@@ -153,6 +154,7 @@ body {
 }
 
 .grid-exp-card img {
+
   width: 100%;
   height: 380px;
   object-fit: cover;
@@ -374,7 +376,6 @@ body {
 }
 
 /*COMMENTARY*/
-
 .btn-filter button {
   background-color: #4fa13f;
   border: 1.5px solid black;
@@ -503,6 +504,7 @@ body {
   flex-direction: column;
   gap: 1.2rem;
 }
+
 
 .reservation-form label {
   margin-top: 20px;

@@ -3,22 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./app/public/assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/main.css" />
     <title>Document</title>
   </head>
   <body>
     <!--navigation bar-->
-    <header class="navbar">
+    <header class="navbar container">
       <div class="logo"><h1>Hidden Routes</h1></div>
       <nav>
         <ul class="nav-link">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Experiences</a></li>
-          <li><button type="button" id="btnlogin">Login</button></li>
+          <li><a href="./dashboard.html">Home</a></li>
+          <li><a href="./views/experience.html">Experiences</a></li>
+          <button type="button" id="btnlogin">
+            <a href="./views/login.html">Login</a>
+          </button>
         </ul>
       </nav>
     </header>
-    <main>
+    <main class="container">
       <!--main introduction view-->
       <section class="main-view">
         <div class="container-main">
@@ -35,31 +37,42 @@
         <h1>Destinations</h1>
         <div class="container-prin">
           <div class="grid-prin">
-            <img src="./app/public/assets/img/barranquilla.webp" alt="example1" />
+          <a href="./views/experience.html"><img
+                src="./assets/img/barranquilla.webp"
+                alt="example1"
+            />
             <h2>Barranquilla</h2>
-            <p>
-              Known for its vibrant carnival and festive atmosphere,
-              Barranquilla is a city full of...
+           <p>
+            Barranquilla, home of Colombia's vibrant Carnival, offers colorful festivals, lively music, and warm Caribbean vibes. Experience rich traditions, delicious local cuisine, and friendly people ready to welcome you.</p>
+
             </p>
-            <a href="">View more</a>
+            </a>
           </div>
           <div class="grid-prin">
-            <img src="./app/public/assets/img/cartagena.webp" alt="example2" />
+            <a href="./views/experience.html">
+              <img
+                src="./assets/img/cartagena.webp"
+                alt="example2"
+              />
+            
             <h2>Cartagena</h2>
             <p>
-              A famous colonial city with a rich history and impressive
-              architecture...
-            </p>
-            <a href="">View more</a>
+              Cartagena enchants visitors with its historic walled city, stunning colonial architecture, beautiful beaches, and vibrant nightlife. A perfect blend of culture, history, and seaside relaxation.</p>
+
+            </a>
           </div>
           <div class="grid-prin">
-            <img src="./app/public/assets/img/santamarta.webp" alt="example3" />
-            <h2>Santa Marta</h2>
-            <p>
-              Discover pristine beaches, rich history, and nearby natural
-              wonders...
+            <a href="./views/experience.html">
+              <img
+                src="./assets/img/santamarta.webp"
+                alt="example3"
+              />
+            <h2>Santa Marta</h2><p>
+              Santa Marta is your gateway to breathtaking natural wonders like Tayrona National Park. Enjoy pristine beaches, lush jungles, and a rich cultural heritage in Colombia's oldest city.</p>
+
+
             </p>
-            <a href="">View more</a>
+            </a>
           </div>
         </div>
       </section>
@@ -72,20 +85,24 @@
       </section>
     </main>
     <!--footer-->
-    <footer>
+    <footer class="container">
       <section class="container-footer">
         <div class="sf-footer">
           <div class="logo-footer">
-            <img src="./app/public/assets/img/logo.webp" alt="logo footer" />
+            <img src="./assets/img/logo.webp" alt="logo footer" />
           </div>
           <div class="social-footer">
-            <a href="#"><img src="./app/public/assets/img/github.png" alt="github" /></a>
             <a href="#"
-              ><img src="./app/public/assets/img/facebook.png" alt="facebook"
+              ><img src="./assets/img/github.png" alt="github"
             /></a>
-            <a href="#"><img src="./app/public/assets/img/youtube.png" alt="youtube" /></a>
             <a href="#"
-              ><img src="./app/public/assets/img/instagram.png" alt="instagram"
+              ><img src="./assets/img/facebook.png" alt="facebook"
+            /></a>
+            <a href="#"
+              ><img src="./assets/img/youtube.png" alt="youtube"
+            /></a>
+            <a href="#"
+              ><img src="./assets/img/instagram.png" alt="instagram"
             /></a>
           </div>
         </div>

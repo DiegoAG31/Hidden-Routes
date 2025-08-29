@@ -1,10 +1,27 @@
-const express = require('express');
-const router = express.Router();
-const auth = require('../middleware/auth');
-const bookingController = require('../controllers/bookingController');
+import { Router } from 'express';
+import {
+	getBookings,
+	getBookingById,
+	createBooking,
+	updateBooking,
+	deleteBooking
+} from '../controllers/bookingController.js';
 
-router.get('/', auth, bookingController.getAllBookings);
+const router = Router();
 
-router.post('/', auth, bookingController.createBooking);
+// Obtener todas las reservas
+router.get('/', getBookings);
 
-module.exports = router;
+// Obtener una reserva por ID
+router.get('/:id', getBookingById);
+
+// Crear una nueva reserva
+router.post('/', createBooking);
+
+// Actualizar una reserva
+router.put('/:id', updateBooking);
+
+// Eliminar una reserva
+router.delete('/:id', deleteBooking);
+
+export default router;
