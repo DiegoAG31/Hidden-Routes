@@ -22,7 +22,7 @@ app.use(express.static(path.join(process.cwd(), 'app/public')));
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`Servidor backend escuchando en http://localhost:${PORT}`);
 });
 
 // Chequear conexión aparte
