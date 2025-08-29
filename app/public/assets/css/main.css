@@ -142,12 +142,17 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 45px;
   margin-top: 40px;
+  align-items: stretch;
 }
 /*COMMENTARY*/
 .grid-exp-card {
   background-color: #ffffff;
   overflow: hidden;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 540px;
+  height: 100%;
 }
 
 .grid-exp-card img {
@@ -161,6 +166,13 @@ body {
 .grid-exp-card h2 {
   margin: 15px 10px 5px;
   color: black;
+}
+
+.grid-exp-card p {
+  margin: 10px;
+  color: grey;
+  font-size: 0.9rem;
+  flex: 1 1 auto;
 }
 
 .grid-exp-card p {
@@ -216,7 +228,6 @@ body {
   color: #ffffff;
   text-decoration: none;
   padding: 8px 10px;
-  border-radius: 8px;
 }
 
 /*COMMENTARY*/
@@ -325,13 +336,16 @@ body {
 .filter {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 2.5rem;
   margin-top: 20px;
+  flex-wrap: wrap;
 }
 
 /*COMMENTARY*/
 .select-city {
-  margin: 10px;
+  margin: 10px 0;
 }
 
 .select-city select {
@@ -372,16 +386,25 @@ body {
 
 /*COMMENTARY*/
 
+.btn-filter {
+  display: flex;
+  align-items: center;
+  height: 32px;
+  margin-bottom: 0;
+}
+
 .btn-filter button {
   background-color: #4fa13f;
   border: 1.5px solid black;
-  margin-top: 20px;
-  margin-right: 20px;
-  padding: 8px 15px;
+  margin: 0 10px 0 0;
+  padding: 4px 12px;
   border-radius: 5px;
   color: white;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 15px;
+  height: 32px;
+  display: flex;
+  align-items: center;
 }
 
 .btn-filter button:hover {
@@ -391,16 +414,20 @@ body {
 /*COMMENTARY*/
 
 #btn-exp-card {
-  display: inline-block;
-  margin: 10px;
+  margin-top: auto;
+  align-self: center;
   background-color: #4fa13f;
   color: #ffffff;
-  padding: 8px 10px;
-  font-size: 1.5rem;
+  padding: 6px 18px;
+  font-size: 1rem;
   border-radius: 8px;
   cursor: pointer;
   transition: background 0.3s, transform 0.3s;
   border: none;
+  min-width: 110px;
+  max-width: 150px;
+  display: block;
+  margin-bottom: 0;
 }
 
 #btn-exp-card:hover {

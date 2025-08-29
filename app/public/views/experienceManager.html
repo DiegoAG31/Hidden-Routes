@@ -31,18 +31,21 @@
     <section class="container-manager">
       <h2>Creating experiences</h2>
       <small>Add a new experience</small>
-      <form class="create-experience-form" id="createExperienceForm">
+      <form class="create-experience-form" id="createExperienceForm" enctype="multipart/form-data">
         <label for="name">Name of the experience</label>
         <input type="text" id="name" name="name" placeholder="Name" required />
 
-        <label for="capacity">Cupos</label>
-        <input type="number" id="capacity" name="capacity" placeholder="Quotas" min="1" max="100" required />
+        <label for="capacity">Places</label>
+        <input type="number" id="capacity" name="capacity" placeholder="Places" min="1" max="100" required />
 
-        <label for="price">Price of the experience</label>
-        <input type="number" id="price" name="price" placeholder="Price" min="0" required />
+        <label for="price">Price per person</label>
+        <input type="number" id="price" name="price" placeholder="Price" min="0" max="1000000" required />
 
         <label for="description">Description of the experience</label>
         <textarea id="description" name="description" placeholder="Description" required></textarea>
+
+        <label for="experience_img">Image (only .webp format accepted)</label>
+        <input type="file" id="experience_img" name="experience_img" accept="image/webp" required />
 
         <button type="submit">Create</button>
       </form>

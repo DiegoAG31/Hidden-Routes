@@ -27,6 +27,10 @@ const Experience = sequelize.define('Experience', {
         type: DataTypes.INTEGER,
         allowNull: false,
     },
+    experience_img: {
+        type: DataTypes.STRING(255),
+        allowNull: true,
+    },
 }, {
     tableName: 'experiences',
     timestamps: true,

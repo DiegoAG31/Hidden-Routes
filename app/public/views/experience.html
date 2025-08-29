@@ -29,16 +29,8 @@
           <h1>Experiences</h1>
         </div>
         <div class="filter">
-          <div class="select-city">
-            <select name="selectcity" id="selectcity">
-              <option value="">Select a city</option>
-              <option value="barranquilla">Barranquilla</option>
-              <option value="cartagena">Cartagena</option>
-              <option value="santamarta">Santa Marta</option>
-            </select>
-          </div>
           <div class="range-container">
-            <span class="label-l">Quotas</span>
+            <span class="label-l">Places</span>
             <span class="label-r">0-100</span><br />
             <input
               type="range"
@@ -49,22 +41,22 @@
               class="slider"
             />
             <div class="value-filter">
-              <p>Description<span id="valuequota"></span></p>
+              <p><span id="valuequota"></span></p>
             </div>
           </div>
           <div class="range-container">
-            <span class="label-l">Prices</span>
-            <span class="label-r">$0-100</span><br />
+            <span class="label-l">Price per person</span>
+            <span class="label-r">$0-1.000.000</span><br />
             <input
               type="range"
               min="0"
-              max="100"
-              value=""
+              max="1000000"
+              value="1000000"
               id="pricerange"
               class="slider"
             />
             <div class="value-filter">
-              <p>Description<span id="valueprice"></span></p>
+              <p><span id="valueprice"></span></p>
             </div>
           </div>
           <div class="btn-filter">
@@ -74,116 +66,12 @@
       </section>
       <!--COMMENTARY-->
       <section class="experiences-cards">
-        <div class="container-prin-exp">
-          <div class="grid-exp-card">
-            <img src="../assets/img/playacristal.webp" alt="example1" />
-            <h2>Boat tour in crystal beach</h2>
-           <p>
-            Sail through the crystal-clear waters of Playa Cristal and explore the hidden gems of the Costa Caribe. This unforgettable boat tour offers stunning views, opportunities for snorkeling, and a chance to relax on pristine beaches.<br><br>
-            <strong>Capacity:</strong> Limited to 12 guests per tour to ensure a personalized experience.<br><br>
-            <strong>Price:</strong> $50 per person.<br><br>
-            Book your spot now and embark on a tropical adventure filled with natural beauty and relaxation.
-          </p>
-
-           <a href="./booking.html"><button type="button" id="btn-exp-card">Reserve</button></a>
-          </div>
-          <div class="grid-exp-card">
-            <img src="../assets/img/comidacostena.webp" alt="example1" />
-            <h2>Coastal Cooking Class</h2>
-            <p>
-              Learn to prepare authentic dishes from the Caribbean coast with hands-on guidance from local chefs. Discover the flavors and traditions behind each recipe in a fun and interactive environment.<br><br>
-              <strong>Capacity:</strong> Maximum 10 participants per class.<br><br>
-              <strong>Price:</strong> $40 per person, including ingredients.<br><br>
-              Reserve your spot and bring the taste of the Caribbean into your kitchen!</p>
-
-            <a href="./booking.html"><button type="button" id="btn-exp-card">Reserve</button></a>
-          </div>
-          <div class="grid-exp-card">
-            <img src="../assets/img/tayrona.webp" alt="example1" />
-            <h2>Hiking in Tayrona Park</h2>
-            <p>
-              Embark on an unforgettable hiking adventure through the breathtaking landscapes of Tayrona National Park. Explore lush jungles, pristine beaches, and ancient ruins while connecting with nature.<br><br>
-              <strong>Capacity:</strong> Groups of up to 15 hikers.<br><br>
-              <strong>Price:</strong> $60 per person, including guided tour.<br><br>
-              Book now and experience one of Colombia's most stunning natural treasures!</p>
-            <a href="./booking.html"><button type="button" id="btn-exp-card">Reserve</button></a>
-          </div>
+        <div class="container-prin-exp" id="experiencesContainer">
+          <!-- Las experiencias dinámicas se insertarán aquí con JavaScript -->
         </div>
       </section>
 
       <!--COMMENTARY-->
-      <section class="reviews">
-        <h2 class="r-h2">Reviews</h2>
-        <div class="reviews-grid">
-          <!--REVIEW 1-->
-          <div class="review-card">
-            <div class="tittle-review">
-              <h2>"My first time at the beach"</h2>
-            </div>
-            <div class="review-header">
-              <img
-                src="../assets/img/usuario1.webp"
-                alt="user1"
-                class="review-avatar"
-              />
-              <div>
-                <h3 class="review-user">Carlos Gómez</h3>
-                <span class="review-location">Bogota</span>
-              </div>
-            </div>
-            <div class="review-body">
-              <p>
-                An unforgettable experience! The carnival vibes, the music, and
-                the people made this trip one of the best. Highly recommended.
-              </p>
-            </div>
-          </div>
-          <!--REVIEW 2-->
-          <div class="review-card">
-            <div class="tittle-review">
-              <h2>"I'm ready to be a tour guide"</h2>
-            </div>
-            <div class="review-header">
-              <img
-                src="../assets/img/usuario2.webp"
-                alt="user1"
-                class="review-avatar"
-              />
-              <div>
-                <h3 class="review-user">Sandra Velazques</h3>
-                <span class="review-location">Medellin</span>
-              </div>
-            </div>
-            <div class="review-body">
-              <p>
-                The beaches are simply beautiful, and the food is delicious. I
-                loved walking around the walled city.
-              </p>
-            </div>
-          </div>
-          <!--REVIEW 3-->
-          <div class="review-card">
-            <div class="tittle-review"><h2>"I love to travel"</h2></div>
-            <div class="review-header">
-              <img
-                src="../assets/img/usuario3.webp"
-                alt="user1"
-                class="review-avatar"
-              />
-              <div>
-                <h3 class="review-user">Pierre Boviz</h3>
-                <span class="review-location">Hungria</span>
-              </div>
-            </div>
-            <div class="review-body">
-              <p>
-                Sierra Nevada and Tayrona are magical places. Perfect for
-                adventure and nature lovers.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       <!--commentary-->
       <section class="exit-section">
@@ -223,6 +111,7 @@
       <p class="footer-copy">
         © 2025 Colombia Hidden Routes - All rights reserved.
       </p>
-    </footer>
+  </footer>
+  <script src="../assets/js/experience.js"></script>
   </body>
 </html>

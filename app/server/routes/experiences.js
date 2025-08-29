@@ -1,3 +1,4 @@
+
 import { Router } from 'express';
 import {
     getExperiences,
@@ -6,8 +7,7 @@ import {
     updateExperience,
     deleteExperience
 } from '../controllers/experienceController.js';
-import authMiddleware from '../middleware/auth.js';
-import isHost from '../middleware/isHost.js';
+import upload from '../middleware/uploadExperienceImg.js';
 
 const router = Router();
 
@@ -17,8 +17,8 @@ router.get('/', getExperiences);
 // Obtener una experiencia por ID
 router.get('/:id', getExperienceById);
 
-// Crear una nueva experiencia (solo host)
-router.post('/', createExperience);
+// Crear una nueva experiencia con imagen
+router.post('/', upload.single('experience_img'), createExperience);
 
 // Actualizar una experiencia (solo host)
 router.put('/:id', updateExperience);

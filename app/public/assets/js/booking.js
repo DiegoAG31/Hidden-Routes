@@ -5,7 +5,6 @@ async function cargarExperiencias() {
 	try {
 		const res = await fetch('http://localhost:3000/api/experiences');
 		const data = await res.json();
-		console.log('Experiencias recibidas:', data);
 		// Limpiar opciones excepto la primera
 		select.innerHTML = '<option value="">-- Select --</option>';
 		data.forEach(exp => {

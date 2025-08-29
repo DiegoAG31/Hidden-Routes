@@ -7,15 +7,17 @@ function renderExperiences(experiences) {
   const container = document.getElementById('experienceList');
   container.innerHTML = '';
   experiences.forEach(exp => {
+    const imgSrc = exp.experience_img ? exp.experience_img : '../assets/img/playacristal.webp';
     container.innerHTML += `
       <div class="card" data-id="${exp.Experience_id || exp.id}">
+        <img src="${imgSrc}" alt="experience-img" style="width:100%;max-height:180px;object-fit:cover;border-radius:8px;margin-bottom:10px;" />
         <h3>${exp.Experience_title || exp.name}</h3>
         <label>Name</label>
         <input type="text" value="${exp.Experience_title || exp.name}" class="input-name" />
-        <label>Price</label>
-        <input type="number" value="${exp.Price || exp.price}" class="input-price" />
-        <label>Quotas</label>
+        <label>Places</label>
         <input type="number" value="${exp.Capacity || exp.capacity}" class="input-capacity" />
+        <label>Price per person</label>
+        <input type="number" value="${exp.Price || exp.price}" class="input-price" />
         <label>Description</label>
         <textarea class="input-description">${exp.Experience_description || exp.description}</textarea>
         <div class="actions">
@@ -43,19 +45,19 @@ document.getElementById('createExperienceForm').addEventListener('submit', async
   const Capacity = document.getElementById('capacity').value;
   const Price = document.getElementById('price').value;
   const Experience_description = document.getElementById('description').value;
+  const experience_img = document.getElementById('experience_img').files[0];
+  const formData = new FormData();
+  formData.append('Experience_title', Experience_title);
+  formData.append('Capacity', Capacity);
+  formData.append('Price', Price);
+  formData.append('Experience_description', Experience_description);
+  if (experience_img) {
+    formData.append('experience_img', experience_img);
+  }
   try {
     const res = await fetch(API_URL, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        // 'Authorization': 'Bearer TU_TOKEN' // Si usas autenticación
-      },
-      body: JSON.stringify({
-        Experience_title,
-        Experience_description,
-        Price,
-        Capacity
-      })
+      body: formData
     });
     if (!res.ok) throw new Error('Error al crear experiencia');
     await fetchExperiences();
@@ -70,10 +72,10 @@ document.getElementById('experienceList').addEventListener('click', async functi
   if (!card) return;
   const id = card.getAttribute('data-id');
   if (e.target.classList.contains('btn-edit')) {
-    const name = card.querySelector('.input-name').value;
-    const price = card.querySelector('.input-price').value;
-    const capacity = card.querySelector('.input-capacity').value;
-    const description = card.querySelector('.input-description').value;
+    const Experience_title = card.querySelector('.input-name').value;
+    const Price = card.querySelector('.input-price').value;
+    const Capacity = card.querySelector('.input-capacity').value;
+    const Experience_description = card.querySelector('.input-description').value;
     try {
       const res = await fetch(`${API_URL}/${id}`, {
         method: 'PUT',
@@ -82,10 +84,10 @@ document.getElementById('experienceList').addEventListener('click', async functi
           // 'Authorization': 'Bearer TU_TOKEN' // Si usas autenticación
         },
         body: JSON.stringify({
-          name,
-          price,
-          capacity,
-          description
+          Experience_title,
+          Price,
+          Capacity,
+          Experience_description
         })
       });
       if (!res.ok) throw new Error('Error al editar experiencia');

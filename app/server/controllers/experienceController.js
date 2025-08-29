@@ -33,12 +33,19 @@ export const createExperience = async (req, res) => {
         // Asignar user_id fijo para pruebas temporales
         const user_id = 1;
 
+        // Si se subió imagen, guardar la ruta relativa
+        let experience_img = null;
+        if (req.file) {
+            experience_img = `/assets/img/experiences/${req.file.filename}`;
+        }
+
         const newExperience = await Experience.create({
             Experience_title,
             Experience_description,
             Price,
             Capacity,
-            user_id
+            user_id,
+            experience_img
         });
 
         res.status(201).json(newExperience);
