@@ -710,3 +710,101 @@ body {
   object-fit: cover;
   border: 2px solid #ddd;
 }
+
+
+/*------------------------------------------------*/
+
+.grid-aboutus {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  padding: 40px;
+  background-color: #f4f4f4;
+}
+
+/* TARJETA / SECCIÓN */
+.container-aboutus {
+  background-color: #ccc9c95d; /* gris translúcido */
+  border-radius: 12px;
+  padding: 12px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* EFECTO AL PASAR EL MOUSE */
+.container-aboutus:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* IMAGEN */
+.container-aboutus img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 3px solid #4fa13f;
+}
+
+/* CONTENIDO TEXTO */
+.informationweb h2 {
+  color: #4fa13f;
+  font-size: 1.6em;
+  margin-bottom: 10px;
+}
+
+.informationweb p {
+  font-size: 0.9em;
+  color: #333;
+  line-height: 1.5;
+  padding: 0 10px;
+  max-width: 300px;
+  text-align: justify;
+}
+
+/*--------------------------------------------------------*/
+/* Sección general */
+.meet{
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+/* Título */
+.meet h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+  color: #4fa13f; /* verde que usas */
+}
+
+/* Galería de imágenes en grid */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Estilo de cada imagen */
+.gallery img {
+  width: 160px;
+  height: 230px;
+  border-radius: 20%; /* formato circular */
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto al pasar el mouse */
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
