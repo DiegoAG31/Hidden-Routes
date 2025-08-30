@@ -1,3 +1,5 @@
+/*-----------------------------------------------------------INIT--------------------------------------------------------------------------*/
+/* Reset margins, paddings and set default font */
 * {
   margin: 0;
   padding: 0;
@@ -5,6 +7,7 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Main body setup: full screen, flexbox column, centered content */
 body {
   width: 100vw;
   height: 100vh;
@@ -13,13 +16,14 @@ body {
   align-items: center;
 }
 
-/*COMMENTARY*/
+/* Main content wrapper with max width */
 .container {
   max-width: 80%;
   width: 100%;
 }
 
-/*COMMENTARY*/
+/*-----------------------------------------------------------NAVBAR--------------------------------------------------------------------------*/
+/* Top navigation bar */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -28,19 +32,12 @@ body {
   padding: 20px 50px;
 }
 
-/*COMMENTARY*/
-.logo h1,
-
-.r-h2,
-.reservation h2,
-.container-manager h2 {
+.logo h1, .form-profile h2 {
   color: #4fa13f;
-  margin-left: 40px;
   margin-bottom: 10px;
   font-size: 25px;
 }
-
-/*COMMENTARY*/
+/* Navigation links container */
 .nav-link {
   display: flex;
   list-style: none;
@@ -55,13 +52,11 @@ body {
   color: #000000;
 }
 
-
 .nav-link button a {
   color: #ffffff;
 }
 
-
-/*COMMENTARY*/
+/* Login button */
 #btnlogin {
   background-color: #4fa13f;
   border: none;
@@ -77,8 +72,10 @@ body {
   background-color: #929292;
 }
 
-/*COMMENTARY*/
+/*------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------MAIN VIEW SECTION--------------------------------------------------------------------------*/
 
+/* Hero section with background image, gradient overlay, padding and shadow */
 .main-view {
   height: 65vh;
   display: flex;
@@ -94,21 +91,19 @@ body {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
 
-/*COMMENTARY ------------------------------------------------------------------------------------*/
-.container-main {
-  margin-top: 5em;
-}
-
+/* Title inside main view */
 .main-view h1 {
   font-size: 3rem;
   margin-bottom: 20px;
 }
 
+/* Paragraph text inside main view */
 .main-view p {
   font-size: 1.1rem;
   margin-top: 25px;
 }
 
+/* Button inside main view */
 .main-view button {
   background-color: #4fa13f;
   padding: 12px 50px;
@@ -121,32 +116,37 @@ body {
   margin-top: 20px;
 }
 
+/* Button hover effect */
 .main-view button:hover {
   transform: scale(1.05);
   background-color: #929292;
 }
 
-/*COMMENTARY*/
+/*-----------------------------------------------------------ZONES SECTION--------------------------------------------------------------------------*/
 
+/* Section for zones */
 .zones {
   padding: 60px 50px;
 }
 
+/* Title inside zones section */
 .zones h1 {
-  font-size: 2rem;
+  font-size: 25px;
   margin-bottom: 40px;
   color: #4fa13f;
 }
 
-.container-prin,
-.container-prin-exp {
+
+/*------------------------------------- CARDS ZONES & EXPERIENCES -------------------------------------------------------------------------------*/
+
+/* Hero section with background image, gradient overlay, padding and shadow */
+.container-prin {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 45px;
   margin-top: 40px;
 }
 
-/*COMMENTARY*/
 .grid-exp-card {
   background-color: #ffffff;
   overflow: hidden;
@@ -154,7 +154,6 @@ body {
 }
 
 .grid-exp-card img {
-
   width: 100%;
   height: 380px;
   object-fit: cover;
@@ -181,21 +180,22 @@ body {
   border-radius: 8px;
 }
 
-/*COMMENTARY*/
+/* General grid card style with hover animation */
 .grid-prin {
   background-color: #ffffff;
   overflow: hidden;
   padding: 10px;
-  border-radius: 10PX;
+  border-radius: 10px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
+/* Hover effect: zoom in */
 .grid-prin:hover {
   transform: scale(1.05);
 }
 
-/*COMMENTARY*/
+/* Image inside grid card */
 .grid-prin img {
   width: 100%;
   height: 380px;
@@ -214,6 +214,7 @@ body {
   font-size: 0.9rem;
 }
 
+/* Button/link inside grid card */
 .grid-prin a {
   display: inline-block;
   margin: 10px;
@@ -223,8 +224,618 @@ body {
   border-radius: 8px;
 }
 
-/*COMMENTARY*/
+/*------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*COMMENTARY ------------------------------------------------ MAIN - EXPERIENCES ----------------------------------------------------------------*/
+/* Main container in grid for the experience cards */
+.container-prin-exp {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+  padding: 20px;
+  align-items: stretch;
+}
 
+/* General background container for the experiences section */
+.container-experiences {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Section title */
+#exp-h1 {
+  color: #4fa13f;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  margin-left: 0;
+  font-size: 22px;
+  text-align: left;
+}
+
+/* General container for filters */
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* City select container */
+.select-city {
+  margin: 10px;
+}
+
+.select-city select {
+  font-size: 18px;
+  width: 250px;
+  border-radius: 8px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+}
+
+/* Range (slider) container */
+.range-container {
+  margin: 10px;
+}
+
+.slider {
+  width: 250px;
+  margin-top: 5px;
+}
+
+/* Left label of slider */
+.label-l {
+  float: left;
+  font-size: 14px;
+  color: #4fa13f;
+}
+
+/* Right label of slider */
+.label-r {
+  float: right;
+  font-size: 14px;
+  color: #4fa13f;
+}
+
+/*Value text under the slider */
+.value-filter {
+  font-size: 14px;
+  color: #929292;
+  clear: both;
+}
+
+/*Filter button */
+.btn-filter button {
+  background-color: #4fa13f;
+  border: 1.5px solid black;
+  margin: 10px;
+  padding: 8px 15px;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-filter button:hover {
+  background-color: #929292;
+}
+
+/* Button inside each experience card  */
+#btn-exp-card {
+  display: inline-block;
+  margin: 10px;
+  background-color: #4fa13f;
+  color: #ffffff;
+  padding: 8px 10px;
+  font-size: 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+  border: none;
+}
+
+/* Hover state for card button  */
+#btn-exp-card:hover {
+  background-color: #929292;
+}
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------ MAIN - BOOKING --------------------------------------------------------------*/
+
+/* Main reservation section container */
+.reservation {
+  padding: 3rem 5rem;
+  border-radius: 8px;
+  width: 100%;
+  border: solid 1px #6565659d;
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+}
+
+.reservation h2 {
+  color: #4fa13f;
+  margin-bottom: 10px;
+  font-size: 25px;
+}
+
+/* Reservation form container */
+.reservation-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.reservation-form label {
+  margin-top: 20px;
+  color: #656565;
+}
+
+.reservation-form select,
+.reservation-form input {
+  padding: 0.75rem;
+  border-radius: 10px;
+  border: solid 1px #656565;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+
+/* Focus state for form inputs and selects */
+.reservation-form select:focus,
+.reservation-form input:focus {
+  border: 1px solid #326728;
+  box-shadow: 0 0 5px #4fa13f;
+}
+
+/* Submit button inside reservation form */
+.terms a {
+  text-decoration: none;
+  color: #326728;
+}
+
+/* Submit button inside reservation form */
+.btn-submit {
+  padding: 1rem;
+  background-color: #4fa13f;
+  color: white;
+  border: solid 1px black;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  margin-top: 10px;
+}
+
+.btn-submit:hover {
+  background: #929292;
+  transform: scale(1.02);
+}
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------ MAIN - MANAGE EXPERIENCES ---------------------------------------------------------------*/
+
+/* Container styles for manager and created experiences section */
+.container-manager,
+.created-experiences {
+  padding: 3rem 5rem;
+  border-radius: 8px;
+  width: 100%;
+  border: solid 1px #6565659d;
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+}
+
+.container-manager h2 {
+  color: #4fa13f;
+  margin-bottom: 10px;
+  font-size: 25px;
+}
+/* Form styles for creating a new experience */
+.create-experience-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+  margin-top: 20px;
+}
+
+/* Section title inside created experiences */
+.created-experiences h2 {
+  color: #4fa13f;
+  margin-bottom: 10px;
+  font-size: 25px;
+  margin-top: 30px;
+}
+
+.create-experience-form label {
+  font-size: 0.85rem;
+  color: #4fa13f;
+  font-weight: 600;
+}
+
+/* Inputs, selects and textareas in create experience form */
+.create-experience-form input,
+.create-experience-form select,
+.create-experience-form textarea {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  resize: vertical;
+  font-family: inherit;
+}
+
+/* Dropdown select styling */
+.create-experience-form select {
+  cursor: pointer;
+}
+
+/* Textarea specific height */
+.create-experience-form textarea {
+  height: 70px;
+}
+
+/* Submit button styles for create experience form */
+.create-experience-form button {
+  background-color: #4fa13f;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 10px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.create-experience-form button:hover {
+  background-color: #3b7d2a;
+}
+
+/* Separator line for created experiences section */
+.created-experiences {
+  border-top: 1px solid #ccc;
+  padding-top: 1rem;
+}
+
+/* Grid container for displaying experience cards */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+/* Individual card styles */
+.card {
+  margin-top: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.07);
+  color: #333;
+}
+
+.card h3 {
+  margin-top: 0;
+  color: #4fa13f;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.card label {
+  font-size: 0.75rem;
+  color: #4fa13f;
+  font-weight: 600;
+  margin-top: 0.6rem;
+  display: block;
+}
+
+/* Inputs and textareas inside cards */
+.card input,
+.card textarea {
+  width: 100%;
+  font-family: inherit;
+  font-size: 0.9rem;
+  padding: 6px 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  margin-top: 3px;
+}
+
+.card textarea {
+  height: 60px;
+}
+
+/* Actions container inside cards (buttons edit/delete) */
+.actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-between;
+}
+
+/* Edit button styles */
+.btn-edit {
+  flex: 1;
+  background-color: #4fa13f;
+  border: none;
+  color: white;
+  padding: 8px 0;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-edit:hover {
+  background-color: #3b7d2a;
+}
+
+/* Delete button styles */
+.btn-delete {
+  flex: 1;
+  background-color: #d32f2f;
+  border: none;
+  color: white;
+  padding: 8px 0;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-delete:hover {
+  background-color: #a52828;
+}
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*COMMENTARY ----------------------------------------------------- MAIN - PROFILE --------------------------------------------------------------*/
+
+/* Profile container: Centers profile picture and content inside a styled box */
+.container-profile {
+  background-color: #ccc9c95d;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+/* Profile image: Large circular profile photo with border */
+.container-profile img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ddd;
+}
+
+
+/* Verification button: Small square button for verification action */
+#verificate {
+  width: 35px;
+  height: 35px;
+  border: none;
+}
+
+/* Profile form container: Styled form area with spacing and borders */
+.form-profile {
+  padding: 3rem 5rem;
+  border-radius: 8px;
+  width: 100%;
+  border: solid 1px #6565659d;
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+}
+/*----------------------------------------------------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------- LOGIN / REGISTER --------------------------------------------------------------*/
+/* Main container for login/register */
+.container-login {
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Places image above and form below */
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 60px;
+}
+
+/* Login and register sections */
+.login, .register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Top logo image */
+.login img, .register img {
+  width: 120px;
+  height: 180px;
+  transition: transform 0.3s ease;
+}
+
+/* Zoom effect on hover for the logo */
+.login img:hover, .register img:hover {
+  transform: scale(1.05);
+}
+
+/* Form container (login and register) */
+.form-login, .form-register {
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid #c5c4c4;
+  border-radius: 12px;
+  padding: 25px 30px;
+  background: #fff;
+  box-shadow: 0 4px 20px #0c44ad52;
+}
+
+/* Form layout inside login/register */
+.form-login form, .form-register form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Form labels */
+.form-login label, .form-register label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
+  font-size: 14px;
+}
+
+/* Input fields */
+.form-login input, .form-register input {
+  padding: 12px;
+  margin-bottom: 18px;
+  border: 1px solid #306e20;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Focus effect for inputs */
+.form-login input:focus, .form-register input:focus {
+  border-color: #0e7bd4;
+  box-shadow: 0 0 6px #15360c4d;
+  outline: none;
+}
+
+/* Sign in button */
+.sign-in-button {
+  padding: 12px;
+  background: linear-gradient(135deg, #4fa13f, #3b7d2a);
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+/* Hover effect for the button */
+.sign-in-button:hover {
+  background: linear-gradient(135deg, #3b7d2a, #2c5720);
+  transform: translateY(-2px);
+}
+
+/*----------------------------------------------------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------- ABOUT US --------------------------------------------------------------*/
+
+ /*Grid layout for the cards*/
+.grid-aboutus {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  padding: 40px;
+  background-color: #f4f4f4;
+}
+
+/* Card / container style */
+.container-aboutus {
+  background-color: #ccc9c95d; /* translucent gray */
+  border-radius: 12px;
+  padding: 12px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for cards */
+.container-aboutus:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* Profile image inside the card */
+.container-aboutus img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 3px solid #4fa13f;
+}
+
+/* Text content (title and description) */
+.informationweb h2 {
+  color: #4fa13f;
+  font-size: 1.6em;
+  margin-bottom: 10px;
+}
+
+.informationweb p {
+  font-size: 0.9em;
+  color: #333;
+  line-height: 1.5;
+  padding: 0 10px;
+  max-width: 300px;
+  text-align: justify;
+}
+
+/*-------------------------------------------------------- MEET SECTION - Team showcase and gallery --------------------------------------------------------*/
+
+/* General section style */
+.meet{
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+/* Section title */
+.meet h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+  color: #4fa13f; /* same green used in About Us */
+}
+
+/* Image gallery grid layout */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Each gallery image style */
+.gallery img {
+  width: 160px;
+  height: 230px;
+  border-radius: 20%; /* rounded rectangle style */
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for gallery images */
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+/*------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*COMMENTARY ------------------------------------------------------ EXIT SECTION  ---------------------------------------------------------------*/
+
+/* Exit section container: Horizontal section that aligns exit options to the right */
 .exit-section {
   background-color: #ccc9c94b;
   height: 10em;
@@ -234,6 +845,7 @@ body {
   margin-top: 20px;
 }
 
+/* Exit content: Aligns profile and logout buttons with spacing */
 .exit {
   margin-top: 3em;
   margin-right: 8em;
@@ -242,8 +854,7 @@ body {
   gap: 20px;
 }
 
-/*COMMENTARY*/
-
+/* Profile button: Green styled button for profile navigation */
 .exit .btnprofile {
   padding: 20px 45px;
   background-color: #4fa13f;
@@ -255,6 +866,7 @@ body {
   transition: transform 0.3s, background 0.3s;
 }
 
+/* Logout button: Gray styled button for logging out */
 .exit .btnlogout {
   padding: 20px 45px;
   background-color: #9292929c;
@@ -266,16 +878,20 @@ body {
   transition: transform 0.3s, background 0.3s;
 }
 
+/* Hover effect for profile button: Darker green */
 .exit .btnprofile:hover {
   background-color: #326728;
 }
 
+/* Hover effect for logout button: Darker gray */
 .exit .btnlogout:hover {
   background-color: #656565;
-}
+} 
 
-/*COMMENTARY*/
+/*----------------------------------------------------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------- FOOTER --------------------------------------------------------------*/
 
+/* Footer container: Organizes footer content with spacing between elements */
 .container-footer {
   display: flex;
   justify-content: space-between;
@@ -288,6 +904,7 @@ body {
   height: auto;
 }
 
+/* Social footer container: Displays social media icons in a row with spacing */
 .social-footer {
   display: flex;
   gap: 15px;
@@ -309,597 +926,10 @@ body {
   color: #000000;
 }
 
+/* Footer copy: Text at the bottom of the footer */
 .footer-copy {
   text-align: center;
   padding: 10px;
 }
 
-/*COMMENTARY*/
-.container-experiences {
-  background-color: #ffffff;
-}
-
-#exp-h1 {
-  color: #4fa13f;
-  margin-top: 3em;
-  margin-left: 40px;
-  font-size: 25px;
-}
-
-/*COMMENTARY*/
-.filter {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  margin-top: 30px;
-  margin-bottom: 20px;
-}
-
-/*COMMENTARY*/
-.select-city {
-  margin: 10px;
-}
-
-.select-city select {
-  font-size: 18px;
-  width: 250px;
-  border-radius: 8px;
-  padding: 8px 12px;
-}
-
-/*COMMENTARY*/
-
-.range-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0 20px;
-}
-
-.slider {
-  width: 250px;
-  margin-top: 5px;
-}
-
-.label-l {
-  display: block;
-  font-size: 14px;
-  color: #4fa13f;
-  text-align: left;
-}
-
-.label-r {
-  display: block;
-  font-size: 14px;
-  color: #4fa13f;
-  text-align: right;
-}
-
-.value-filter {
-  font-size: 14px;
-  color: #929292;
-  text-align: center;
-  margin-top: 5px;
-}
-
-/*COMMENTARY*/
-.btn-filter button {
-  background-color: #4fa13f;
-  border: 1.5px solid black;
-  margin-top: 20px;
-  margin-right: 0;
-  padding: 8px 15px;
-  border-radius: 5px;
-  color: white;
-  cursor: pointer;
-  font-size: 18px;
-}
-/* Centrado del contenedor de botón de filtro */
-.btn-filter {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.btn-filter button:hover {
-  background-color: #929292;
-}
-/*COMMENTARY*/
-
-/*COMMENTARY*/
-
-#btn-exp-card {
-  display: inline-block;
-  margin: 10px;
-  background-color: #4fa13f;
-  color: #ffffff;
-  padding: 8px 10px;
-  font-size: 1.5rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s, transform 0.3s;
-  border: none;
-}
-
-#btn-exp-card:hover {
-  background-color: #929292;
-}
-
-/*COMMENTARY*/
-.reviews {
-  padding: 3rem 1rem;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  margin-top: 3rem;
-}
-
-.reviews-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-top: 10px;
-}
-
-.tittle-review {
-  margin-bottom: 40px;
-  font-size: 0.9rem;
-}
-
-.review-card {
-  background-color: #ffffff;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.review-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-}
-
-/*COMMENTARY*/
-.review-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-
-/*COMMENTARY*/
-.review-avatar {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  /* avatar circular */
-  object-fit: cover;
-  border: 2px solid #ddd;
-}
-
-/*COMMENTARY*/
-.review-user {
-  font-size: 1.1rem;
-  font-weight: bold;
-  margin: 0;
-}
-
-
-.review-location {
-  font-size: 0.9rem;
-  color: #666;
-}
-
-
-/* Texto de la reseña */
-.review-body {
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: #333;
-  margin-bottom: 1rem;
-}
-
-
-/*COMMENTARY*/
-.reservation,
-.container-manager,
-.created-experiences {
-  padding: 3rem 5rem;
-  border-radius: 8px;
-  width: 100%;
-  border: solid 1px #6565659d;
-  margin-top: 5rem;
-  margin-bottom: 5rem;
-}
-
-/*COMMENTARY*/
-.reservation-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-}
-
-
-.reservation-form label {
-  margin-top: 20px;
-  color: #656565;
-}
-
-.reservation-form select,
-.reservation-form input {
-  padding: 0.75rem;
-  border-radius: 10px;
-  border: solid 1px #656565;
-  font-size: 1rem;
-  outline: none;
-  transition: border 0.2s, box-shadow 0.2s;
-}
-
-.reservation-form select:focus,
-.reservation-form input:focus {
-  border: 1px solid #326728;
-  box-shadow: 0 0 5px #4fa13f;
-}
-
-/*COMMENTARY*/
-.terms a {
-  text-decoration: none;
-  color: #326728;
-}
-
-/*COMMENTARY*/
-.btn-submit {
-  padding: 1rem;
-  background-color: #4fa13f;
-  color: white;
-  border: solid 1px black;
-  border-radius: 10px;
-  font-size: 1.1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.2s, transform 0.1s;
-}
-
-.btn-submit:hover {
-  background: #929292;
-  transform: scale(1.02);
-}
-
-
-/*COMMENTARY*/
-.create-experience-form {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-  margin-bottom: 2rem;
-  margin-top: 20px;
-}
-
-
-.created-experiences h2 {
-  color: #4fa13f;
-  margin-bottom: 10px;
-  font-size: 25px;
-  margin-top: 30px;
-}
-
-.create-experience-form label {
-  font-size: 0.85rem;
-  color: #4fa13f;
-  font-weight: 600;
-}
-
-/*COMMENTARY*/
-.create-experience-form input,
-.create-experience-form select,
-.create-experience-form textarea {
-  padding: 8px 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1rem;
-  resize: vertical;
-  font-family: inherit;
-}
-
-.create-experience-form select {
-  cursor: pointer;
-}
-
-.create-experience-form textarea {
-  height: 70px;
-}
-
-.create-experience-form button {
-  background-color: #4fa13f;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  font-weight: 600;
-  font-size: 1rem;
-  padding: 10px 0;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.create-experience-form button:hover {
-  background-color: #3b7d2a;
-}
-
-
-.created-experiences {
-  border-top: 1px solid #ccc;
-  padding-top: 1rem;
-}
-
-/*COMMENTARY*/
-.cards-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-}
-
-.card {
-  margin-top: 20px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.07);
-  color: #333;
-}
-
-.card h3 {
-  margin-top: 0;
-  color: #4fa13f;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-/*COMMENTARY*/
-.card label {
-  font-size: 0.75rem;
-  color: #4fa13f;
-  font-weight: 600;
-  margin-top: 0.6rem;
-  display: block;
-}
-
-/*COMMENTARY*/
-.card input,
-.card textarea {
-  width: 100%;
-  font-family: inherit;
-  font-size: 0.9rem;
-  padding: 6px 8px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  resize: vertical;
-  margin-top: 3px;
-}
-
-.card textarea {
-  height: 60px;
-}
-
-/*COMMENTARY*/
-.actions {
-  margin-top: 1rem;
-  display: flex;
-  gap: 0.5rem;
-  justify-content: space-between;
-}
-
-.btn-edit {
-  flex: 1;
-  background-color: #4fa13f;
-  border: none;
-  color: white;
-  padding: 8px 0;
-  border-radius: 5px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.btn-edit:hover {
-  background-color: #3b7d2a;
-}
-
-.btn-delete {
-  flex: 1;
-  background-color: #d32f2f;
-  border: none;
-  color: white;
-  padding: 8px 0;
-  border-radius: 5px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.btn-delete:hover {
-  background-color: #a52828;
-}
-
-/*COMMENTARY*/
-
-.container-login {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  margin-bottom: 60px;
-
-}
-
-.login, .register {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.login img {
-  max-width: 400px;
-}
-
-/* Formulario */
-.form-login, .form-register {
-  width: 400px;
-  border: 1px solid #6565658c;
-  border-radius: 8px;
-  padding: 20px 30px;
-}
-
-.form-login form, .form-register form {
-  display: flex;
-  flex-direction: column;
-}
-
-.form-login label, .form-register label {
-  font-weight: 600;
-  margin-bottom: 5px;
-  color: #333;
-}
-
-.form-login input, .form-register input {
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 16px;
-  transition: border 0.3s ease;
-}
-
-
-
-/* Botón de inicio de sesión */
-.sign-in-button {
-  padding: 12px;
-  background-color: #3b7d2a;
-  color: white;
-  font-weight: bold;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.sign-in-button:hover {
-  background-color: #0056b3;
-}
-
-/* Enlace de "Forgot password" */
-.register-prompt,
-.login-prompt {
-  margin-top: 15px;
-  text-align: center;
-  display: block;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.register-prompt:hover,
-.login-prompt:hover {
-  text-decoration: underline;
-}
-
-
-/*------------------------------------------------*/
-
-.grid-aboutus {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 30px;
-  padding: 40px;
-  background-color: #f4f4f4;
-}
-
-/* TARJETA / SECCIÓN */
-.container-aboutus {
-  background-color: #ccc9c95d; /* gris translúcido */
-  border-radius: 12px;
-  padding: 12px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* EFECTO AL PASAR EL MOUSE */
-.container-aboutus:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
-}
-
-/* IMAGEN */
-.container-aboutus img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 20px;
-  border: 3px solid #4fa13f;
-}
-
-/* CONTENIDO TEXTO */
-.informationweb h2 {
-  color: #4fa13f;
-  font-size: 1.6em;
-  margin-bottom: 10px;
-}
-
-.informationweb p {
-  font-size: 0.9em;
-  color: #333;
-  line-height: 1.5;
-  padding: 0 10px;
-  max-width: 300px;
-  text-align: justify;
-}
-
-/*--------------------------------------------------------*/
-/* Sección general */
-.meet{
-  padding: 60px 20px;
-  background-color: #f9f9f9;
-  text-align: center;
-}
-
-/* Título */
-.meet h2 {
-  font-size: 2em;
-  margin-bottom: 30px;
-  color: #4fa13f; /* verde que usas */
-}
-
-/* Galería de imágenes en grid */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 20px;
-  justify-items: center;
-  align-items: center;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-/* Estilo de cada imagen */
-.gallery img {
-  width: 160px;
-  height: 230px;
-  border-radius: 20%; /* formato circular */
-  object-fit: cover;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Efecto al pasar el mouse */
-.gallery img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-}
+/*-----------------------------------------------------------END--------------------------------------------------------------------------*/
