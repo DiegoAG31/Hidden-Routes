@@ -8,7 +8,7 @@ async function cargarExperiencias() {
 		// Limpiar opciones excepto la primera
 		select.innerHTML = '<option value="">-- Select --</option>';
 		data.forEach(exp => {
-			select.innerHTML += `<option value="${exp.Experience_id || exp.id}">${exp.Experience_title || exp.name}</option>`;
+			select.innerHTML += `<option value="${exp.experience_id || exp.Experience_id || exp.id}">${exp.experience_title || exp.Experience_title || exp.name}</option>`;
 		});
 	} catch (err) {
 		select.innerHTML = '<option value="">No experiences found</option>';
@@ -27,37 +27,54 @@ document.addEventListener('DOMContentLoaded', () => {
 		e.preventDefault();
 
 		// Valores fijos temporales
-		const User_id = 1;
-		const booking_status_id = 1;
+		const user_id = 1; // Cambiar cuando tengas autenticación
 
 		// Obtener datos del formulario
 		const experienceSelect = document.getElementById('experience');
-		const Experience_id = experienceSelect.value;
-		const Quotes = document.getElementById('quota').value;
+		const experience_id = parseInt(experienceSelect.value);
+		const places = parseInt(document.getElementById('quota').value);
 
-		if (!Experience_id || !Quotes) {
+		if (!experience_id || !places) {
 			alert('Por favor completa todos los campos.');
 			return;
 		}
 
+		console.log('Datos a enviar:', { user_id, experience_id, places });
+
 		try {
+			const requestData = {
+				user_id,
+				experience_id,
+				places,
+				booking_status_name: 'pending'
+			};
+			
+			console.log('Enviando petición:', requestData);
+			
 			const res = await fetch(API_URL, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
 				},
-				body: JSON.stringify({
-					User_id,
-					Experience_id,
-					Quotes,
-					booking_status_id
-				})
+				body: JSON.stringify(requestData)
 			});
-			if (!res.ok) throw new Error('Error al crear la reserva');
+			
+			console.log('Status de respuesta:', res.status);
+			
+			const result = await res.json();
+			console.log('Respuesta del servidor:', result);
+			
+			if (!res.ok) {
+				throw new Error(result.message || `Error HTTP ${res.status}`);
+			}
+			
 			alert('Reserva realizada con éxito');
 			form.reset();
+			console.log('Reserva creada:', result);
 		} catch (err) {
-			alert('No se pudo realizar la reserva');
+			console.error('Error completo:', err);
+			console.error('Tipo de error:', typeof err);
+			alert(`No se pudo realizar la reserva: ${err.message}`);
 		}
 	});
 });

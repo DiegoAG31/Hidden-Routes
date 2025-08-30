@@ -1,69 +1,68 @@
-import Booking from '../models/bookingModel.js';
+import Joi from 'joi';
+import sequelize from '../database.js';
 
-// Obtener todas las reservas
-export const getBookings = async (req, res) => {
-	try {
-		const bookings = await Booking.findAll();
-		res.json(bookings);
-	} catch (error) {
-		res.status(500).json({ error: 'Error al obtener reservas' });
-	}
-};
+const createSchema = Joi.object({
+  user_id: Joi.number().integer().required(),
+  experience_id: Joi.number().integer().required(),
+  places: Joi.number().integer().min(1).required(),
+  booking_status_name: Joi.string().valid('pending','confirmed','cancelled','rejected').optional()
+});
 
-// Obtener una reserva por ID
-export const getBookingById = async (req, res) => {
-	try {
-		const booking = await Booking.findOne({ where: { Booking_id: req.params.id } });
-		if (!booking) return res.status(404).json({ error: 'Reserva no encontrada' });
-		res.json(booking);
-	} catch (error) {
-		res.status(500).json({ error: 'Error al obtener la reserva' });
-	}
-};
+// ===== CREATE =====
+export async function createBooking(req, res) {
+  console.log('=== INICIO createBooking SIMPLE ===');
+  console.log('Datos recibidos:', req.body);
+  console.log('Tipo de datos:', typeof req.body);
+  console.log('Keys del body:', Object.keys(req.body));
+  
+  const { error, value } = createSchema.validate(req.body);
+  if (error) {
+    console.log('Error de validación Joi:', error.details);
+    return res.status(400).json({ message: error.message });
+  }
 
-// Crear una nueva reserva
-export const createBooking = async (req, res) => {
-	try {
-		const { User_id, Experience_id, Quotes, booking_status_id } = req.body;
+  console.log('Datos validados:', value);
 
-		if (!User_id || !Experience_id || !Quotes || !booking_status_id) {
-			return res.status(400).json({ error: 'Todos los campos son obligatorios' });
-		}
+  try {
+    const statusName = value.booking_status_name || 'pending';
+    
+    // Primero, insertar el estado si no existe
+    await sequelize.query(`
+      INSERT IGNORE INTO booking_status (booking_status_name) 
+      VALUES ('pending'), ('confirmed'), ('cancelled'), ('rejected')
+    `);
+    
+    // Obtener el ID del estado
+    const [statusResult] = await sequelize.query(`
+      SELECT booking_status_id FROM booking_status WHERE booking_status_name = ?
+    `, {
+      replacements: [statusName],
+      type: sequelize.QueryTypes.SELECT
+    });
+    
+    const statusId = statusResult[0]?.booking_status_id || 1;
+    console.log('Status ID encontrado:', statusId);
 
-		const newBooking = await Booking.create({
-			User_id,
-			Experience_id,
-			Quotes,
-			booking_status_id
-		});
+    const [result] = await sequelize.query(`
+      INSERT INTO bookings (user_id, experience_id, places, booking_status_id)
+      VALUES (?, ?, ?, ?)
+    `, {
+      replacements: [value.user_id, value.experience_id, value.places, statusId],
+      type: sequelize.QueryTypes.INSERT
+    });
 
-		res.status(201).json(newBooking);
-	} catch (error) {
-		res.status(500).json({ error: 'Error al crear la reserva' });
-	}
-};
+    console.log('Reserva creada con ID:', result);
 
-// Actualizar una reserva
-export const updateBooking = async (req, res) => {
-	try {
-		const { id } = req.params;
-		const [updated] = await Booking.update(req.body, { where: { Booking_id: id } });
-		if (!updated) return res.status(404).json({ error: 'Reserva no encontrada' });
-		const updatedBooking = await Booking.findByPk(id);
-		res.json(updatedBooking);
-	} catch (error) {
-		res.status(500).json({ error: 'Error al actualizar la reserva' });
-	}
-};
-
-// Eliminar una reserva
-export const deleteBooking = async (req, res) => {
-	try {
-		const { id } = req.params;
-		const deleted = await Booking.destroy({ where: { Booking_id: id } });
-		if (!deleted) return res.status(404).json({ error: 'Reserva no encontrada' });
-		res.json({ message: 'Reserva eliminada' });
-	} catch (error) {
-		res.status(500).json({ error: 'Error al eliminar la reserva' });
-	}
-};
+    res.status(201).json({
+      booking_id: result,
+      user_id: value.user_id,
+      experience_id: value.experience_id,
+      places: value.places,
+      status: statusName,
+      message: 'Reserva creada exitosamente'
+    });
+  } catch (err) {
+    console.error('Error en createBooking:', err);
+    res.status(400).json({ message: err.message });
+  }
+}
