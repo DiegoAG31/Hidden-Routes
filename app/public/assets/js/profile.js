@@ -40,12 +40,19 @@ document.addEventListener('DOMContentLoaded', () => {
           roleSelect.value = data.role_id == 1 ? 'user' : 'admin';
         }
       }
-      // Actualizar nombre y foto en la sección superior (cuando tengas esos campos en la BD)
+      // Mostrar foto de perfil
+      const profileImg = document.querySelector('.container-profile img');
+      if (profileImg && data.user_img) {
+        profileImg.src = '../assets/img/' + data.user_img;
+      }
+      // Mostrar nombre en la sección superior
       const profileName = document.querySelector('.container-profile h2');
       if (profileName && data.user_name) profileName.textContent = data.user_name;
-      // Foto y verificado: agregar cuando existan en la BD
-      // document.querySelector('.container-profile img').src = data.profile_img || ...
-      // document.getElementById('verificate').style.display = data.verified ? 'inline' : 'none';
+      // Mostrar icono de verificación
+      const verificateIcon = document.getElementById('verificate');
+      if (verificateIcon) {
+        verificateIcon.style.display = (data.verification_id == 1) ? 'inline' : 'none';
+      }
     })
     .catch(() => {
       alert('No se pudo cargar el perfil');
@@ -60,8 +67,17 @@ document.addEventListener('DOMContentLoaded', () => {
       const user_name = document.getElementById('nameprofile').value;
       const email = document.getElementById('email').value;
       const role = document.getElementById('role').value;
-      // Convierte el rol a id (ajusta según tu lógica de roles)
       const role_id = role === 'user' ? 1 : 2;
+      // Foto de perfil: solo guarda el nombre del archivo
+      const photoInput = document.getElementById('profilePhoto');
+      let user_img = null;
+      if (photoInput && photoInput.files.length > 0) {
+        user_img = 'users/' + photoInput.files[0].name; // Ajusta la ruta si usas subcarpeta
+      }
+      // Estado de verificación: solo para admin, ejemplo
+      let verification_id = null;
+      // Si quieres permitir que el usuario cambie el estado, agrega un select en el formulario
+      // Por ahora, lo dejamos igual
       try {
         const res = await fetch(API_URL, {
           method: 'PUT',
@@ -69,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'Content-Type': 'application/json',
             'Authorization': 'Bearer ' + token
           },
-          body: JSON.stringify({ user_name, email, role_id })
+          body: JSON.stringify({ user_name, email, role_id, user_img, verification_id })
         });
         const data = await res.json();
         if (res.ok) {

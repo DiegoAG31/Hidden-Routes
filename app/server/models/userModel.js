@@ -24,6 +24,15 @@ const User = sequelize.define('User', {
     type: DataTypes.INTEGER,
     allowNull: false,
   },
+  user_img: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
+  verification_id: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    defaultValue: 2 // Not verified por defecto
+  },
 }, {
   tableName: 'users',
   timestamps: true,
