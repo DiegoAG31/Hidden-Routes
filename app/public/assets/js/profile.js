@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (data.role_id) {
         const roleSelect = document.getElementById('role');
         if (roleSelect) {
-          roleSelect.value = data.role_id == 1 ? 'user' : 'admin';
+          roleSelect.value = data.role_id == 1 ? 'Host' : 'Tourist';
         }
       }
       // Mostrar foto de perfil
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const user_name = document.getElementById('nameprofile').value;
       const email = document.getElementById('email').value;
       const role = document.getElementById('role').value;
-      const role_id = role === 'user' ? 1 : 2;
+      const role_id = role === 'Host' ? 1 : 2;
       // Foto de perfil: solo guarda el nombre del archivo
       const photoInput = document.getElementById('profilePhoto');
       let user_img = null;

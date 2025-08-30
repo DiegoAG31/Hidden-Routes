@@ -10,6 +10,12 @@ CREATE TABLE roles (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
+DROP TABLE IF EXISTS verification_status;
+CREATE TABLE verification_status (
+    verification_id INT AUTO_INCREMENT PRIMARY KEY,
+    status_name VARCHAR(20) NOT NULL
+);
+
 DROP TABLE IF EXISTS users;
 CREATE TABLE users (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -17,10 +23,15 @@ CREATE TABLE users (
     email VARCHAR(100),
     password_hash VARCHAR(255),
     role_id INT,
+    user_img VARCHAR(255),
+    verification_id INT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (role_id)
         REFERENCES roles (role_id)
+        ON DELETE SET NULL ON UPDATE CASCADE,
+    FOREIGN KEY (verification_id)
+        REFERENCES verification_status (verification_id)
         ON DELETE SET NULL ON UPDATE CASCADE
 );
 
@@ -77,3 +88,4 @@ CREATE TABLE bookings (
         REFERENCES booking_status (booking_status_id)
         ON DELETE SET NULL ON UPDATE CASCADE
 );
+

@@ -1,3 +1,19 @@
+// Guardian: solo hosts pueden acceder
+document.addEventListener('DOMContentLoaded', function() {
+  const token = localStorage.getItem('token');
+  if (!token) {
+    window.location.href = './experience.html';
+    return;
+  }
+  try {
+    const payload = JSON.parse(atob(token.split('.')[1]));
+    if (payload.roleName !== 'Host') {
+      window.location.href = './experience.html';
+    }
+  } catch (e) {
+    window.location.href = './experience.html';
+  }
+});
 // experienceManager.js
 // Lógica de gestión de experiencias para experienceManager.html
 

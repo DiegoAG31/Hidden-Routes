@@ -78,6 +78,23 @@ async function fetchExperiences() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Ocultar botón Manage si el usuario no es host
+  const manageNav = document.getElementById('manageNav');
+  if (manageNav) {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      manageNav.style.display = 'none';
+    } else {
+      try {
+        const payload = JSON.parse(atob(token.split('.')[1]));
+        if (payload.roleName !== 'Host') {
+          manageNav.style.display = 'none';
+        }
+      } catch (e) {
+        manageNav.style.display = 'none';
+      }
+    }
+  }
   fetchExperiences();
   fetchCities().then(() => {
     // Leer el parámetro destination_id de la URL
