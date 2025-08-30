@@ -1,123 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../assets/css/main.css" />
-    <title>Document</title>
-  </head>
-  <body>
-    <!--COMMENTARY-->
-    <header class="navbar container">
-      <div class="logo"><h1>Hidden Routes</h1></div>
-      <nav>
-        <ul class="nav-link">
-          <li><a href="../dashboard.html">Home</a></li>
-          <li><a href="./experience.html">Experiences</a></li>
-          <li><a href="./experienceManager.html">Manage</a></li>
-          <li>
-            <button type="button" id="btnlogin">
-              <a href="./login.html">Login</a>
-            </button>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <main class="container" 
-      <section class="container-experiences">
-        <div id="exp-h1">
-          <h1>Experiences</h1>
-        </div>
-        <div class="filter">
-          <div class="select-city">
-            <label for="citySelect" class="label-l">City</label>
-            <select id="citySelect">
-              <option value="">All cities</option>
-            </select>
-          </div>
-          <div class="range-container">
-            <span class="label-l">Places</span>
-            <span class="label-r">0-100</span><br />
-            <input
-              type="range"
-              min="0"
-              max="100"
-              value="50"
-              id="quotasrange"
-              class="slider"
-            />
-            <div class="value-filter">
-              <p><span id="valuequota"></span></p>
-            </div>
-          </div>
-          <div class="range-container">
-            <span class="label-l">Price per person</span>
-            <span class="label-r">$0-1.000.000</span><br />
-            <input
-              type="range"
-              min="0"
-              max="1000000"
-              value="1000000"
-              id="pricerange"
-              class="slider"
-            />
-            <div class="value-filter">
-              <p><span id="valueprice"></span></p>
-            </div>
-          </div>
-          <div class="btn-filter">
-            <button type="submit">filter</button>
-          </div>
-        </div>
-      </section>
-      <!--COMMENTARY-->
-      <section class="experiences-cards">
-        <div class="container-prin-exp" id="experiencesContainer">
-          <!-- Las experiencias dinámicas se insertarán aquí con JavaScript -->
-        </div>
-      </section>
 
-      <!--COMMENTARY-->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <title>Document</title>
+</head>
 
-      <!--commentary-->
-      <section class="exit-section">
-        <div class="exit">
-          <button type="button" class="btnprofile">Profile</button>
-          <button type="button" class="btnlogout">Logout</button>
+<body>
+  <!--COMMENTARY-->
+  <header class="navbar container">
+    <div class="logo">
+      <h1>Hidden Routes</h1>
+    </div>
+    <nav>
+      <ul class="nav-link">
+        <li><a href="../dashboard.html">Home</a></li>
+        <li><a href="./experience.html">Experiences</a></li>
+        <li><a href="./experienceManager.html">Manage</a></li>
+        <a href="./login.html">
+          <button type="button" id="btnlogin">Login</button>
+        </a>
+      </ul>
+    </nav>
+  </header>
+  <main class="container" <section class="container-experiences">
+    <div id="exp-h1">
+      <h1>Experiences</h1>
+    </div>
+    <div class="filter">
+      <div class="select-city">
+        <label for="citySelect" class="label-l">City</label>
+        <select id="citySelect">
+          <option value="">All cities</option>
+        </select>
+      </div>
+      <div class="range-container">
+        <span class="label-l">Places</span>
+        <span class="label-r">0-100</span><br />
+        <input type="range" min="0" max="100" value="50" id="quotasrange" class="slider" />
+        <div class="value-filter">
+          <p><span id="valuequota"></span></p>
         </div>
-      </section>
-    </main>
+      </div>
+      <div class="range-container">
+        <span class="label-l">Price per person</span>
+        <span class="label-r">$0-1.000.000</span><br />
+        <input type="range" min="0" max="1000000" value="1000000" id="pricerange" class="slider" />
+        <div class="value-filter">
+          <p><span id="valueprice"></span></p>
+        </div>
+      </div>
+      <div class="btn-filter">
+        <button type="submit">filter</button>
+      </div>
+    </div>
+    </section>
     <!--COMMENTARY-->
-    <footer class="container">
-      <section class="container-footer">
-        <div class="sf-footer">
-          <div class="logo-footer">
-            <img src="../assets/img/logo.webp" alt="logo footer" />
-          </div>
-          <div class="social-footer">
-            <a href="#"><img src="../assets/img/github.png" alt="github" /></a>
-            <a href="#"
-              ><img src="../assets/img/facebook.png" alt="facebook"
-            /></a>
-            <a href="#"
-              ><img src="../assets/img/youtube.png" alt="youtube"
-            /></a>
-            <a href="#"
-              ><img src="../assets/img/instagram.png" alt="instagram"
-            /></a>
-          </div>
+    <section class="experiences-cards">
+      <div class="container-prin-exp" id="experiencesContainer">
+        <!-- Las experiencias dinámicas se insertarán aquí con JavaScript -->
+      </div>
+    </section>
+
+    <!--COMMENTARY-->
+
+    <!--commentary-->
+    <section class="exit-section">
+      <div class="exit">
+        <a href="./profile.html"><button type="button" class="btnprofile">Profile</button></a>
+        <button type="button" class="btnlogout">Logout</button>
+      </div>
+    </section>
+  </main>
+  <!--COMMENTARY-->
+  <footer class="container">
+    <section class="container-footer">
+      <div class="sf-footer">
+        <div class="logo-footer">
+          <img src="../assets/img/logo.webp" alt="logo footer" />
         </div>
-        <div class="info-footer">
-          <a href="#">About us</a>
-          <a href="#">Contact</a>
-          <a href="#">Privacy</a>
-          <a href="#">TyC</a>
+        <div class="social-footer">
+          <a href="#"><img src="../assets/img/github.png" alt="github" /></a>
+          <a href="#"><img src="../assets/img/facebook.png" alt="facebook" /></a>
+          <a href="#"><img src="../assets/img/youtube.png" alt="youtube" /></a>
+          <a href="#"><img src="../assets/img/instagram.png" alt="instagram" /></a>
         </div>
-      </section>
-      <p class="footer-copy">
-        © 2025 Colombia Hidden Routes - All rights reserved.
-      </p>
+      </div>
+      <div class="info-footer">
+        <a href="./aboutUs.html">About us</a>
+        <a href="./aboutUs.html">Contact</a>
+        <a href="./aboutUs.html">Privacy</a>
+        <a href="./aboutUs.html">TyC</a>
+      </div>
+    </section>
+    <p class="footer-copy">
+      © 2025 Colombia Hidden Routes - All rights reserved.
+    </p>
   </footer>
   <script src="../assets/js/experience.js"></script>
-  </body>
+</body>
+
 </html>
