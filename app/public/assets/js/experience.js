@@ -100,6 +100,16 @@ document.addEventListener('DOMContentLoaded', () => {
     e.preventDefault();
     applyFilters();
   });
+
+  // Funcionalidad para el botón de logout en experience.html
+  const logoutBtn = document.querySelector('.btnlogout');
+  if (logoutBtn) {
+    logoutBtn.addEventListener('click', () => {
+      localStorage.removeItem('token');
+      alert('Sesión cerrada');
+      window.location.href = './login.html';
+    });
+  }
 });
 
 async function fetchCities() {

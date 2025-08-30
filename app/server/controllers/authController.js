@@ -49,3 +49,45 @@ export const login = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
+
+// Obtener perfil del usuario logeado
+export const getProfile = async (req, res) => {
+  try {
+    const authHeader = req.headers.authorization;
+    if (!authHeader) return res.status(401).json({ message: 'No token provided' });
+    const token = authHeader.split(' ')[1];
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const user = await User.findByPk(decoded.userId);
+    if (!user) return res.status(404).json({ message: 'User not found' });
+    res.json({
+      user_id: user.User_id,
+      user_name: user.User_name,
+      email: user.Email,
+      role_id: user.Role_id
+      // image, verified: agregar cuando existan
+    });
+  } catch (error) {
+    res.status(401).json({ message: 'Invalid token' });
+  }
+};
+
+// Actualizar perfil del usuario logeado
+export const updateProfile = async (req, res) => {
+  try {
+    const authHeader = req.headers.authorization;
+    if (!authHeader) return res.status(401).json({ message: 'No token provided' });
+    const token = authHeader.split(' ')[1];
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const user = await User.findByPk(decoded.userId);
+    if (!user) return res.status(404).json({ message: 'User not found' });
+    const { user_name, email, role_id } = req.body;
+    // Actualiza solo los campos permitidos
+    if (user_name) user.User_name = user_name;
+    if (email) user.Email = email;
+    if (role_id) user.Role_id = role_id;
+    await user.save();
+    res.json({ message: 'Profile updated', user });
+  } catch (error) {
+    res.status(401).json({ message: 'Invalid token or update error' });
+  }
+};
