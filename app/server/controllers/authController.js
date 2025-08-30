@@ -5,8 +5,16 @@ import Role from '../models/roleModel.js';
 
 export const register = async (req, res) => {
   try {
-    const { user_name, email, password_hash, role_id } = req.body;
-    const hashedPassword = await bcrypt.hash(password_hash, 10);
+    const { user_name, email, password, role_id } = req.body;
+    if (!user_name || !email || !password || !role_id) {
+      return res.status(400).json({ message: 'All fields are required' });
+    }
+    // Verifica si el email ya existe
+    const existingUser = await User.findOne({ where: { Email: email } });
+    if (existingUser) {
+      return res.status(409).json({ message: 'Email already registered' });
+    }
+    const hashedPassword = await bcrypt.hash(password, 10);
     const newUser = await User.create({
       User_name: user_name,
       Email: email,
@@ -21,16 +29,15 @@ export const register = async (req, res) => {
 
 export const login = async (req, res) => {
   try {
-    const { email, password_hash } = req.body;
+    const { email, password } = req.body; // <-- CAMBIO AQUÍ
     const user = await User.findOne({ where: { Email: email } });
     if (!user) {
       return res.status(404).json({ message: 'User not found' });
     }
-    const isPasswordValid = await bcrypt.compare(password_hash, user.Password_hash);
+    const isPasswordValid = await bcrypt.compare(password, user.Password_hash); // <-- CAMBIO AQUÍ
     if (!isPasswordValid) {
       return res.status(401).json({ message: 'Invalid password' });
     }
-    // Obtener el nombre del rol
     const role = await Role.findByPk(user.Role_id);
     const token = jwt.sign(
       { userId: user.User_id, roleId: user.Role_id, roleName: role?.Role_name },
