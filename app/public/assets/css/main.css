@@ -35,10 +35,10 @@ body {
 .reservation h2,
 .container-manager h2 {
   color: #4fa13f;
+  margin-left: 40px;
   margin-bottom: 10px;
   font-size: 25px;
 }
-
 
 /*COMMENTARY*/
 .nav-link {
@@ -133,7 +133,7 @@ body {
 }
 
 .zones h1 {
-  font-size: 25px;
+  font-size: 2rem;
   margin-bottom: 40px;
   color: #4fa13f;
 }
@@ -321,9 +321,9 @@ body {
 
 #exp-h1 {
   color: #4fa13f;
-  margin-top: 2.5rem;
+  margin-top: 3em;
   margin-left: 40px;
-  font-size: 20px;
+  font-size: 25px;
 }
 
 /*COMMENTARY*/
@@ -406,6 +406,7 @@ body {
 .btn-filter button:hover {
   background-color: #929292;
 }
+/*COMMENTARY*/
 
 /*COMMENTARY*/
 
@@ -492,7 +493,7 @@ body {
 }
 
 
-/*COMMENTARY*/
+/* Texto de la reseña */
 .review-body {
   font-size: 0.95rem;
   line-height: 1.5;
@@ -509,7 +510,7 @@ body {
   border-radius: 8px;
   width: 100%;
   border: solid 1px #6565659d;
-  margin-top: 3rem;
+  margin-top: 5rem;
   margin-bottom: 5rem;
 }
 
