@@ -21,24 +21,18 @@ export const register = async (req, res) => {
 
 export const login = async (req, res) => {
   try {
-    const { email, password_hash } = req.body;
+    const { email, password } = req.body; 
     const user = await User.findOne({ where: { Email: email } });
     if (!user) {
       return res.status(404).json({ message: 'User not found' });
     }
-    const isPasswordValid = await bcrypt.compare(password_hash, user.Password_hash);
+    const isPasswordValid = await bcrypt.compare(password, user.Password_hash);
     if (!isPasswordValid) {
       return res.status(401).json({ message: 'Invalid password' });
     }
-    // Obtener el nombre del rol
-    const role = await Role.findByPk(user.Role_id);
-    const token = jwt.sign(
-      { userId: user.User_id, roleId: user.Role_id, roleName: role?.Role_name },
-      process.env.JWT_SECRET,
-      { expiresIn: '1h' }
-    );
-    res.status(200).json({ message: 'Login successful', token });
+    const token = jwt.sign({ id: user.User_id, role: user.Role_id }, process.env.JWT_SECRET, { expiresIn: '1h' });
+    res.json({ token, user: { id: user.User_id, email: user.Email, role: user.Role_id } });
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    res.status(500).json({ message: 'Server error', error: error.message });
   }
 };
