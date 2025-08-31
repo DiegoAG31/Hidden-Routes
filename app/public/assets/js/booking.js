@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				let User_id = null;
 				const booking_status_id = 1;
 				const Experience_id = expId;
-					const Quota = document.getElementById('quota').value;
+						const Places = document.getElementById('quota').value;
 				const messageDiv = document.getElementById('booking-message');
 				const token = localStorage.getItem('token');
 				if (token) {
@@ -71,17 +71,17 @@ document.addEventListener('DOMContentLoaded', () => {
 					if (messageDiv) messageDiv.textContent = 'No se encontró la experiencia seleccionada.';
 					return;
 				}
-					if (!Quota || Quota < 1) {
-						if (messageDiv) messageDiv.textContent = 'Debes ingresar la cantidad de cupos antes de reservar.';
-						return;
-					}
+						if (!Places || Places < 1) {
+							if (messageDiv) messageDiv.textContent = 'Debes ingresar la cantidad de cupos antes de reservar.';
+							return;
+						}
 
 			// Mostrar resumen total
 			const totalPayDiv = document.getElementById('total-pay');
-				if (totalPayDiv) {
-					const total = pricePerPerson * Quota;
-					totalPayDiv.textContent = `Total a pagar: $${pricePerPerson} x ${Quota} = $${total}`;
-				}
+					if (totalPayDiv) {
+						const total = pricePerPerson * Places;
+						totalPayDiv.textContent = `Total a pagar: $${pricePerPerson} x ${Places} = $${total}`;
+					}
 
 			try {
 				const res = await fetch(API_URL, {
@@ -89,12 +89,12 @@ document.addEventListener('DOMContentLoaded', () => {
 					headers: {
 						'Content-Type': 'application/json'
 					},
-							body: JSON.stringify({
-								User_id,
-								Experience_id,
-								Quota,
-								booking_status_id
-							})
+									body: JSON.stringify({
+										User_id,
+										Experience_id,
+										Places,
+										booking_status_id
+									})
 				});
 				if (!res.ok) throw new Error('Error al crear la reserva');
 				if (messageDiv) messageDiv.textContent = '¡Reserva realizada con éxito! Recibirás un correo con los detalles.';
@@ -108,13 +108,13 @@ document.addEventListener('DOMContentLoaded', () => {
 		// Actualizar el total a pagar en tiempo real
 		const quotaInput = document.getElementById('quota');
 		quotaInput?.addEventListener('input', function() {
-				const Quota = parseInt(quotaInput.value, 10);
-				const totalPayDiv = document.getElementById('total-pay');
-				if (selectedExperience && totalPayDiv && Quota > 0) {
-					const total = pricePerPerson * Quota;
-					totalPayDiv.textContent = `Total a pagar: $${pricePerPerson} x ${Quota} = $${total}`;
-				} else if (totalPayDiv) {
-					totalPayDiv.textContent = '';
-				}
+					const Places = parseInt(quotaInput.value, 10);
+					const totalPayDiv = document.getElementById('total-pay');
+					if (selectedExperience && totalPayDiv && Places > 0) {
+						const total = pricePerPerson * Places;
+						totalPayDiv.textContent = `Total a pagar: $${pricePerPerson} x ${Places} = $${total}`;
+					} else if (totalPayDiv) {
+						totalPayDiv.textContent = '';
+					}
 		});
 });
