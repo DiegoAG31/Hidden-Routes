@@ -24,22 +24,23 @@ export const getBookingById = async (req, res) => {
 // Crear una nueva reserva
 export const createBooking = async (req, res) => {
 	try {
-		const { User_id, Experience_id, Quotes, booking_status_id } = req.body;
+		const { User_id, Experience_id, Quota, booking_status_id } = req.body;
 
-		if (!User_id || !Experience_id || !Quotes || !booking_status_id) {
+		if (!User_id || !Experience_id || !Quota || !booking_status_id) {
 			return res.status(400).json({ error: 'Todos los campos son obligatorios' });
 		}
 
 		const newBooking = await Booking.create({
 			User_id,
 			Experience_id,
-			Quotes,
+			Quota,
 			booking_status_id
 		});
 
 		res.status(201).json(newBooking);
 	} catch (error) {
-		res.status(500).json({ error: 'Error al crear la reserva' });
+		console.error('Error al crear la reserva:', error);
+		res.status(500).json({ error: 'Error al crear la reserva', details: error.message });
 	}
 };
 

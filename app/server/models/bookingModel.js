@@ -15,7 +15,7 @@ const Booking = sequelize.define('Booking', {
         type: DataTypes.INTEGER,
         allowNull: false,
     },
-    Quotes: {
+    Quota: {
         type: DataTypes.INTEGER,
         allowNull: false,
     },

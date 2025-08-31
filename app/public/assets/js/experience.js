@@ -21,7 +21,7 @@ function renderExperiences(experiences) {
           <strong>Places:</strong> ${exp.Capacity || exp.capacity}<br><br>
           <strong>Price per person:</strong> $${exp.Price || exp.price}<br><br>
         </p>
-        <a href="./booking.html"><button type="button" id="btn-exp-card">Reserve</button></a>
+        <a href="./booking.html?experience_id=${exp.Experience_id || exp.id}"><button type="button" class="btn-exp-card">Reserve</button></a>
       </div>
     `;
   });

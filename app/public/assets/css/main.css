@@ -326,7 +326,7 @@ body {
 }
 
 /* Button inside each experience card  */
-#btn-exp-card {
+.btn-exp-card {
   display: inline-block;
   margin: 10px;
   background-color: #4fa13f;
@@ -340,7 +340,7 @@ body {
 }
 
 /* Hover state for card button  */
-#btn-exp-card:hover {
+.btn-exp-card:hover {
   background-color: #929292;
 }
 

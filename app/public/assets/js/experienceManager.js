@@ -105,6 +105,9 @@ document.getElementById('createExperienceForm').addEventListener('submit', async
   try {
     const res = await fetch(API_URL, {
       method: 'POST',
+      headers: {
+        'Authorization': 'Bearer ' + token
+      },
       body: formData
     });
     if (!res.ok) throw new Error('Error al crear experiencia');
@@ -129,7 +132,7 @@ document.getElementById('experienceList').addEventListener('click', async functi
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
-          // 'Authorization': 'Bearer TU_TOKEN' // Si usas autenticación
+          'Authorization': 'Bearer ' + token
         },
         body: JSON.stringify({
           Experience_title,
@@ -150,7 +153,7 @@ document.getElementById('experienceList').addEventListener('click', async functi
       const res = await fetch(`${API_URL}/${id}`, {
         method: 'DELETE',
         headers: {
-          // 'Authorization': 'Bearer TU_TOKEN' // Si usas autenticación
+          'Authorization': 'Bearer ' + token
         }
       });
       if (!res.ok) throw new Error('Error al eliminar experiencia');
