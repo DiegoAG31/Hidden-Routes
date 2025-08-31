@@ -1,3 +1,20 @@
+/* Select field in register form styled like input */
+.form-register-select select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 18px;
+  border: 1px solid #306e20;
+  border-radius: 8px;
+  font-size: 15px;
+  background: #fff;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-register-select select:focus {
+  border-color: #0e7bd4;
+  box-shadow: 0 0 6px #15360c4d;
+  outline: none;
+}
 /*-----------------------------------------------------------INIT--------------------------------------------------------------------------*/
 /* Reset margins, paddings and set default font */
 * {
