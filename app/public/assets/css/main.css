@@ -39,6 +39,121 @@ body {
   width: 100%;
 }
 
+/*-----------------------------------------------------------RESPONSIVE DESIGN--------------------------------------------------------------------------*/
+/* 🔹 Extra Small Devices (≤ 480px) - Small Mobile */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+    padding: 0 5px;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+
+  .main-view,
+  .reservation,
+  .form-profile,
+  .container-manager {
+    padding: 1rem;
+  }
+
+  button, input, select, textarea {
+    width: 100%;
+    font-size: 0.95rem;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+/* 🔹 Small Devices (481px – 768px) - Mobile */
+@media (min-width: 481px) and (max-width: 768px) {
+  body {
+    font-size: 15px;
+    padding: 0 10px;
+  }
+
+  section, .container, .cards-container {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .cards-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  button, input, select, textarea {
+    width: 100%;
+    font-size: 1rem;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+/* 🔹 Medium Devices (769px – 992px) - Tablets */
+@media (min-width: 769px) and (max-width: 992px) {
+  body {
+    font-size: 16px;
+    padding: 0 15px;
+  }
+
+  h1, h2, h3 {
+    font-size: 90%;
+    text-align: center;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .cards-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+  }
+}
+
+/* 🔹 Large Devices (993px – 1200px) - Laptops pequeños */
+@media (min-width: 993px) and (max-width: 1200px) {
+  body {
+    font-size: 17px;
+    padding: 0 20px;
+  }
+
+  .cards-container {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+  }
+}
+
+/* 🔹 Extra Large Devices (≥ 1201px) - Desktop grande */
+@media (min-width: 1201px) {
+  body {
+    font-size: 18px;
+    padding: 0 30px;
+  }
+
+  .cards-container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 35px;
+  }
+
+  button {
+    padding: 10px 18px;
+    font-size: 1.05rem;
+  }
+}
+
 /*-----------------------------------------------------------NAVBAR--------------------------------------------------------------------------*/
 /* Top navigation bar */
 .navbar {
@@ -165,10 +280,12 @@ body {
 }
 
 .grid-exp-card {
-  background-color: #ffffff;
+  background: linear-gradient(120deg, #eceff1, #eef0f1);
   overflow: hidden;
   padding: 20px;
+  border-radius: 1.5em;
 }
+
 
 .grid-exp-card img {
   width: 100%;
@@ -179,22 +296,20 @@ body {
 }
 
 .grid-exp-card h2 {
-  margin: 15px 10px 5px;
-  color: black;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  color: #000000;
+  font-size: 1.5rem;       
+  text-align: center;        
+  letter-spacing: 0.5px;     
 }
 
 .grid-exp-card p {
   margin: 10px;
-  color: grey;
-  font-size: 0.9rem;
-}
-
-.grid-exp-card a {
-  display: inline-block;
-  margin: 10px;
-  text-decoration: none;
-  padding: 8px 10px;
-  border-radius: 8px;
+  color: #555;             /* gris más elegante, mejor contraste */
+  font-size: 1em;         /* un poco más grande */
+  line-height: 1.5;        /* más espacio entre líneas */
+  font-weight: 300;        /* claridad y ligereza */
 }
 
 /* General grid card style with hover animation */
@@ -246,12 +361,14 @@ body {
 /* Main container in grid for the experience cards */
 .container-prin-exp {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 25px;              
+  margin: 30px auto;
   padding: 20px;
-  align-items: stretch;
+  max-width: 1400px;    
+  justify-content: center;
 }
+
 
 /* General background container for the experiences section */
 .container-experiences {
@@ -308,6 +425,7 @@ body {
 .label-l {
   float: left;
   font-size: 14px;
+  margin-right: 10px;
   color: #4fa13f;
 }
 
@@ -342,24 +460,24 @@ body {
   background-color: #929292;
 }
 
-/* Button inside each experience card  */
+/* Buttons inside experience cards: 
+   Styles for both <a> links and .btn-exp-card elements. 
+   They are displayed as centered block buttons with consistent look. */
+.grid-exp-card a,
 .btn-exp-card {
-  display: inline-block;
-  margin: 10px;
+  display: block;            
+  margin: 10px auto;       
+  text-align: center;           
+  padding: 8px 14px;           
+  border-radius: 6px;
   background-color: #4fa13f;
-  color: #ffffff;
-  padding: 8px 10px;
-  font-size: 1.5rem;
-  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;             
+  text-decoration: none;
   cursor: pointer;
-  transition: background 0.3s, transform 0.3s;
-  border: none;
+  border: none;  
 }
 
-/* Hover state for card button  */
-.btn-exp-card:hover {
-  background-color: #929292;
-}
 
 /*------------------------------------------------------------------------------------------------------------------------------------------------*/
 /*------------------------------------------------------------ MAIN - BOOKING --------------------------------------------------------------*/
