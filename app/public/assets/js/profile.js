@@ -4,6 +4,62 @@
 const API_URL = 'http://localhost:3000/api/auth/profile';
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Mostrar reservas activas del usuario logeado
+  async function renderActiveBookings(userId) {
+    const token = localStorage.getItem('token');
+    if (!token || !userId) return;
+    try {
+      // Obtener todas las reservas y filtrar por usuario y estado activo
+      const bookingsRes = await fetch('http://localhost:3000/api/bookings', {
+        method: 'GET',
+        headers: { 'Authorization': 'Bearer ' + token }
+      });
+      const bookings = await bookingsRes.json();
+      const activeBookings = bookings.filter(b => b.User_id === userId && b.booking_status_id === 1);
+      const bookingsList = document.getElementById('active-bookings-list');
+      if (bookingsList) {
+        if (activeBookings.length === 0) {
+          bookingsList.innerHTML = '<p>No tienes reservas activas.</p>';
+        } else {
+          bookingsList.innerHTML = activeBookings.map(b => `
+            <div class="card booking-card" data-booking-id="${b.Booking_id}" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+              <h3 style="text-align: center;">Reserva #${b.Booking_id}</h3>
+              <label style="text-align: center;">Experiencia:</label> <span>${b.Experience_id}</span><br>
+              <label style="text-align: center;">Cupos:</label> <span>${b.Places}</span><br>
+              <label style="text-align: center;">Estado:</label> <span class="active-status">Activa</span><br>
+              <button class="btn-cancel-booking btn-delete" data-id="${b.Booking_id}" style="margin: 10px auto; display: block;">Cancelar</button>
+            </div>
+          `).join('');
+          // Agregar eventos a los botones de cancelar
+          document.querySelectorAll('.btn-cancel-booking').forEach(btn => {
+            btn.addEventListener('click', async function() {
+              const bookingId = this.getAttribute('data-id');
+              if (confirm('¿Seguro que deseas cancelar esta reserva?')) {
+                try {
+                  const token = localStorage.getItem('token');
+                  const res = await fetch(`http://localhost:3000/api/bookings/${bookingId}`, {
+                    method: 'DELETE',
+                    headers: { 'Authorization': 'Bearer ' + token }
+                  });
+                  if (res.ok) {
+                    alert('Reserva cancelada');
+                    renderActiveBookings(userId);
+                  } else {
+                    alert('No se pudo cancelar la reserva');
+                  }
+                } catch (err) {
+                  alert('Error al cancelar la reserva');
+                }
+              }
+            });
+          });
+        }
+      }
+    } catch (err) {
+      const bookingsList = document.getElementById('active-bookings-list');
+      if (bookingsList) bookingsList.innerHTML = '<p>Error al cargar reservas.</p>';
+    }
+  }
   // Ocultar botón de login si el usuario está logeado
   const token = localStorage.getItem('token');
   const loginBtn = document.getElementById('btnlogin');
@@ -59,6 +115,8 @@ document.addEventListener('DOMContentLoaded', () => {
           <img src="../assets/img/verificate.png" alt="verificate" id="verificate" style="display:${data.verification_id == 1 ? 'inline' : 'none'}">
         `;
       }
+  // Mostrar reservas activas después de cargar el perfil
+  renderActiveBookings(data.user_id);
     })
     .catch(() => {
       alert('No se pudo cargar el perfil');
