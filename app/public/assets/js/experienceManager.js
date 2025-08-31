@@ -1,6 +1,11 @@
 // Guardian: solo hosts pueden acceder
+// Ocultar botón de login si el usuario está logeado
+const token = localStorage.getItem('token');
+const loginBtn = document.getElementById('btnlogin');
+if (token && loginBtn) {
+  loginBtn.style.display = 'none';
+}
 document.addEventListener('DOMContentLoaded', function() {
-  const token = localStorage.getItem('token');
   if (!token) {
     window.location.href = './experience.html';
     return;

@@ -101,23 +101,5 @@
     </p>
   </footer>
   <script src="../assets/js/experience.js"></script>
-  <script>
-    // Ocultar botón Manage si el usuario no es host
-    document.addEventListener('DOMContentLoaded', function() {
-      const token = localStorage.getItem('token');
-      if (!token) {
-        document.getElementById('manageNav').style.display = 'none';
-        return;
-      }
-      try {
-        const payload = JSON.parse(atob(token.split('.')[1]));
-        if (payload.roleName !== 'Host') {
-          document.getElementById('manageNav').style.display = 'none';
-        }
-      } catch (e) {
-        document.getElementById('manageNav').style.display = 'none';
-      }
-    });
-  </script>
 </body>
 </html>

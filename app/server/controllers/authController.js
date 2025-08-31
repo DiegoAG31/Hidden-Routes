@@ -86,7 +86,12 @@ export const updateProfile = async (req, res) => {
   if (user_name) user.User_name = user_name;
   if (email) user.Email = email;
   if (role_id) user.Role_id = role_id;
-  if (user_img) user.user_img = user_img;
+  // Si se subió una imagen, guardar el nombre del archivo
+  if (req.file) {
+    user.user_img = 'users/' + req.file.filename;
+  } else if (user_img) {
+    user.user_img = user_img;
+  }
   if (verification_id) user.verification_id = verification_id;
   await user.save();
   res.json({ message: 'Profile updated', user });

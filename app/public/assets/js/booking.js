@@ -19,6 +19,12 @@ async function cargarExperiencias() {
 const API_URL = 'http://localhost:3000/api/bookings';
 
 document.addEventListener('DOMContentLoaded', () => {
+	// Ocultar botón de login si el usuario está logeado
+	const token = localStorage.getItem('token');
+	const loginBtn = document.getElementById('btnlogin');
+	if (token && loginBtn) {
+		loginBtn.style.display = 'none';
+	}
 	cargarExperiencias();
 	const form = document.querySelector('.reservation-form');
 	if (!form) return;
