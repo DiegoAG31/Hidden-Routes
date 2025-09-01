@@ -13,7 +13,9 @@ CREATE TABLE roles (
 DROP TABLE IF EXISTS verification_status;
 CREATE TABLE verification_status (
     verification_id INT AUTO_INCREMENT PRIMARY KEY,
-    status_name VARCHAR(20) NOT NULL
+    status_name VARCHAR(20) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
 DROP TABLE IF EXISTS users;
@@ -38,7 +40,9 @@ CREATE TABLE users (
 DROP TABLE IF EXISTS destinations;
 CREATE TABLE destinations (
     destination_id INT AUTO_INCREMENT PRIMARY KEY,
-    destination_name VARCHAR(100)
+    destination_name VARCHAR(100),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
 DROP TABLE IF EXISTS experiences;
@@ -89,3 +93,20 @@ CREATE TABLE bookings (
         ON DELETE SET NULL ON UPDATE CASCADE
 );
 
+INSERT INTO roles (role_id, role_name) VALUES
+(1, 'Host'),
+(2, 'Tourist');
+
+INSERT INTO destinations (destination_name)
+VALUES 
+  ('Cartagena'),
+  ('Santa Marta'),
+  ('Barranquilla');
+
+INSERT INTO verification_status (verification_id, status_name) VALUES
+(1, 'Verified'),
+(2, 'Not Verified');
+
+INSERT INTO booking_status (booking_status_id, booking_status_name) VALUES
+(1, 'Confirmed'),
+(2, 'Cancelled');
