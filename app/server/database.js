@@ -1,7 +1,18 @@
-import { Sequelize } from 'sequelize';
-import config from '../config/config.js';
+import mysql from 'mysql2/promise';
 
-const env = process.env.NODE_ENV || 'development';
-const sequelize = new Sequelize(config[env]);
+const testConnection = async () => {
+  try {
+    const conn = await mysql.createConnection({
+      host: process.env.DB_HOST,
+      user: process.env.DB_USER,
+      password: process.env.DB_PASS,
+      database: process.env.DB_NAME
+    });
+    console.log("✅ Conexión exitosa a MySQL");
+    await conn.end();
+  } catch (error) {
+    console.error("❌ Error de conexión:", error.message);
+  }
+};
 
-export default sequelize;
+testConnection();
