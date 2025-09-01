@@ -1,5 +1,5 @@
 // register.js
-const API_URL = 'http://localhost:3000/api/auth/register';
+const API_URL = '/api/auth/register';
 
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('form');

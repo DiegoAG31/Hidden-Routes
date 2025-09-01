@@ -1,5 +1,5 @@
 // login.js
-const API_URL = 'http://localhost:3000/api/auth/login';
+const API_URL = '/api/auth/login';
 
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('form');

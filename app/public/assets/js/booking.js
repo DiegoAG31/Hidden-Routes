@@ -1,5 +1,5 @@
 // booking.js - Conexión frontend con backend para reservas
-const API_URL = 'http://localhost:3000/api/bookings';
+const API_URL = '/api/bookings';
 
 document.addEventListener('DOMContentLoaded', () => {
 	// Variables para experiencia y precio
@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const params = new URLSearchParams(window.location.search);
 	const expId = params.get('experience_id');
 	if (expId) {
-		fetch('http://localhost:3000/api/experiences/' + expId)
+		fetch('/api/experiences/' + expId)
 			.then(res => res.json())
 			.then(exp => {
 				selectedExperience = exp;

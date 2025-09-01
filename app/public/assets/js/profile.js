@@ -1,7 +1,7 @@
 // profile.js
 // Lógica para mostrar y actualizar el perfil del usuario logeado
 
-const API_URL = 'http://localhost:3000/api/auth/profile';
+const API_URL = '/api/auth/profile';
 
 document.addEventListener('DOMContentLoaded', () => {
   // Mostrar reservas activas del usuario logeado
@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!token || !userId) return;
     try {
       // Obtener todas las reservas y filtrar por usuario y estado activo
-      const bookingsRes = await fetch('http://localhost:3000/api/bookings', {
+      const bookingsRes = await fetch('/api/bookings', {
         method: 'GET',
         headers: { 'Authorization': 'Bearer ' + token }
       });
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
               if (confirm('¿Seguro que deseas cancelar esta reserva?')) {
                 try {
                   const token = localStorage.getItem('token');
-                  const res = await fetch(`http://localhost:3000/api/bookings/${bookingId}`, {
+                  const res = await fetch(`/api/bookings/${bookingId}`, {
                     method: 'DELETE',
                     headers: { 'Authorization': 'Bearer ' + token }
                   });

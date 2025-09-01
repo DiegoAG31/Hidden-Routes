@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // experienceManager.js
 // Lógica de gestión de experiencias para experienceManager.html
 
-const API_URL = 'http://localhost:3000/api/experiences';
+const API_URL = '/api/experiences';
 
 function renderExperiences(experiences) {
   const container = document.getElementById('experienceList');
@@ -61,7 +61,7 @@ async function fetchExperiences() {
 
   async function fetchCities() {
     try {
-      const res = await fetch('http://localhost:3000/api/destinations/cities');
+      const res = await fetch('/api/destinations/cities');
       const cities = await res.json();
       const select = document.getElementById('citySelect');
       if (select) {

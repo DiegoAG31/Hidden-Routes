@@ -1,7 +1,7 @@
 // experience.js - Renderizar experiencias dinámicamente desde la base de datos
 
 
-const API_URL = 'http://localhost:3000/api/experiences';
+const API_URL = '/api/experiences';
 let allExperiences = [];
 
 function renderExperiences(experiences) {
@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function fetchCities() {
   try {
-    const res = await fetch('http://localhost:3000/api/destinations/cities');
+    const res = await fetch('/api/destinations/cities');
     const cities = await res.json();
     const select = document.getElementById('citySelect');
     if (select) {
