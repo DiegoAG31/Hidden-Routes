@@ -1,3 +1,61 @@
+/* Membership info section styles */
+.membership-info-block {
+  background: #f8f8f8;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  padding: 2rem 2.5rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 2px 12px #0c44ad18;
+}
+.membership-info-block h2 {
+  color: #4fa13f;
+  margin-bottom: 0.7em;
+  font-size: 1.5em;
+}
+.membership-info-block ul {
+  margin-left: 1.5em;
+  margin-bottom: 1.2em;
+  color: #333;
+  font-size: 1.05em;
+}
+.membership-info-block li {
+  margin-bottom: 0.5em;
+  line-height: 1.6;
+}
+.membership-info-block p {
+  margin-bottom: 1.2em;
+  color: #222;
+  font-size: 1.05em;
+}
+/* Membership payment cards row and columns */
+.membership-cards-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.membership-card-col {
+  flex: 1;
+  min-width: 260px;
+  max-width: 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.membership-card-col .card {
+  width: 100%;
+}
+
+.membership-card-col .card img[alt="QR CODE"] {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  margin: 0 auto;
+}
 /*---------------------- MEMBERSHIP PAYMENT PAGE ----------------------*/
 .membership-container {
   background: #fff;
