@@ -1,3 +1,87 @@
+/*---------------------- MEMBERSHIP PAYMENT PAGE ----------------------*/
+.membership-container {
+  background: #fff;
+  border-radius: 12px;
+  margin: 2rem auto;
+  padding: 2rem;
+  box-shadow: 0 4px 20px #0c44ad22;
+}
+
+.membership-container h3,
+.membership-container h4 {
+  color: #4fa13f;
+}
+
+.membership-container ul, .membership-container ol {
+  margin-left: 1.2rem;
+  margin-bottom: 1rem;
+  color: #333;
+  font-size: 1em;
+}
+
+.membership-container li {
+  margin-bottom: 0.5em;
+  line-height: 1.5;
+}
+
+.membership-container .card {
+  background: #f8f8f8;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px #0001;
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.membership-container input[type="text"],
+.membership-container input[type="date"] {
+  border: 1px solid #4fa13f;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 1em;
+  margin-bottom: 0.5em;
+  background: #fff;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.membership-container input[type="text"]:focus,
+.membership-container input[type="date"]:focus {
+  border-color: #0e7bd4;
+  outline: none;
+  box-shadow: 0 0 6px #15360c4d;
+}
+
+.membership-container label {
+  color: #4fa13f;
+  font-weight: 600;
+  font-size: 0.95em;
+  margin-bottom: 0.2em;
+}
+
+.membership-container .btn-submit {
+  background: linear-gradient(135deg, #4fa13f, #3b7d2a);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+.membership-container .btn-submit:hover {
+  background: linear-gradient(135deg, #3b7d2a, #2c5720);
+  transform: translateY(-2px);
+}
+
+.membership-container img[alt="QR CODE"] {
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 8px #0001;
+}
 /* Select field in register form styled like input */
 .form-register-select select {
   width: 100%;
