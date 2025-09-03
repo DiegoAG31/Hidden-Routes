@@ -46,25 +46,11 @@
    ```bash
    npm install
    ```
-4. Create a `.env` file in the `/app` root with the following variables:
-   ```env
-   DB_HOST=82.197.82.91
-   DB_USER=u976542190_root
-   DB_PASS=Qwe.123*
-   DB_NAME=u976542190_hidden_routes
-   JWT_SECRET=hrcolombia
-   PORT=3306
-   ```
-5. Start the backend (Express):
+4. Start the backend (Express):
    ```bash
-   cd app/server
-   node server.js
+   node app/server/server.js
    ```
-6. Start the frontend (Vite):
-   ```bash
-   npm run dev
-   ```
-The frontend is served by default at `http://localhost:5173`.
+The frontend is served by default at `http://localhost:3000`.
 
 ## API Endpoints
 ### Auth
@@ -76,12 +62,9 @@ The frontend is served by default at `http://localhost:5173`.
 ### Experiences
 - `GET /api/experiences` - List experiences
 - `POST /api/experiences` - Add experience
-### Reviews
-- `GET /api/reviews` - Get all reviews
-- `POST /api/reviews` - Add review
 
 ## Usage
-- Access the frontend in your browser: `http://localhost:5173`
+- Access the frontend in your browser: `http://localhost:3000
 - Use the API with Postman or similar tools.
 - HTML views are in `app/public/views/`.
 - Backend controllers and routes are in `app/server/controllers/` and `app/server/routes/`.
@@ -98,30 +81,30 @@ Hidden-Routes/
 │   ├── config/
 │   │   └── config.js
 │   ├── doc/
-│   │   ├── MER.drawio
 │   │   ├── Documento_Tecnico_hidden_routes.pdf
 │   │   ├── MER.jpg
 │   │   └── queryHiddenRoutes.sql
 │   ├── public/
+│   ├── dashboard.html
 │   │   ├── assets/
 │   │   │   ├── css/
 │   │   │   │   └── main.css
-│   │   │   └── img/
-│   │   │       ├── barranquilla.webp
-│   │   │       ├── caribe.webp
-│   │   │       ├── cartagena.webp
-│   │   │       ├── facebook.png
-│   │   │       ├── github.png
-│   │   │       ├── hr_logo-removebg-preview.webp
-│   │   │       ├── instagram.png
-│   │   │       ├── logo.webp
-│   │   │       ├── santamarta.webp
-│   │   │       └── youtube.png
+│   │   │   ├── img/
+│   │   │   └── js/
+│   │   │       ├── booking.js
+│   │   │       ├── dashboard.js
+│   │   │       ├── experience.js
+│   │   │       ├── experienceManager.js
+│   │   │       ├── login.js
+│   │   │       ├── profile.js
+│   │   │       └── register.js
 │   │   └── views/
+│   │       ├── aboutUs.html
 │   │       ├── booking.html
-│   │       ├── destination.html
 │   │       ├── experience.html
+│   │       ├── experienceManager.html
 │   │       ├── login.html
+│   │       ├── paymentMethod.html
 │   │       ├── profile.html
 │   │       ├── register.html
 │   └── server/
@@ -130,21 +113,26 @@ Hidden-Routes/
 │       ├── controllers/
 │       │   ├── authController.js
 │       │   ├── bookingController.js
+│       │   ├── destinationController.js
 │       │   ├── experienceController.js
 │       │   └── reviewController.js
 │       ├── middleware/
-│       │   └── auth.js
+│       │   ├── auth.js
+│       │   ├── isHost.js
+│       │   ├── uploadExperienceImg.js
+│       │   └── uploadProfileImg.js
 │       ├── models/
 │       │   ├── bookingModel.js
 │       │   ├── bookingStatusModel.js
+│       │   ├── destinationModel.js
 │       │   ├── experienceModel.js
 │       │   ├── roleModel.js
 │       │   └── userModel.js
 │       └── routes/
 │           ├── auth.js
 │           ├── bookings.js
-│           ├── experiences.js
-│           └── reviews.js
+│           ├── destinations.js
+│           └── experiences.js
 ```
 
 ## Screenshots
@@ -159,3 +147,4 @@ You can add screenshots here to show the app in action.
 
 ## License
 Hidden-Routes Colombia is licensed under the MIT License
+
