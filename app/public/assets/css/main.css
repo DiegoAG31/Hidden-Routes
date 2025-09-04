@@ -416,9 +416,10 @@ body {
 /* Hero section with background image, gradient overlay, padding and shadow */
 .container-prin {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 45px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
   margin-top: 40px;
+  padding: 0 1rem;
 }
 
 .grid-exp-card {
@@ -426,32 +427,96 @@ body {
   overflow: hidden;
   padding: 20px;
   border-radius: 1.5em;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
 
 .grid-exp-card img {
   width: 100%;
-  height: 380px;
+  max-width: 340px;
+  height: 220px;
   object-fit: cover;
   border-radius: 10px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
 }
 
 .grid-exp-card h2 {
-  margin-bottom: 20px;
-  margin-top: 20px;
-  color: #000000;
-  font-size: 1.5rem;       
-  text-align: center;        
-  letter-spacing: 0.5px;     
+  margin-bottom: 12px;
+  margin-top: 18px;
+  color: #222;
+  font-size: 1.35rem;
+  text-align: center;
+  letter-spacing: 0.5px;
 }
 
 .grid-exp-card p {
-  margin: 10px;
-  color: #555;             /* gris más elegante, mejor contraste */
-  font-size: 1em;         /* un poco más grande */
-  line-height: 1.5;        /* más espacio entre líneas */
-  font-weight: 300;        /* claridad y ligereza */
+  margin: 10px 0 18px 0;
+  color: #555;
+  font-size: 1em;
+  line-height: 1.5;
+  font-weight: 300;
+  text-align: center;
+}
+/* Responsive cards */
+@media (max-width: 900px) {
+  .container-prin {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .grid-exp-card img {
+    height: 180px;
+    max-width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .container-prin {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 0 0.5rem;
+  }
+  .grid-exp-card {
+    padding: 12px;
+    border-radius: 1em;
+  }
+  .grid-exp-card img {
+    height: 120px;
+    max-width: 100%;
+  }
+  .grid-exp-card h2 {
+    font-size: 1.1rem;
+    margin-top: 10px;
+    margin-bottom: 8px;
+  }
+  .grid-exp-card p {
+    font-size: 0.95em;
+    margin-bottom: 12px;
+  }
+}
+/* Reserve button style */
+.reserve-btn {
+  display: block;
+  width: 100%;
+  max-width: 220px;
+  margin: 0 auto;
+  padding: 12px 0;
+  background: #4fa13f;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(79,161,63,0.08);
+  cursor: pointer;
+}
+.reserve-btn:hover {
+  background: #388c2c;
 }
 
 /* General grid card style with hover animation */
